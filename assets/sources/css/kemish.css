@@ -1,0 +1,166 @@
+.blog_bg{position: relative;top:-25px; display: table;height:200px;background: url("../img/Deerek/02-1024x423.jpg");width: 100%;background-size: 100% 100%;}
+.blog_titulo{text-align: center;vertical-align: middle;display: table-cell;color: white;position: relative;font-size: 50px;font-family: "Times New Roman", Times, serif;}
+img.izquierda {float: left;position: relative;left: 40%;top: 20px;}
+img.derecha {float: right;position: relative;right: 40%;top: 20px;}
+.fecha{
+	background-color: orange;
+	height: 65px;
+	width: 90px;
+	margin-top: 30px;
+	position: relative;
+	top: 0px;
+	left:12%;
+	font-family: "Times New Roman", Times, serif;
+}
+.blog_contenido{
+	position: relative;
+	left: 10%;
+	background-color: gray; 
+	height: 330px; 
+	width: 700px; 
+	margin-top: 20px;
+}
+.titulo{
+	height: 50px;
+    width: 500px;
+    position: relative;
+    /* float: left; */
+    left: 20%;
+    top: -10px;
+    font-family: "Times New Roman", Times, serif;
+}
+.readmore{
+	background-color: #fea100;
+    height: 40px;
+    width: 100px;
+    position: relative;
+    left: 12%;
+    top: 50px;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}
+.redes{
+	position: relative;
+	left: -20%;
+	top: 50px;
+}
+.like{
+	position: relative;
+	left: -25%;
+	top: 50px;
+}
+.lineas{
+	position: relative;
+	left: 0%;
+	top: 50px;
+	z-index: -1;
+}
+.pestanias{
+	position: relative;
+	top: -100px;
+	left: 12%;
+}
+.next_prev{
+	position: relative;
+	top: 0%;
+	left: 0%;
+	background-color: #fea100;
+	height: 40px;
+    width: 100px;
+    color: white;
+    border-radius: 20px;
+    border-style: none;
+}
+.numeros{
+	position: relative;
+	top: 0%;
+	left: 0%;
+	border-style: 2px;
+	height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid #d4dade;
+    background-color: white;
+}
+.sidebar{
+	position: relative;
+    top: -550px;
+    left: 70%;
+}
+
+
+
+
+
+.lista2 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding-left: 15px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.lista2 ol {
+    margin: 0 0 0 2em; 
+}
+
+.lista2 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+.lista2 li:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.lista2 li:hover:before{
+    transform: rotate(360deg);  
+}
+
+.lista2 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #ffe9f1;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.pictures>div>img{width: 100%; height: 350px;}
+.category{    margin-left: 50px;}
+.category>section>h4{margin-top: -2px; font-weight: bold;}
+.pictures{margin-bottom: 30px;}
+.pictures>div>div{margin-top: 25px;}
+.date{    background-color: #fea100;
+    width: 100%;
+    margin-left: -15px;
+    color: white;
+    padding: 5px;
+}
+.date>div{border:1px solid white;padding: 5px;}
+.date>div>strong{
+        font-size: 30px;
+    }
+    .date>div>p{
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }

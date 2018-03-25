@@ -1,0 +1,11 @@
+.blog_bg{position: relative;top:-25px; display: table;height:200px;background: url("../img/Mirtha/gallery.jpg");width: 100%;background-size: 100% 100%;}
+.blog_titulo{text-align: center;vertical-align: middle;display: table-cell;color: white;position: relative;font-size: 50px;font-family: "Times New Roman", Times, serif;}
+img.izquierda {float: left;position: relative;left: 35%;top: 20px;}
+img.derecha {float: right;position: relative;right: 35%;top: 20px;}
+.ourGallery{font-size: 12px; position: relative; text-align: center;}
+.img-gal>div{border-right: 2px solid #e3e3e3;}
+.img-gal>div:hover{color: pink;}
+.img-gal>div>p{font-size: 12px; font-weight: bold;}
+.img-gal-end{border-right: 2px solid #FFF !important;}
+.img-gal{margin-bottom: 40px;}
+.opening{background: #edf1f3;}

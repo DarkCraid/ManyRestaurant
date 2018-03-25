@@ -1,0 +1,49 @@
+.blog_bg{position: relative;top:-25px; display: table;height:200px;background: url("../img/fondo5.jpg");width: 100%;background-size: 100% 100%;}
+.blog_titulo{text-align: center;vertical-align: middle;display: table-cell;color: white;position: relative;font-size: 50px;font-family: "Times New Roman", Times, serif;}
+img.izquierda {float: left;position: relative;left: 43%;top: 20px;}
+img.derecha {float: right;position: relative;right: 43%;top: 20px;}
+.AboutUsTitle{margin-top: 7%;}
+.AboutUs{color: white; display: table-cell;vertical-align: middle; }
+.arrowrigth{padding-left: 0px;padding-right: 0px;}
+.AboutTxt{padding-right: 0px;padding-left: 0px; width: 12%; text-align: center; }
+.arrowleft{padding-left: 0px;padding-right: 0px;}
+.ourHistory{text-align: center;width: 50%; margin-top: 5%; margin-bottom: 2%;}
+.ourHotel{max-width: 969px;max-height: 446px;width: 60%;height: 446px;}
+.ourHotel img{width: 100%;height: 100%;}
+.ourHotel p{float: left;font-weight: bold; }
+.ourCooks{background-image: url("../img/backgroundOurCooks.png");margin-top: 10%; width: 100%; text-align: center; margin-left: auto; margin-right: auto;}
+.ourCooks h3{font-weight: bold;}
+ hr{width:100%;}
+.container-gallery{width: 80%; margin-left: auto; margin-right: auto;}
+.ourCooks-gallery{margin: 10px;border: 1px solid #ccc;display:inline-block; width: 180px; background-color: white; }
+.ourCooks-gallery img {width: 100%;height: 100%;}
+.ourCooks-desc {padding: 15px;text-align: center;}
+.speciality{width: 100%; display: inline-block; height: auto; }
+.grey{background-color: #ecf1f4;}
+.imgSpeciality{float: left; width: 45%; margin-right: 0px; height: 100%;}
+.imgSpeciality > img{ width: 100%; height: 100%; }
+.textSpeciality{float: left; width: 40%; margin-left: 50px;}
+.textSpeciality h3,p{ padding-top: 10px;}
+.textSpeciality p{color: grey;}
+.pointSpeciality{color:black!important; }
+.titleSpeciality{font-weight: bold; color: black;}
+.pointSpeciality{font-weight: bold;}
+.openingHours{margin-top: 30px;margin-bottom: 50px;}
+.openingHours>div>label{color: #fea100; font-size: 20px;}
+.openingHours small{display: inline-block; color: gray;}
+ hr{padding-top: 0px;padding-top: 0px;margin: 0px;}
+ .carousel-inner{margin-bottom: 10px; padding-bottom: 5%;}
+.carousel-indicators{bottom: 10px;} 
+.carousel-indicators li{background-color: grey;}
+.carousel-indicators .active{background-color: #fea100;}
+
+/*CSS DE MENU*/
+.MenuOptions{width: 100%; }
+.option{display: inline-block;  margin-right: 5%;}
+.option:hover{cursor: pointer;}
+.FoodOptions{width: 100%; margin-top: 20px;}
+.container-menu{width: 80%; margin-left: auto; margin-right: auto; box-shadow: 10px 10px grey;}
+.menu-gallery{margin: 10px;border: 1px solid #ccc;display:inline-block; width: 370px; height: 223px; background-color: white; margin-bottom: 200px;}
+.menu-gallery img {width: 100%;height: 100%;}
+.menu-desc {padding: 10px; border: 1px solid #ccc;}
+.costFood {width: 30%; display: inline-block; color: #fea100; font-size: 20px;}
