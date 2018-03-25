@@ -29,6 +29,8 @@ class Events extends Generales {
 		public function EvDetail(){
 			$data['event']	=	$this->EventsModel->GetEvent($this->input->post('idToFind'));
 			$data['time']	=	$this->GetHora();
+			$data['idFind'] = 	array('idprev' => 1, 'idnext'=>2 );
+
 			$this->load->view('FrontEnd/EventDetail',$data);
 		}
 }
