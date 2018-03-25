@@ -24,6 +24,11 @@ class Events extends Generales {
 			$data['events']	= 	$this->EventsModel->GetEventsAfter($fromPage['uno']);
 			$data['time']	=	$this->GetHora();
 			$this->load->view('FrontEnd/Event',$data);
+		}
 
+		public function EvDetail(){
+			$data['event']	=	$this->EventsModel->GetEvent($this->input->post('idToFind'));
+			$data['time']	=	$this->GetHora();
+			$this->load->view('FrontEnd/EventDetail',$data);
 		}
 }
