@@ -8,7 +8,6 @@ class Restaurante extends CI_Controller
 		$this->load->view('FrontEnd/Home');
 	}
 
-	
 	public function Home()
 	{
 		$this->load->view('FrontEnd/Home');

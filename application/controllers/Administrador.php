@@ -7,6 +7,7 @@ class Administrador extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("Restaurant/ReservacionModel");
+		$this->load->model("Restaurant/ContactoModel");
 	}
 
 	public function index()
@@ -34,5 +35,11 @@ class Administrador extends CI_Controller
 	{
 		$data['key'] = $this->ReservacionModel->mostrarReservaciones();		
 		$this->load->view('Administrador/Reservaciones', $data);
+	}
+
+	public function Contacto()
+	{
+		$data['key'] = $this->ContactoModel->mostrarMensaje();
+		$this->load->view('Administrador/MensajesContacto',$data);
 	}
 }
