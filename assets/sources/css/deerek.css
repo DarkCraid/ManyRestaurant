@@ -1,0 +1,128 @@
+.blog_bg{position: relative;top:-25px; display: table;height:200px;background: url("../img/Deerek/02-1024x423.jpg");width: 100%;background-size: 100% 100%;}
+.blog_titulo{text-align: center;vertical-align: middle;display: table-cell;color: white;position: relative;font-size: 50px;font-family: "Times New Roman", Times, serif;}
+img.izquierda {float: left;position: relative;left: 35%;top: 20px;}
+img.derecha {float: right;position: relative;right: 35%;top: 20px;}
+.imgfondo{
+	max-height: 250px;
+	max-width: 1970px;
+	height: 100%;
+	width: 100%;
+}
+.img2{
+	position: relative;
+	top: -150px;
+	margin-left: 25%;
+	margin-right: 25%;
+	width: 50%;
+}
+.paginado{
+background-color: #ffeac5; 
+color: orange;
+}
+.firstImg{
+	height: 350px;
+}
+.firstImg>img{
+	width: 100%;
+	height: 100%;
+}
+.secondImg{
+	right: 0px;
+	height: 200px;
+	position: absolute;
+	overflow: hidden;
+	width: 400px;
+}
+.secondImg>img{
+	width: 100%;
+	height: 100%;
+}
+.event-detail-img{
+	background-image: url('../img/backgroundOurCooks.png');
+	width: 100%;
+	height: auto;
+	background-repeat: repeat-y;
+}
+#fecha_eventdetail{
+	background: #fea100;
+}
+#fecha_eventdetail>div{
+	margin: 3px;
+	border: 1px solid white;
+	color: white;
+	padding: 5px 15px;
+}
+#fecha_eventdetail>div>strong{
+	font-size: 25px;
+}
+#fecha_eventdetail>div>p{
+	margin-top: -20px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.lista{
+	font-weight: bold;
+}
+.lista>ul>li{
+	list-style-type: none;
+	margin-bottom: 15px;
+	margin-left: -40px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.lista>ul>li>span{
+	background-color: #ffe9f1;
+	padding: 5px 8px;
+	border-radius: 50% !important;
+	margin-right: 15px;
+	font-size: 10px;
+	color: #fe5694;
+	font-family: arial;
+}
+.img-reserv>img{
+	width: 100%;
+	height: 150px;
+}
+.reserv{
+	background-color: #fe4c8d;
+	color: white;
+	height: 340px;
+	margin-bottom: 80px;
+	padding-top: 55px;
+}
+.reserv>p:not(.first){
+	margin-bottom: 30px;
+}
+.div-reserv{
+	background: white;
+	margin-bottom: 80px;
+	padding: 25px;
+}
+.time-yellow{
+	position: relative;
+	top: -8px;
+	font-size: 14px;
+}
+.time-yellow>img{
+	top: -2px;
+	width: 20px;
+	height: 20px;
+	position: relative;
+}
+.dateRes{
+	position: absolute;
+	background: #fea100;
+	z-index: 10;
+	top: 0px;
+	margin-top: 120px;
+	color: white;
+	font-weight: bold;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 13px;
+	margin-left: 40px;
+}
+.dateDe{
+	position: relative;top: -18px;
+}

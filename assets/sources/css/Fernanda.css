@@ -1,0 +1,261 @@
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+
+input.form-control
+{
+    background-color: transparent;
+    background:url("assets/sources/img/carta.png");
+    padding: 5px 5px 5px 25px;
+}
+
+span.input-group-addon
+{
+    background-color: transparent;
+}
+
+
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
+
+.big-btn small{font-size: 90%;}
+
+.android-btn{
+
+width: 170px;
+padding: 5px 10px 10px 0px;
+background-color: #626160;
+border-color: #626160;
+
+}
+
+.android-btn strong{
+font-size: 17px;
+text-shadow: none;
+color: #fff;
+line-height: 10px;
+}
+
+.apple-btn{
+
+width: 170px;
+padding: 5px 10px 10px 0px;
+background-color: #626160;
+border-color: #626160;
+
+}
+
+.apple-btn strong{
+font-size: 17px;
+text-shadow: none;
+color: #fff;
+line-height: 10px;
+}
+
+.elemento {
+    width: 100%;
+}
+
+table {
+    font-style: normal;
+    font-weight: normal;
+    font-family: Verdana, sans-serif;
+    font-size: 9pt;
+    color: #323537;
+    text-align: center;
+    align-content:center;
+    align-items: center;
+}
+
+table {
+    background-color: transparent;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+
+table {
+    border-width: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#botonSend{
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+#row2{
+    margin-top: 50px;
+}
+
+.chefOptions{width: 100%; margin-top: 20px;}
+.menu-gallery{margin: 10px;border: 1px solid #ccc;display:inline-block; width: 200px; height: 205px; 
+              background-color: white; margin-bottom: 100px;}
+.menu-gallery img {width: 100%;height: 100%;}
+.menu-desc {background-color: white; padding: 10px; border: 1px solid #ccc;}
+
+.chefHead{width: 100%; margin-top: 20px;}
+.speciality{width: 50%; display: inline-block; height: auto; }
+.imgSpeciality{float: left; width: 45%; margin-right: 0px; height: 100%;}
+.imgSpeciality > img{ width: 100%; height: 100%; }
+.textSpeciality{float: right; width: 58%;}
+.textSpeciality h3,p{ padding-top: 10px;}
+
+#form1 a:hover,
+#form1 a:focus {
+    text-decoration: none;
+    color: black;
+}
+
+#form1 .social-networks {
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#form1 .social-networks a {
+    font-size: 25px;
+    color: gray;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#form1 .social-networks a:hover {
+    text-decoration: none;
+}
+
+#form1 .facebook:hover {
+    color: #0077e2;
+}
+
+#form1 .google:hover {
+    color: #ef1a1a;
+}
+
+#form1 .twitter:hover {
+    color: #00aced;
+}
+
+.option{display: inline-block;  margin-right: 5%;}
+.option:hover{cursor: pointer;}
+
+#form1 {
+    margin-bottom: 50px;
+}
+
+
+#fondoLeft{ 
+    background-image: url(../img/fondo7.jpg);
+    background-position-x: 100px;
+    background-repeat: no-repeat;
+    height: 300px;
+    background-position-y: -30px;
+}
+
+#input1, #input2, #input3{
+     border: none;
+    background: transparent;
+    border-bottom: 2px solid #e3e3e3;
+    padding: 5px 5px 5px 25px;
+}
+
+#sizing-addon3{
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #e3e3e3;
+}
