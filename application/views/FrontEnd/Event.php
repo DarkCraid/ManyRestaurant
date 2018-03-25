@@ -1,5 +1,6 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" href="<?= base_url('assets/sources/css/Ereo.css'); ?>">
+<?php $this->load->view('FrontEnd/Global/generales'); ?>
 
 <div class="blog_bg">
 	<h1 class="blog_titulo"><img src="<?= base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?= base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Event</h1>
@@ -18,12 +19,7 @@
 			<div class="col-md-2 col-md-offset-1">
 				<div id="fecha_eventdetail" class="pull-right text-center fechapost">
 					<div>
-						<strong><?= substr($event->fecha,8,strlen($event->fecha)); ?></strong>
-						<?php 
-							$dt = DateTime::createFromFormat('!m', substr($event->fecha,5,2));
-							$dt = $dt->format('F');
-						?>
-						<p><?= substr($dt,0,3); ?><br><?= substr($event->fecha,0,4); ?></p>	
+						<?= GetFechaV($event->fecha); ?>	
 					</div>			
 				</div>
 			</div>
@@ -34,7 +30,7 @@
 				<label id="eventhead"><?= $event->titulo; ?></label>
 				<p class="dateDe"><img src="<?= base_url('assets/sources/img/Deerek/reloj.jpg'); ?>" class="img-fluid" alt="Responsive image" width="25px" height="25px">
 
-					<b><?= GetFecha($event->hora_in); ?> - <?= GetFecha($event->hora_fin); ?></b></p>
+					<b><?= GetHora($event->hora_in); ?> - <?= GetHora($event->hora_fin); ?></b></p>
 				<p id="eventcontent"><?= $event->descripcion; ?></p>
 				<button type="button" class="btn btn-lg botonview" id="<?= $event->id; ?>">VIEW EVENT DETAILS</button>
 			</div>
@@ -70,6 +66,9 @@
 				<form method="post" action="<?= base_url('index.php/restaurant/Events/changePage'); ?>" id="sendToPage">
 					<input type="hidden" id="dataPageF" name="dataPageF">
 				</form>
+				<form method="post" action="<?= base_url('index.php/restaurant/Events/EvDetail'); ?>" id="sendToDetail">
+					<input type="hidden" id="idToFind" name="idToFind">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -82,10 +81,4 @@
 <script>var cantidad = <?= count($events); ?></script>
 <script src="<?= base_url('assets/sources/js/restaurant/events.js'); ?>"></script>
 
-<?php 
-	function GetFecha($hora){
-		$h =	((int)substr($hora,0,2));
-		return	(((int)$h>12)? 
-				$hora=((int)$h-12).substr($hora,2,3).' PM' : $hora=$h.substr($hora,2,3).' AM');
-	}
-?>
+

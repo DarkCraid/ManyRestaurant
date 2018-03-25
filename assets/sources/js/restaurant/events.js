@@ -16,3 +16,8 @@ $('.prev-next').click(function(){
 	console.log(data);
 	$('#sendToPage').submit();
 });
+
+$('.botonview').click(function(){
+	$('#idToFind').val(this.id);
+	$('#sendToDetail').submit();
+});
