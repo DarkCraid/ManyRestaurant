@@ -1,1 +1,1 @@
-# ManyRestaurant
+# WebSiteOfMany
