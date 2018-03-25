@@ -104,18 +104,6 @@
   </header>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -126,9 +114,6 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Barra de Navegacion</li>
-
-
-
 
         <li class="treeview ">
           <a href="#">
@@ -142,7 +127,6 @@
             <li ><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
             <li ><a href="#"><i class="fa fa-circle-o"></i> Especialidades</a></li>
 
-
             <li class="treeview">
               <a href="#"><i class="fa fa-circle-o"></i> Galeria
                 <span class="pull-right-container">
@@ -154,13 +138,9 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
               </ul>
             </li>
+            <li><a href="<?php echo base_url('index.php/Administrador/Reservaciones'); ?>"><i class="fa fa-circle-o"></i>Reservaciones</a></li>
           </ul>
         </li>
-
-
-
-
-
 
         <li class="treeview ">
           <a href="#">
@@ -174,15 +154,6 @@
             <li ><a href="<?php echo base_url('index.php/Administrador/CambiarContrasena');?>"><i class="fa fa-circle-o"></i> Cambiar Contraseña</a></li>
           </ul>
         </li>
-
-
-
-
-
-
-
-
-
 
         <!--<li class="treeview">
           <a href="#">
@@ -200,14 +171,6 @@
           </ul>
         </li>-->
 
-
-
-
-
-
-
-
-
         <!--<li>
           <a href="#">
             <i class="fa fa-th"></i> <span>Lorem</span>
@@ -217,20 +180,11 @@
           </a>
         </li>-->
 
-
-
         <li>
           <a href="#">
             <i class="fa fa-share"></i> <span>Cerrar Sesion</span>
           </a>
         </li>
-
-
-
-
-
-
-
 
       </ul>
     </section>

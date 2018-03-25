@@ -1,9 +1,9 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" href="<?= base_url('assets/sources/css/reservation.css'); ?>">
-<div class="blog_bg">
-	<h1 class="blog_titulo"><img src="<?= base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?= base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Reservations</h1>
+<div class="header">
+	<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>">
+	<span></span>
 </div>
-
 
 <div class="container">
 	<section class="row text-center">
@@ -11,7 +11,7 @@
 		<p class="col-md-6 col-md-offset-3">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
 	</section>
 
-<form id="formularioReservacion" action="<?php echo base_url('index.php/Restaurant/ReservacionControlador/guardar'); ?>" method="POST" >
+<form id="formularioReservacion" action="<?php echo base_url('index.php/Restaurant/ReservacionControlador/guardar'); ?>" method="POST">
 	<section class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="row form-group">
@@ -44,7 +44,7 @@
 
 	</section>
 	<section class="row text-center">
-		<button class="btn make" type="submit">MAKE RESERVATION</button>
+		<button class="btn make" type="submit" id="guardar">MAKE RESERVATION</button>
 	</section>
 </form>
 </div>
@@ -82,7 +82,7 @@
 		</div>
 	</div>
 </div>
-
+<script src="<?php echo base_url('assets/sources/js/Loui.js') ?>"></script>
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
