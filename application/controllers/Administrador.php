@@ -3,9 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Administrador extends CI_Controller 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model("Restaurant/ReservacionModel");
+	}
+
 	public function index()
 	{
-		$this->load->view('Administrador/Inicio');
+		$this->load->view('Administrador/Inicio');		
 	}
 	public function Error404()
 	{
@@ -22,5 +28,11 @@ class Administrador extends CI_Controller
 	public function CambiarContrasena()
 	{
 		$this->load->view('Administrador/CambiarContrasena');
+	}
+
+	public function Reservaciones()
+	{
+		$data['key'] = $this->ReservacionModel->mostrarReservaciones();		
+		$this->load->view('Administrador/Reservaciones', $data);
 	}
 }
