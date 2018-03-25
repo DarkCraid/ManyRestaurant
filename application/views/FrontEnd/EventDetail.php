@@ -75,7 +75,10 @@
 
 	<section class="row">
 		<div class="col-md-8 col-md-offset-3"><br><br>
-			<?php $this->load->view('FrontEnd/Global/prev-next'); ?>
+			<?php 
+				(($event[0]->id==1)? $idFind['idprev']=1:$idFind['idprev']=(int)$event[0]->id+1);
+			?>
+			<?php $this->load->view('FrontEnd/Global/prev-next',$idFind); ?>
 		</div>
 	</section>
 </div>
@@ -119,3 +122,8 @@
 
 <?php $this->load->view('FrontEnd/Global/horaApertura',$time); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+<script >
+	$('.prev-next').click(function(){
+		alert(this.id);
+	});
+</script>
