@@ -31,8 +31,8 @@ class ReservacionControlador extends CI_Controller {
 				"req_especiales"	=> $requerimentos
 			);
 
-			$this->ReservacionModel->guardar($datos);
-			echo "Reservación realizada";
-		}
-
+			$this->ReservacionModel->guardar($datos);		
+			redirect('Restaurante/Reservation','refresh');
+			//echo "Reservacion realizada";
+		}		
 }
