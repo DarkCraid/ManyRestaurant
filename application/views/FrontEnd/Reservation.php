@@ -1,8 +1,7 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" href="<?= base_url('assets/sources/css/reservation.css'); ?>">
-<div class="header">
-	<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>">
-	<span></span>
+<div class="blog_bg">
+	<h1 class="blog_titulo"><img src="<?= base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?= base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Reservations</h1>
 </div>
 
 <div class="container">
