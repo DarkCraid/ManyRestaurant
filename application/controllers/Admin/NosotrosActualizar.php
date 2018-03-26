@@ -37,7 +37,7 @@ class NosotrosActualizar extends CI_Controller {
         		"foto"		=> $data
         	);
         	$this->AboutUsModel->insert($datos);
-        	//redirect('Admin/NosotrosActualizar','refresh');
+        	redirect('Admin/NosotrosActualizar','refresh');
         }else{
         	$data = array('upload_data' => $this->upload->data() );
         	$datos = array(
@@ -48,7 +48,7 @@ class NosotrosActualizar extends CI_Controller {
         	);
         }
         	$this->AboutUsModel->insert($datos);
-        	//redirect('Admin/NosotrosActualizar','refresh');
+        	redirect('Admin/NosotrosActualizar','refresh');
 	}
 
 }

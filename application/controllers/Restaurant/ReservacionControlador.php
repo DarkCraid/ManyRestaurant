@@ -7,12 +7,10 @@ class ReservacionControlador extends CI_Controller {
 		{
 			parent::__construct();
 			$this->load->model("Restaurant/ReservacionModel");
+			$this->load->("Restaurant/GeneralesModal");
 		}
 
 		public function guardar(){
-			//print_r("TU COLA PINCHE DEREK!!!!!!");
-			//echo "TU COLA DERECK";
-			
 			$nombre			= $this->input->post("Nombre");
 			$email 			= $this->input->post("Email");
 			$telefono		= $this->input->post("Telefono");
@@ -30,9 +28,6 @@ class ReservacionControlador extends CI_Controller {
 				"invitados"			=> $invitados,
 				"req_especiales"	=> $requerimentos
 			);
-
-			$this->ReservacionModel->guardar($datos);		
 			redirect('Restaurante/Reservation','refresh');
-			//echo "Reservacion realizada";
 		}		
 }
