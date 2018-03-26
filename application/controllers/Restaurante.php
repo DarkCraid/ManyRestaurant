@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Restaurante extends CI_Controller 
 {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model("Restaurant/GeneralesModal");
+	}
+
 	public function index()
 	{
 		$this->load->view('FrontEnd/Home');
@@ -46,6 +53,8 @@ class Restaurante extends CI_Controller
 	}
 	public function Reservation()
 	{
-		$this->load->view('FrontEnd/Reservation');
+
+		$datos['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Reservation',$datos);
 	}
 }
