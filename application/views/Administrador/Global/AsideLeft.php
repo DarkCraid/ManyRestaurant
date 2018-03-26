@@ -138,7 +138,9 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
               </ul>
             </li>
+						<li><a href="<?php echo base_url('index.php/Admin/NosotrosActualizar') ?>"><i class="fa fa-circle-o"></i>Actualizar Sobre Nosotros</a></li>
             <li><a href="<?php echo base_url('index.php/Administrador/Reservaciones'); ?>"><i class="fa fa-circle-o"></i>Reservaciones</a></li>
+            <li><a href="<?php echo base_url('index.php/Administrador/Contacto'); ?>"><i class="fa fa-circle-o"></i>Contacto</a></li>
           </ul>
         </li>
 

@@ -41,6 +41,7 @@
 	</div>
 </div>
 
+<form id="formularioContacto" action="<?php echo base_url('index.php/Restaurant/ContactoControl/guardar'); ?>" method="POST">
 	<div style="background-color: #e2f7e0;">
 		<div class="container"  id="row2">
 			<div class="col-sm-4">
@@ -49,18 +50,16 @@
 					<div class="form-group">
 						<div class="input-group input-group-sm">
 		                    <span class="input-group-addon form" id="sizing-addon3"><img src="<?= base_url('assets/sources/img/icon_user.png'); ?>" width="15px;"></span>
-		                    <input type="text" id="input1" placeholder="Name*" aria-describedby="sizing-addon3">
+		                    <input type="text" id="input1" placeholder="Name*" aria-describedby="sizing-addon3" name="Nombre">
 		                 </div>
 		            </div>
 		            <div class="form-group">
 		                 <div class="input-group input-group-sm">
 		                    <span class="input-group-addon form" id="sizing-addon3"><img src="<?= base_url('assets/sources/img/icon_msg.png'); ?>" width="15px;"></span>
-		                    <input type="text" id="input2" placeholder="Message*" aria-describedby="sizing-addon3">
+		                    <input type="text" id="input2" placeholder="Message*" aria-describedby="sizing-addon3" name="Mensaje">
 		                 </div>
 	            	 </div>
-	            	 <div class="form-group">
-	            	 <button type="button" class="btn btn-warning" id="botonSend">SEND NOW</button>
-	            	 </div>
+
 	            </div>
 			</div>
 			<div class="col-sm-4">
@@ -68,11 +67,17 @@
 					<div class="form-group" style="margin-top: 58px;">
 						<div class="input-group input-group-sm">
 			                    <span class="input-group-addon form" id="sizing-addon3"><img src="<?= base_url('assets/sources/img/icon_carta.png'); ?>" width="15px;"></span>
-			                    <input type="text" id="input3" placeholder="Email*" aria-describedby="sizing-addon3">
+			                    <input type="email" id="input3" placeholder="Email*" aria-describedby="sizing-addon3" name="Email">
 			            </div>
 			        </div>
 			    </div>
 			</div>
+		<div class="form-group">
+		<button class="btn btn-warning" id="botonSend" type="submit">SEND NOW</button>
 		</div>
 	</div>
+</div>	            	 
+	
+</form>
+
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
