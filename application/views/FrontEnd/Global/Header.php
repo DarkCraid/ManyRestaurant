@@ -19,13 +19,13 @@
          <a href="#"><center><img src="<?php echo base_url('assets/sources/img/luxury.png'); ?>" class="img-nav" alt="SAO" width="150px" heigh="150px" style="position:relative; top:10px;"></center></a>
               </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/WebSiteOfMany/index.php/Restaurante/Home" style="font-size: 12px;">Home</a></li>
-      <li><a href="/WebSiteOfMany/index.php/Restaurante/Menu" style="font-size: 12px;">MENU</a></li>
-      <li><a href="/WebSiteOfMany/index.php/Restaurante/Reservation" style="font-size: 12px;">RESERVATION</a></li>
+      <li class="active"><a href="<?php echo base_url('index.php/Restaurante/Home'); ?>" style="font-size: 12px;">Home</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurante/Menu'); ?>" style="font-size: 12px;">MENU</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurante/Reservation'); ?>" style="font-size: 12px;">RESERVATION</a></li>
       <li><a href="<?= base_url('index.php/Restaurant/Events'); ?>" style="font-size: 12px;">EVENTS</a></li>
-      <li><a href="/WebSiteOfMany/index.php/Restaurante/Recipies" style="font-size: 12px;">RECIPE</a></li>
-      <li><a href="/WebSiteOfMany/index.php/Restaurante/Blog" style="font-size: 12px;">BLOG</a></li>
-      <li><a href="/WebSiteOfMany/index.php/Restaurante/ContactUs" style="font-size: 12px;">CONTACT</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurante/Recipies'); ?>" style="font-size: 12px;">RECIPE</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurante/Blog'); ?>" style="font-size: 12px;">BLOG</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurante/ContactUs'); ?>" style="font-size: 12px;">CONTACT</a></li>
     </ul>
   </div>
 </nav>

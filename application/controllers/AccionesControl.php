@@ -7,6 +7,7 @@ public function __construct()
 {
 	parent::__construct();
 	$this->load->model("Restaurant/ReservacionModel");
+	$this->load->model("Restaurant/ContactoModel");
 }
 
 	public function index()
@@ -18,5 +19,10 @@ public function __construct()
 		$this->ReservacionModel->cancelar($id);
 		redirect('Administrador/Reservaciones','refresh');
 		//asdfasdfsadfsadfadsfasdfasdfasdf
+	}
+
+	public function leido($id){
+		$this->ContactoModel->leido($id);
+		redirect('Administrador/Contacto','refresh');
 	}
 }
