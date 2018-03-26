@@ -98,6 +98,7 @@ color: orange;
 	background: white;
 	margin-bottom: 80px;
 	padding: 25px;
+	height: 240px;
 }
 .time-yellow{
 	position: relative;
@@ -126,4 +127,6 @@ color: orange;
 .dateDe{
 	position: relative;top: -18px;
 }
-#textosecundario_eventdetail{position: relative;}
+.contDetails{
+	height: 200px;
+}

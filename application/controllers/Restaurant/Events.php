@@ -35,9 +35,8 @@ class Events extends Generales {
 				$idActual-=1;
 			else
 				$idActual=1;
-			
-			$data['idFind'] = 	array('idprev' => $idActual, 'idnext'=>$idNext);
-
+			$data['idFind'] 	= 	array('idprev' => $idActual, 'idnext'=>$idNext);
+			$data['featuredEv']	=	$this->EventsModel->GetFeaturedEvents();
 			$this->load->view('FrontEnd/EventDetail',$data);
 		}
 }
