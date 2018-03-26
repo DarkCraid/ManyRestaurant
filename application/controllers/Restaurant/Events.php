@@ -1,8 +1,8 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No Direct script access allowed');
 require_once APPPATH.'controllers/Restaurant/Generales.php';
 class Events extends Generales {
-
+	
 		public function __construct()
 		{	parent::__construct();
 			$this->load->model("Restaurant/EventsModel");
@@ -27,9 +27,16 @@ class Events extends Generales {
 		}
 
 		public function EvDetail(){
-			$data['event']	=	$this->EventsModel->GetEvent($this->input->post('idToFind'));
+			$idActual		=	$this->input->post('idToFind');
+			$data['event']	=	$this->EventsModel->GetEvent($idActual);
 			$data['time']	=	$this->GetHora();
-			$data['idFind'] = 	array('idprev' => 1, 'idnext'=>2 );
+			$idNext=$idActual+1;
+			if($idActual!=1){
+				$idActual=(int)$idActual-1;
+				$idNext+=$idActual-2;
+			}
+			
+			$data['idFind'] = 	array('idprev' => $idActual, 'idnext'=>$idNext);
 
 			$this->load->view('FrontEnd/EventDetail',$data);
 		}

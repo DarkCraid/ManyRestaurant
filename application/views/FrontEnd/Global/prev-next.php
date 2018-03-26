@@ -42,7 +42,7 @@
 
 <div class="options op-pager col-xs-8">
 	<div class="pager">
-		<button type="button" class="prev-next pull-left" id=""><span>< Next</span></button>
+		<button type="button" class="prev-next pull-left" id="<?= $idFind['idnext']; ?>"><span>< Next</span></button>
 		<button type="button" class="prev-next pull-left" id="<?= $idFind['idprev']; ?>"><span>Prev ></span></button>
 		<img class="pull-right" src="<?= base_url('assets/sources/img/like.png'); ?>" alt="likes" >
 	</div>
