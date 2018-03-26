@@ -31,10 +31,10 @@ class Events extends Generales {
 			$data['event']	=	$this->EventsModel->GetEvent($idActual);
 			$data['time']	=	$this->GetHora();
 			$idNext=$idActual+1;
-			if($idActual!=1){
-				$idActual=(int)$idActual-1;
-				$idNext+=$idActual-2;
-			}
+			if($idActual>1)
+				$idActual-=1;
+			else
+				$idActual=1;
 			
 			$data['idFind'] = 	array('idprev' => $idActual, 'idnext'=>$idNext);
 

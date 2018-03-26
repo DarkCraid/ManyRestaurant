@@ -32,33 +32,25 @@
 		<div class="col-md-8 col-md-offset-3">
 			<div class="col-md-6 lista" >
 				<ul>
-		<?php 
-		set_error_handler('exceptions_error_handler');
-		function exceptions_error_handler($severity,$msg,$filename,$lineon){
-			if(error_reporting()==0){
-				return;
-			}
-			if(error_reporting() && $severity){
-				throw new ErrorException($msg,0,$severity,$filename,$lineon);
-			}
-		}
-		
-		$pos=0; $arr = explode(",", $event[0]->cosas_relevantes)[(int)$pos];
-			do{ 
-				try{
-						$arr = explode(",", $event[0]->cosas_relevantes)[(int)$pos];
-						$pos++;
-						?>
-						<li><span>></span><?= $arr; ?></li>
-						<?php
-					
-				}catch(Exception $e){break;}
-				
-			}while($arr[$pos]);
-		?>
-				
-					
-					
+				<?php 
+				set_error_handler('exceptions_error_handler');
+				function exceptions_error_handler($severity,$msg,$filename,$lineon){
+					if(error_reporting()==0)
+						return;
+					if(error_reporting() && $severity)
+						throw new ErrorException($msg,0,$severity,$filename,$lineon);
+				}
+				$pos=0; $arr = explode(",", $event[0]->cosas_relevantes)[(int)$pos];
+					do{ 
+						try{
+							$arr = explode(",", $event[0]->cosas_relevantes)[(int)$pos];
+							$pos++;
+							?>
+							<li><span>></span><?= $arr; ?></li>
+							<?php	
+						}catch(Exception $e){break;}
+					}while($arr[$pos]);
+				?>
 				</ul>
 			</div>
 			<div class="col-md-6 secondImg" > 
@@ -117,11 +109,10 @@
 			</div>
 		</div>
 </section>
+<form method="post" action="<?= base_url('index.php/restaurant/Events/EvDetail'); ?>" id="sendToDetail">
+	<input type="hidden" id="idToFind" name="idToFind">
+</form>
 
 <?php $this->load->view('FrontEnd/Global/horaApertura',$time); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
-<script >
-	$('.prev-next').click(function(){
-		alert(this.id);
-	});
-</script>
+<script src="<?= base_url('assets/sources/js/restaurant/eventDetail.js'); ?>"></script>
