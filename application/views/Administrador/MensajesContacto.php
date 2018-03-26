@@ -5,13 +5,13 @@
 	<section class="content-header">
 		<h1>Mensaje de los Clientes</h1>
 	</section>
-	
+
 	<table class="table">
 		<thead>
 			<tr>
 				<th>Nombre de Cliente</th>
 				<th>E-Mail</th>
-				<th>Mensaje</th>				
+				<th>Mensaje</th>
 			</tr>
 		</thead>
 
@@ -19,7 +19,7 @@
 		<tr id="arreglo">
 			<td id="Nombre"><?php echo $d->nombre ?></td>
 			<td id="Email"><?php echo $d->email ?></td>
-			<td id="Mensaje"><?php echo $d->mensaje ?></td>			
+			<td id="Mensaje"><?php echo $d->mensaje ?></td>
 			<td><a href="<?php echo base_url()?>index.php/AccionesControl/leido/<?php echo $d->id ?>" class="button">Cancelar</button></td>
 		</tr>
 		<?php } ?>

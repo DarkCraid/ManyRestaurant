@@ -32,10 +32,6 @@ class Restaurante extends CI_Controller
 	{
 		$this->load->view('FrontEnd/BlogDetail');
 	}
-	public function AboutUs()
-	{
-		$this->load->view('FrontEnd/AboutUs');
-	}
 	public function Chef()
 	{
 		$this->load->view('FrontEnd/Chef');

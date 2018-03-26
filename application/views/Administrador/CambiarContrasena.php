@@ -41,12 +41,6 @@
   <!-- /.form-box -->
 </div>
   </div>
-
-
-
+  
 <?php $this->load->view('Administrador/Global/AsideRight');?>
 <?php $this->load->view('Administrador/Global/Footer');?>
-
-
-  
-

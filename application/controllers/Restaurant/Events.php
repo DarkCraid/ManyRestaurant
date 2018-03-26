@@ -1,8 +1,8 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No Direct script access allowed');
 require_once APPPATH.'controllers/Restaurant/Generales.php';
 class Events extends Generales {
-	
+
 		public function __construct()
 		{	parent::__construct();
 			$this->load->model("Restaurant/EventsModel");

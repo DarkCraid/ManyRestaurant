@@ -7,13 +7,13 @@
                 <div class="col-sm-4">
                     <h5>Navigation</h5>
                     <ul>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/Home">Home</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/AboutUs">About us</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/Menu">Menu</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/Reservation">Reservation</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/Recipies">Recipe</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/Blog">Blog</a></li>
-                        <li><a href="/WebSiteOfMany/index.php/Restaurante/ContactUs">Contact us</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/Home'); ?>">Home</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurant/Nosotros'); ?>">About us</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/Menu'); ?>">Menu</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/Reservation'); ?>">Reservation</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/Recipies'); ?>">Recipe</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/Blog'); ?>">Blog</a></li>
+                        <li><a href="<?php echo base_url('index.php/Restaurante/ContactUs'); ?>">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
