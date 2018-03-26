@@ -12,8 +12,19 @@ class NosotrosActualizar extends CI_Controller {
 	public function index()
 	{
 		$data['key'] = $this->AboutUsModel->check();
-		//print_r($data);
-		$this->load->view('Administrador/NosotrosActualizar',$data);
+		if(!empty($data['key']) ){
+			//print_r($data);
+			//$this->load->view('Administrador/NosotrosActualizar',$data);
+		}else{
+			$data['key'] = (object)array(
+				"id"		=> null,
+				"titulo" 	=> null,
+				"contenido" 	=> null,
+				"foto"		=> null
+			);
+			//print_r($data);
+			$this->load->view('Administrador/NosotrosActualizar',$data);
+		}
 	}
 
 	public function do_upload()

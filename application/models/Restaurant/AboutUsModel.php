@@ -12,6 +12,7 @@ class AboutUsModel extends CI_Model {
 	public function check(){
 
 		$query = $this->db->query('SELECT * FROM nuestrahistoria WHERE EXISTS (SELECT id FROM nuestrahistoria WHERE id = 1)')->row();
+		//print_r($query);
 		return $query;
 	}
 
