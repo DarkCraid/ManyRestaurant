@@ -28,8 +28,8 @@ class Restaurante extends CI_Controller
 		$this->load->view('FrontEnd/Recipies');
 	}
 	public function RecipiesDetail()
-	{
-		$this->load->view('FrontEnd/RecipiesDetail');
+	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/RecipiesDetail',$data);
 	}
 	public function Blog()
 	{
@@ -40,8 +40,8 @@ class Restaurante extends CI_Controller
 		$this->load->view('FrontEnd/BlogDetail');
 	}
 	public function Chef()
-	{
-		$this->load->view('FrontEnd/Chef');
+	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Chef',$data);
 	}
 	public function ContactUs()
 	{
