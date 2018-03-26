@@ -49,7 +49,8 @@ class Restaurante extends CI_Controller
 	}
 	public function Gallery()
 	{
-		$this->load->view('FrontEnd/Gallery');
+		$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Gallery',$data);
 	}
 	public function Reservation()
 	{
