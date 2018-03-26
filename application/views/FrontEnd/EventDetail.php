@@ -29,7 +29,7 @@
 	</section>
 <br>
 	<section class="row">
-		<div class="col-md-8 col-md-offset-3">
+		<div class="col-md-8 col-md-offset-3 contDetails">
 			<div class="col-md-6 lista" >
 				<ul>
 				<?php 
@@ -78,33 +78,21 @@
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1 container"><h3>Featured Events</h3></div>
 				<div class="col-md-10 col-md-offset-1">
+					
+				<?php foreach ($featuredEv as $fev) {	?>
 					<div class="col-md-4 img-reserv">
-						<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
-						<div class="dateRes">11-NOV-06</div>
+						<img src="<?= base_url().$fev->foto; ?>" alt="">
+						<div class="dateRes"><?= GetFechaH($fev->fecha); ?></div>
 						<div class="col-xs-12 div-reserv">
-							<h4>Event deading here</h4>
-							<strong class="time-yellow"><img src="<?= base_url('assets/sources/icons/time-yellow.png'); ?>" alt="icon">7:00 pm - 10:00 pm</strong>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam illo consectetur aut maiores na</p>
+							<h4><?= $fev->titulo ?></h4>
+							<strong class="time-yellow"><img src="<?= base_url('assets/sources/icons/time-yellow.png'); ?>" alt="icon">
+								<?= GetHora($fev->hora_in); ?> - <?= GetHora($fev->hora_fin); ?>
+							</strong>
+							<p><?= $fev->descripcion; ?></p>
 						</div>
 					</div>
-					<div class="col-md-4 img-reserv">
-						<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
-						<div class="dateRes">13-NOV-06</div>
-						<div class="col-xs-12 div-reserv">
-							<h4>Event deading here</h4>
-							<strong class="time-yellow"><img src="<?= base_url('assets/sources/icons/time-yellow.png'); ?>" alt="icon">7:00 pm - 10:00 pm</strong>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam illo consectetur aut maiores na</p>
-						</div>
-					</div>
-					<div class="col-md-4 img-reserv">
-						<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
-						<div class="dateRes">18-NOV-06</div>
-						<div class="col-xs-12 div-reserv">
-							<h4>Event deading here</h4>
-							<strong class="time-yellow"><img src="<?= base_url('assets/sources/icons/time-yellow.png'); ?>" alt="icon">7:00 pm - 10:00 pm</strong>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam illo consectetur aut maiores na</p>
-						</div>
-					</div>
+				<?php } ?>
+
 				</div>
 			</div>
 		</div>
