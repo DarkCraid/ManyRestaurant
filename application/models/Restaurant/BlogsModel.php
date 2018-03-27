@@ -13,4 +13,11 @@ class BlogsModel extends CI_Model{
 		$this->db->order_by('fecha','desc');
 		return $this->db->get()->result();
 	}
+
+	function GetBlogById($id){
+		$this->db->select('*');
+		$this->db->from('blog');
+		$this->db->where('blog.id',$id);
+		return $this->db->get()->result();
+	}
 }
