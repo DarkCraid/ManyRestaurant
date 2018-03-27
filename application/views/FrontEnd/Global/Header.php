@@ -24,7 +24,7 @@
       <li><a href="<?php echo base_url('index.php/Restaurante/Reservation'); ?>" style="font-size: 12px;">RESERVATION</a></li>
       <li><a href="<?= base_url('index.php/Restaurant/Events'); ?>" style="font-size: 12px;">EVENTS</a></li>
       <li><a href="<?php echo base_url('index.php/Restaurante/Recipies'); ?>" style="font-size: 12px;">RECIPE</a></li>
-      <li><a href="<?php echo base_url('index.php/Restaurante/Blog'); ?>" style="font-size: 12px;">BLOG</a></li>
+      <li><a href="<?php echo base_url('index.php/Restaurant/Blogs'); ?>" style="font-size: 12px;">BLOG</a></li>
       <li><a href="<?php echo base_url('index.php/Restaurante/ContactUs'); ?>" style="font-size: 12px;">CONTACT</a></li>
     </ul>
   </div>
