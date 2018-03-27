@@ -8,6 +8,7 @@ class Restaurante extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("Restaurant/GeneralesModal");
+		$this->load->model("Restaurant/GaleriaModel");
 	}
 
 	public function index()
@@ -47,8 +48,10 @@ class Restaurante extends CI_Controller
 	{
 		$this->load->view('FrontEnd/ContactUs');
 	}
+
 	public function Gallery()
 	{
+		$data['galeria'] = $this->GaleriaModel->carga();
 		$data['time'] = $this->GeneralesModal->GetHora();
 		$this->load->view('FrontEnd/Gallery',$data);
 	}

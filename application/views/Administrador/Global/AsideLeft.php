@@ -136,6 +136,7 @@
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> Restaurante</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
+                <li><a href="<?= base_url('index.php/Admin/GaleriaSubir'); ?>"><i class="fa fa-circle-o"></i> Galeria/Subir</a></li>
               </ul>
             </li>
 						<li><a href="<?php echo base_url('index.php/Admin/NosotrosActualizar') ?>"><i class="fa fa-circle-o"></i>Actualizar Sobre Nosotros</a></li>
