@@ -101,6 +101,7 @@ img.derecha {float: right;position: relative;right: 40%;top: 20px;}
     font: 15px 'trebuchet MS', 'lucida sans';
     padding-left: 15px;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-transform: uppercase;
 }
 
 .lista2 ol {

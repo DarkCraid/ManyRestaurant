@@ -37,13 +37,15 @@
 	margin-right: 15px;
 }
 </style>
-
+<!--
 <div class="options op-pager col-xs-8">
 	<div class="pager">
-		<button type="button" class="pull-left"><span>READ MORE</span></button>
+		<?php $pos = 0; ?>
+		<button type="button" class="pull-left readMore" id="<?= $blogs[$pos]->id; ?>"><span>READ MORE</span></button>
+		<?php $pos++; ?>
 		<img class="pull-right" src="<?= base_url('assets/sources/img/like.png'); ?>" alt="likes" >
 	</div>
 </div>
 <div class="options col-xs-4">
 	<img class="pull-right" src="<?= base_url('assets/sources/img/redes.png'); ?>" alt="Redes" >
-</div>
+</div>-->

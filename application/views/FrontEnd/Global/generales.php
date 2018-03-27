@@ -21,5 +21,13 @@
 		return $date;
 	}
 
+	function GetFechaV2($fecha){
+		$date= 	'<strong>'.substr($fecha,8,strlen($fecha)).'</strong>';
+		$dt = DateTime::createFromFormat('!m', substr($fecha,5,2));
+		$dt = $dt->format('F');
+		$date.= '<p>'. substr($dt,0,3) .'-'. substr($fecha,0,4).'</p>';
+		return $date;
+	}
+
 
 ?>
