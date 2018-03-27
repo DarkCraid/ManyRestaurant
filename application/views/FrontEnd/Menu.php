@@ -1,7 +1,7 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
-	<link rel="stylesheet" type="text/css" href="../../assets/sources/css/TomEliezer.css">
-	<script src="../../assets/sources/js/jquery.min.js" ></script>
-	<script src="../../assets/sources/js/TomEliezer.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/sources/css/TomEliezer.css'); ?>">
+	<script src="<?= base_url('assets/sources/js/jquery.min.js');?>" ></script>
+	<script src="<?= base_url('assets/sources/js/TomEliezer.js');?>"></script>
 	<div class="blog_bg">
 
 		<h1 class="blog_titulo"><img src="<?php echo base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?php echo base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Menu</h1>
