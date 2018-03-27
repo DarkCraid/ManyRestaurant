@@ -47,12 +47,7 @@
 
     <div class="col-md-3 category">
       <section class="row">
-        <h4>Category</h4>
-        <ol class="lista2">
-          <?php foreach ($category as $cat) { ?>
-          <li><?= $cat->titulo; ?></li>
-          <?php } ?>
-        </ol>
+        <?php $this->load->view('FrontEnd/Global/category'); ?>
       </section>
       <section class="row">
         <?php $this->load->view('FrontEnd/Global/recentPost'); ?>
@@ -60,15 +55,14 @@
     </div>
   </section>
 </div>
-
+<form method="post" action="<?= base_url('index.php/restaurant/Blogs/MoreDetails'); ?>" id="sendToDetail">
+  <input type="hidden" id="idToFind" name="idToFind">
+</form>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
 <script>
   $('.readMore').click(function(){
-    alert(this.id);
-  });
-
-  $('.lista').click(function(){
-    alert(this.id);
+    $('#idToFind').val(this.id);
+    $('#sendToDetail').submit();
   });
 </script>
