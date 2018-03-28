@@ -12,7 +12,7 @@ class BlogsModel extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('blog');
 		$this->db->where('status',1);
-		$this->db->order_by('fecha','desc');
+		$this->db->order_by('blog.id');
 		return $this->db->get()->result();
 	}
 
@@ -55,5 +55,22 @@ class BlogsModel extends CI_Model{
 	function AddCategory($data){
 		$this->db->insert('categoria_blog', $data);
 		return $this->GetCategory();
+	}
+
+	function GetAllBlogsAfter($id){
+		$this->db->select('*');
+		$this->db->from('blog');
+		$this->db->where('blog.id >=',$id);
+		$this->db->order_by('blog.id');
+		return $this->db->get()->result();
+	}
+
+	function recentPost(){
+		$this->db->select('*');
+		$this->db->from('blog');
+		$this->db->where('status',1);
+		$this->db->order_by('fecha');
+		$this->db->limit(3);
+		return $this->db->get()->result();
 	}
 }

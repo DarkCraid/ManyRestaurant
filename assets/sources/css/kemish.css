@@ -61,17 +61,6 @@ img.derecha {float: right;position: relative;right: 40%;top: 20px;}
 	top: -100px;
 	left: 12%;
 }
-.next_prev{
-	position: relative;
-	top: 0%;
-	left: 0%;
-	background-color: #fea100;
-	height: 40px;
-    width: 100px;
-    color: white;
-    border-radius: 20px;
-    border-style: none;
-}
 .numeros{
 	position: relative;
 	top: 0%;
@@ -107,3 +96,35 @@ img.derecha {float: right;position: relative;right: 40%;top: 20px;}
         margin-top: -20px;
         margin-bottom: 0px;
     }
+
+
+    .pager{
+	margin-top: -30px ;
+	margin-bottom: 60px ;
+}
+.prev-next{
+	border: none !important;
+    border-radius: 200px !important;
+    padding: 8px 20px !important;
+    text-transform: uppercase !important;
+    font-size: 10px;
+    background-color: #ffeac5 !important;
+    margin-right: 5px;
+    color: #fea100 !important;
+}
+.prev-next>span{
+	font-weight: bold !important;
+}
+.prev-next:hover{
+	background: #fea100 !important;
+	color: white !important;
+}
+.midle{
+	background: white !important;
+	color: #000 !important;
+	border: 1px solid #e3e3e3 !important;
+}
+.midle:hover{
+	background: #f3f3f3 !important;
+	color: #000 !important;
+}
