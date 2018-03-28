@@ -19,7 +19,7 @@
 			<img src="<?php echo base_url('assets/sources/img/'.$key->foto);?>">
 			<input type="file" class="form-control" name="userFile" value="<?php echo $key->foto ?>">
 		</div>
-		<input type="hidden" name="id" value="<?php echo $key->id ?>"
+		<input type="hidden" name="id" value="<?php echo $key->id ?>">
 		<div class="form-group">
 			<input type="submit">
 		</div>

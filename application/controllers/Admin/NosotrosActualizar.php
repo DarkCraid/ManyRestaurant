@@ -14,7 +14,7 @@ class NosotrosActualizar extends CI_Controller {
 		$data['key'] = $this->AboutUsModel->check();
 		if(!empty($data['key']) ){
 			//print_r($data);
-			//$this->load->view('Administrador/NosotrosActualizar',$data);
+			$this->load->view('Administrador/NosotrosActualizar',$data);
 		}else{
 			$data['key'] = (object)array(
 				"id"		=> null,

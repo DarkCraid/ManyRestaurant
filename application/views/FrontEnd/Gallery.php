@@ -33,36 +33,26 @@
   </section>
 </div>
 
-<div class="container FoodOptions row" id="FoodOptions">
-  <section class="row">
-    <div class="menu-gallery restaurant">
-    	<?php foreach ($galeria as $g) { ?>
-    		<img src="<?= base_url('assets/sources/img/galeria/Restaurant'.$g->nombre) ?>">
-    	<?php } ?>
-    </div>
-    <div class="menu-gallery food">
-    	<?php foreach ($galeria as $g) { ?>
-    		<img src="<?= base_url('assets/sources/img/galeria/Comida'.$g->nombre) ?>">
-    	<?php } ?>
-    </div>
-    <div class="menu-gallery desserts">
-    	<?php foreach ($galeria as $g) { ?>
-    		<img src="<?= base_url('assets/sources/img/galeria/Postres'.$g->nombre) ?>">
-    	<?php } ?>
-    </div>
-  </section>
-</div>
+<div class="container">
+	<div class="container FoodOptions row" id="FoodOptions">
+	    <div class="menu-gallery1 restaurant">
+	    	<?php foreach ($rest as $g) { ?>
+	    		<img src="<?= base_url('assets/sources/img/galeria/Restaurant/'.$g->nombre) ?>">
+	    	<?php } ?>
+	    </div>
 
-  <div class="container col-md-6 col-md-offset-3" style="margin-bottom: 10%; ">
-	  <ul class="pagination">
-	    <li><a href="#" style="background-color: #e2ad56">1</a></li>
-	    <li><a href="#" style="background-color: #e2ad56">2</a></li>
-	    <li><a href="#" style="background-color: #e2ad56">3</a></li>
-	    <li><a href="#" style="background-color: #e2ad56">4</a></li>
-	    <li><a href="#" style="background-color: #e2ad56">5</a></li>
-	  </ul>
+	    <div class="menu-gallery1 food">
+	    	<?php foreach ($comida as $g) { ?>
+	    		<img src="<?= base_url('assets/sources/img/galeria/Comida/'.$g->nombre) ?>">
+	    	<?php } ?>
+	    </div>
+	    <div class="menu-gallery1 desserts">
+	    	<?php foreach ($postre as $g) { ?>
+	    		<img src="<?= base_url('assets/sources/img/galeria/Postres/'.$g->nombre) ?>">
+	    	<?php } ?>
+	    </div>
 	</div>
-
+</div>
 <div class="opening">
   <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 </div>
