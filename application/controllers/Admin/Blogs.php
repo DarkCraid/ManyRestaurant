@@ -19,8 +19,8 @@ class Blogs extends CI_Controller
 	}
 
 	public function addBlog(){
-			if ($this->input->is_ajax_request()) 
-		{
+			/*if ($this->input->is_ajax_request()) 
+		{*/
 			if(!$this->input->post("title") || !$this->input->post("date") ||
 				!$this->input->post("category") || !$this->input->post("contenido")){
 				echo "empty";
@@ -28,8 +28,8 @@ class Blogs extends CI_Controller
 			else{
 			$config['upload_path'] = "./assets/sources/img/blogs";
             $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_width']      = 1024;
-            $config['max_height']      = 786;
+            $config['max_width']      = 4000;
+            $config['max_height']      = 4000;
 			$this->load->library("upload", $config);
 
 			if(! $this->upload->do_upload('fotoP'))
@@ -50,8 +50,20 @@ class Blogs extends CI_Controller
 					];
 
 			$this->BlogsModel->SetPost($info);
+			header('Location: '.base_url('index.php/Admin/Blogs'));
 		}
+	//}
+
 	}
 
+	public function DeletePost(){
+		$this->BlogsModel->DeletePost($this->input->post('idDel'));
+	}
+
+	public function AddCategory(){
+		if($this->input->post('category')){
+			echo json_encode($this->BlogsModel->AddCategory(['titulo'=> $this->input->post('category')]));
+		}else
+			echo "error";
 	}
 }

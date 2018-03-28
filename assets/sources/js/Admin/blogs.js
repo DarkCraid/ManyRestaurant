@@ -31,13 +31,22 @@ function InsertDataTable(ruta){
   { var c       = JSON.parse(data);
     var estatus = "";
     $.each(c,function(i,item)
-    { 	var buttons	=	'<button class="btn btn-danger" id="'+item.id+'">DELETE</button>';	
+    { 	var buttons	=	'<button class="btn btn-danger" onclick="del('+item.id+')">DELETE</button>';	
     	var cont 	=	'<tr><td>'+item.titulo+'</td><td>'+item.fecha+'</td>';
     		cont 	+=	'<td>'+buttons+'</td></tr>';
 		$('#contenido_tabla').append(cont);
     });
     insertarPaginado('tab');
   });
+}
+
+function del(id){
+	$.post(ruta_base+'Admin/Blogs/DeletePost',{
+		'idDel': 	id,
+	},
+	  function (data)
+	  { window.location.reload();
+	  });
 }
 
 function readURL(input) {
@@ -54,31 +63,33 @@ function readURL(input) {
 $('#addB').click(function(){
 	$('#addBlogForm').submit();
 });
-/*
-$("#addBlogForm").submit(function(event)
-    {
-        event.preventDefault();
 
-
-        var formData = new FormData($("#addBlogForm")[0]);
-        $.ajax({
-            url:$(this).attr('action'),
-            type:$(this).attr('method'),
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            dataType: 'text',
-            success:function(data)
-            {	cleanBotonesModal(true);
-                switch(data){
-                	case "empty":
-                		modal(BootstrapDialog.TYPE_DANGER,'ERROR','<strong>Campos vacios.</strong>',true);
-                		break;
-                	default:
-                		window.location.reload();
-                		break;
-                }
-            }
-        });   
-    });*/
+$('#addC').click(function(){
+	var cont 	=	'<div class="row"><div class="container">';
+		cont 	+=	'<div class="col-xs-3 text-right">Category:</div>';
+		cont 	+=	'<div class="col-xs-5"><input type="text" class="form-control" id="inpCat"></div></div></div>';
+		cleanBotonesModal(true);
+		botonesModal.push({
+              label: 'ADD CATEGORY',
+              cssClass: 'btn-success',
+              action: function(dialogItself){
+              	$.post(ruta_base+'Admin/Blogs/AddCategory',{
+					'category': 	$('#inpCat').val(),
+				},
+				  function (data)
+				  { if(data=="error")
+				  		alert("no se pudo guardar");
+				  	else{
+				  		dropDataCombo('category');
+				  		var c = JSON.parse(data);
+				  		$.each(c,function(i,item)
+				        { $('#category').append('<option value="'+item.id+'">'+item.titulo+'</option>');
+				        });
+				  		dialogItself.close();
+				  	}
+				  	
+				  });
+              }
+          });
+		modal(BootstrapDialog.TYPE_DEFAULT,'ADD NEW CATEGORY',cont,true);
+});
