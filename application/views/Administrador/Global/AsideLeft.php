@@ -185,7 +185,7 @@
 
         
         <li>
-          <a href="<?= base_url('index.php/Administrador/Blogs'); ?>">
+          <a href="<?= base_url('index.php/Admin/Blogs'); ?>">
             <i></i> <span>Blogs</span>
           </a>
         </li>

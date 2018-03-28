@@ -42,8 +42,4 @@ class Administrador extends CI_Controller
 		$data['key'] = $this->ContactoModel->mostrarMensaje();
 		$this->load->view('Administrador/MensajesContacto',$data);
 	}
-
-	public function Blogs(){
-		$this->load->view('Administrador/blogs');
-	}
 }
