@@ -14,7 +14,27 @@ class GaleriaSubir extends CI_Controller {
 		$this->load->view("Administrador/GaleriaSubir");
 	}
 
-}
+	public function do_upload()
+	{
+		$tipo	= $this->input->post('Tipo');
 
-/* End of file GaleriaSubir.php */
-/* Location: ./application/views/Administrador/GaleriaSubir.php */
+		$config['upload_path']	= './assets/sources/img/galeria/'.$tipo;
+		$config['allowed_types']= 'gif|jpg|png';
+
+		$this->load->library('upload',$config);
+		if( !$this->upload->do_upload('userFile')){
+			$data['nombre'] 	= "defaultRest.jpg";
+			$this->GaleriaModel->insert($data);
+			redirect('Admin/GaleriaSubir','refresh');
+		}else{
+			$data = array('upload_data' => $this->upload->data() );
+			$datos =array(
+				"nombre" => $data['upload_data']['file_name'],
+				"tipo"	 => $tipo
+			);
+		}
+		$this->GaleriaModel->insert($datos);
+		redirect('Admin/GaleriaSubir','refresh');
+	}
+
+}
