@@ -12,3 +12,8 @@ $('.catg').click(function(){
     $('#idToChange').val(this.id);
     $('#ChangeCat').submit();
   });
+
+$('.readMore').click(function(){
+    $('#idToFind').val(this.id);
+    $('#sendToDetail').submit();
+  });
