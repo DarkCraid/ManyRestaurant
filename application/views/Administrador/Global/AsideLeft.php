@@ -182,6 +182,17 @@
           </a>
         </li>-->
 
+        
+        <li>
+          <a href="<?= base_url('index.php/Administrador/Blogs'); ?>">
+            <i></i> <span>Blogs</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i></i> <span>Events</span>
+          </a>
+        </li>
         <li>
           <a href="#">
             <i class="fa fa-share"></i> <span>Cerrar Sesion</span>
