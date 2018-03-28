@@ -3,6 +3,7 @@ class BlogsModel extends CI_Model{
 
 	function GetCategory(){
 		$this->db->select('*');
+		$this->db->where('status',1);
 		$this->db->from('categoria_blog');
 		return $this->db->get()->result();
 	}
@@ -10,6 +11,7 @@ class BlogsModel extends CI_Model{
 	function GetAllBlogs(){
 		$this->db->select('*');
 		$this->db->from('blog');
+		$this->db->where('status',1);
 		$this->db->order_by('fecha','desc');
 		return $this->db->get()->result();
 	}
@@ -18,6 +20,7 @@ class BlogsModel extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('blog');
 		$this->db->where('blog.id',$id);
+		$this->db->where('status',1);
 		return $this->db->get()->result();
 	}
 
@@ -32,6 +35,7 @@ class BlogsModel extends CI_Model{
 
 		$this->db->select('blog.id, blog.titulo, contenido, fecha, foto');
 		$this->db->from('blog');
+		$this->db->where('blog.status',1);
 		$this->db->join('categoria_blog','blog.id_categoria = categoria_blog.id', 'left');
 		if($id!=1)
 			$this->db->where('blog.id_categoria',$id);
@@ -40,5 +44,16 @@ class BlogsModel extends CI_Model{
 
 	function SetPost($data){
 		$this->db->insert('blog', $data);
+	}
+
+	function DeletePost($id){
+		$this->db->set("status",0);
+		$this->db->where("id",$id);
+		$this->db->update("blog");
+	}
+
+	function AddCategory($data){
+		$this->db->insert('categoria_blog', $data);
+		return $this->GetCategory();
 	}
 }

@@ -17,7 +17,6 @@ function dropDataCombo(comboId){
   while (x.length > 0){
       x.remove(x.selectedIndex);
   }
-  $('#'+comboId).append('<option value="10">-Seleccionar-</option>');
 }
 
 // -------------------------------------------------------------------------------------------------- destruir combo

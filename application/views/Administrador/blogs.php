@@ -49,12 +49,16 @@
 					                        <label class="col-form-label mr-2 control-label">Category: </label>
 					                    </div>
 					                    <div class="col-md-3">
-					                        <select name="category" class="form-control">
+					                        <select id="category" name="category" class="form-control">
 					                        	<?php foreach ($categorias as $cat) { ?>
 													<option value="<?= $cat->id; ?>"><?= $cat->titulo; ?></option>
 					                        	<?php } ?>
 					                        </select>
 					                    </div>
+					                    <div class="col-md-3">
+					                        <button class="btn btn-info" id="addC">ADD CATEGORY</button>
+					                    </div>
+
 					                </div>
 					                <div class="row form-group">
 					                    <div class="col-md-2 text-right">
@@ -98,3 +102,5 @@
 
 <script src="<?= base_url('assets/sources/js/generales.js'); ?>"></script>
 <script src="<?= base_url('assets/sources/js/Admin/blogs.js'); ?>"></script>
+
+
