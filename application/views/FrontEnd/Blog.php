@@ -58,11 +58,19 @@
 <form method="post" action="<?= base_url('index.php/restaurant/Blogs/MoreDetails'); ?>" id="sendToDetail">
   <input type="hidden" id="idToFind" name="idToFind">
 </form>
+<form method="post" action="<?= base_url('index.php/restaurant/Blogs/ChangeCategory'); ?>" id="ChangeCat">
+  <input type="hidden" id="idToChange" name="idToChange">
+</form>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
 <script>
   $('.readMore').click(function(){
     $('#idToFind').val(this.id);
     $('#sendToDetail').submit();
+  });
+
+  $('.catg').click(function(){
+    $('#idToChange').val(this.id);
+    $('#ChangeCat').submit();
   });
 </script>
