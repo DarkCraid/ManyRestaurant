@@ -22,7 +22,7 @@
 <h3><strong>Recent Post</strong></h3>
 	
 <?php $cant=0; foreach ($blogs as $blog) {	if($cant<3){?>				
-<div class="row lista" id="<?= $blog->id; ?>">
+<div class="row lista readMore" id="<?= $blog->id; ?>">
 	<img src="<?= base_url().$blog->foto; ?>">
 	<span><?= GetFechaH($blog->fecha); ?></span><br>
 	<strong><?= $blog->contenido; ?></strong>

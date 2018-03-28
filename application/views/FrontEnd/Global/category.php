@@ -26,6 +26,10 @@
     border-radius: .3em;
     transition: all .3s ease-out;   
 }
+.activo{
+    background: #ffe9f1;
+    font-weight: bold;
+}
 
 .lista2 li:hover{
     background: #eee;
@@ -55,8 +59,8 @@
 }
 </style>
 <h4>Category</h4>
-<ol class="lista2 readMore">
+<ol class="lista2">
   <?php foreach ($category as $cat) { ?>
-  <li><?= $cat->titulo; ?></li>
+  <li class="catg <?= $cat->selected; ?>" id="<?= $cat->id; ?>"><?= $cat->titulo; ?></li>
   <?php } ?>
 </ol>

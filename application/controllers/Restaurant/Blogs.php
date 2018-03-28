@@ -28,4 +28,11 @@ class Blogs extends Generales {
 			$data['idFind'] 	= 	array('idprev' => $idActual, 'idnext'=>$idNext);
 			$this->load->view('FrontEnd/BlogDetail',$data);
 		}
+
+		public function ChangeCategory(){
+			$idActual			=	$this->input->post('idToChange');
+			$data['blogs'] 		=	$this->BlogsModel->ChangeCategory($idActual);
+			$data['category'] 	=	$this->BlogsModel->GetCategory();
+			$this->load->view('FrontEnd/Blog',$data);
+		}
 }

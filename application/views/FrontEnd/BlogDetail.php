@@ -38,6 +38,9 @@
 			<form method="post" action="<?= base_url('index.php/restaurant/Blogs/MoreDetails'); ?>" id="sendToDetail">
 	  			<input type="hidden" id="idToFind" name="idToFind">
 			</form>
+			<form method="post" action="<?= base_url('index.php/restaurant/Blogs/ChangeCategory'); ?>" id="ChangeCat">
+			  <input type="hidden" id="idToChange" name="idToChange">
+			</form>
 		</div>
 	</div>
 
