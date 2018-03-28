@@ -37,4 +37,8 @@ class BlogsModel extends CI_Model{
 			$this->db->where('blog.id_categoria',$id);
 		return $this->db->get()->result();
 	}
+
+	function SetPost($data){
+		$this->db->insert('blog', $data);
+	}
 }
