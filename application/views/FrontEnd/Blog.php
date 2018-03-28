@@ -10,7 +10,12 @@
   <section class="row">
     <div class="col-md-7 col-md-offset-1 pictures">
       <?php $this->load->view('FrontEnd/Global/readMore'); ?>
-      <?php foreach ($blogs as $bl) {  ?>
+      
+      <?php $totalEv=0; $first=1;
+         foreach ($blogs as &$bl) { 
+          if($totalEv==0)
+            $first=$bl->id;
+          if($totalEv<3){ ?>
       
       <div class="row">
         <img id="imgBlog" src="<?= base_url().$bl->foto; ?>">
@@ -41,7 +46,7 @@
         </div>
       </div>
 
-      <?php } ?>
+      <?php $totalEv++; } } $sec=((int)$first+3); $ter=((int)$sec+3);?>
       
     </div>
 
@@ -55,6 +60,45 @@
     </div>
   </section>
 </div>
+
+
+
+
+
+<div class="container" id="pagination">
+  <div class="row">
+    <div class="options col-xs-12">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="pager">
+          <button type="button" class="prev-next pull-left" id="<?= $ter; ?>"><span>< Next</span></button>
+          <button type="button" class="prev-next pull-left midle" id="<?= $first; ?>">
+            <span><?= $pager['uno']; ?></span></button>
+          <button type="button" class="prev-next pull-left midle" id="<?= $sec; ?>">
+            <span><?= $pager['dos']; ?></span></button>
+          <?php if(count($blogs)>6){?>
+          <button type="button" class="prev-next pull-left midle" id="<?= $ter; ?>">
+            <span><?= $pager['tres']; ?></span></button>
+          <?php } 
+          $prev=1; 
+          ((count($blogs)>0 && (int)$first!=1)? $prev = ((int)$first-6):$prev = 1);
+          (($prev<0)? $prev=1:$prev=$prev); 
+          ?>
+          <button type="button" class="prev-next pull-left" 
+            id="<?= $prev; ?>">
+            <span>Prev ></span></button>
+        </div>
+        <form method="post" action="<?= base_url('index.php/restaurant/Blogs/changePage'); ?>" id="sendToPage">
+          <input type="hidden" id="dataPageF" name="dataPageF">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <form method="post" action="<?= base_url('index.php/restaurant/Blogs/MoreDetails'); ?>" id="sendToDetail">
   <input type="hidden" id="idToFind" name="idToFind">
 </form>
@@ -63,7 +107,15 @@
 </form>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+<script>var cantidad = <?= count($blogs); ?></script>
 <script>
+  $(document).ready(function(){
+    if(cantidad==0){
+      $('.midle').attr('disabled',true);
+      $('.midle').css('background','#f3f3f3');
+    }
+  });
+
   $('.readMore').click(function(){
     $('#idToFind').val(this.id);
     $('#sendToDetail').submit();
@@ -73,4 +125,14 @@
     $('#idToChange').val(this.id);
     $('#ChangeCat').submit();
   });
+
+  $('.prev-next').click(function(){
+  var data  =   new Object();
+  data.uno  = this.id;
+  data.dos  = parseInt(this.id)+3;
+  data.tres = parseInt(this.id)+6;
+  $('#dataPageF').val(JSON.stringify(data));
+  console.log(data);
+  $('#sendToPage').submit();
+});
 </script>
