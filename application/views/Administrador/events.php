@@ -21,13 +21,13 @@
 	        	<div class="container" id="contentenido">
     				<div class="row add" style="display: none;">
     					<div class="col-md-12">
-    						<form enctype="multipart/form-data" role="form" method="post" action="<?= base_url('index.php/Admin/Blogs/addBlog'); ?>"  id="addBlogForm">
+    						<form enctype="multipart/form-data" role="form" method="post" action="<?= base_url('index.php/Admin/Events/addEvent'); ?>"  id="addBlogForm">
     							<div class="col-md-4">
     								<img class="imagen" alt="img" id="imagenBlog" src="<?= base_url('assets/sources/img/principalPhoto.png') ?>">
     								<input type="file" name="fotoP" class="btn btn-success col-xs-12" onchange="readURL(this,'imagenBlog');" />
     								<hr>
     								<img class="imagen" alt="img" id="imgSeg" src="<?= base_url('assets/sources/img/secondary_p.png') ?>">
-    								<input type="file" name="fotoP" class="btn btn-success col-xs-12" onchange="readURL(this,'imgSeg');" />
+    								<input type="file" name="fotoS" class="btn btn-success col-xs-12" onchange="readURL(this,'imgSeg');" />
     							</div>
     							<div class="col-md-8">
     								<br>
@@ -52,13 +52,13 @@
 					                        <label class="col-form-label mr-2 control-label">Hora inicio: </label>
 					                    </div>
 					                    <div class="col-md-3">
-					                        <input maxlength="100" type="time" name="h-i" class="form-control" placeholder="*" required>
+					                        <input maxlength="100" type="time" name="h_i" class="form-control" placeholder="*" required>
 					                    </div>
 					                    <div class="col-md-2 text-right">
 					                        <label class="col-form-label mr-2 control-label">Hora fin: </label>
 					                    </div>
 					                    <div class="col-md-3">
-					                        <input maxlength="100" type="time" name="h-f" class="form-control" placeholder="*" required>
+					                        <input maxlength="100" type="time" name="h_f" class="form-control" placeholder="*" required>
 					                    </div>
 
 					                </div>
@@ -68,12 +68,13 @@
 						                    <label class="col-form-label mr-2 control-label">Details list </label>
 						                </div>
 					                	<div class="col-md-4">
-						                        <textarea maxlength="100" type="text" name="det" class="form-control" placeholder="*" id="det" required></textarea>
+						                        <textarea maxlength="100" type="text" class="form-control" placeholder="*" id="det" required></textarea>
 						                        <button class="btn btn-info btnEx">ADD DETAIL</button>
 					                	</div>
 					                	<div class="col-md-6 detailsList">
 					                		<h4>Details list</h4>
 					                		<ul></ul>
+					                		<input type="hidden" id="detallesLista" name="det" />
 					                	</div>
 					                </div>
 
@@ -93,8 +94,8 @@
 					                        <label class="col-form-label mr-2 control-label">Motivation for clients: </label>
 					                    </div>
 					                    <div class="col-md-10">
-					                        <textarea maxlength="100" type="text" name="contenido" class="form-control" placeholder="*" required></textarea><br>
-					                        <button class="btn btn-success pull-right" id="addB">SAVE</button>
+					                        <textarea maxlength="100" type="text" name="motiv" class="form-control" placeholder="*" required></textarea><br>
+					                        <button class="btn btn-success pull-right" id="addE">SAVE</button>
 					                    </div>
 					                </div>
 					                

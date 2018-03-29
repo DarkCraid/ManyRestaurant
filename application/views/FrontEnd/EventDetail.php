@@ -1,6 +1,8 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/sources/css/deerek.css'); ?>">
-<?php $this->load->view('FrontEnd/Global/generales'); ?>
+<?php $this->load->view('FrontEnd/Global/generales'); 
+	
+?>
 
 <div class="blog_bg">
 	<h1 class="blog_titulo"><img src="<?= base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?= base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Event Details</h1>
@@ -16,7 +18,7 @@
 			</div>
 		</div>
 		<div class="col-md-8 firstImg">
-			<img src="<?= base_url().$event[0]->foto;?>" alt="Responsive image">
+			<img src="<?= base_url().explode(",", $event[0]->foto)[0];?>" alt="Responsive image">
 		</div>
 	</section>
 
@@ -34,12 +36,14 @@
 				<ul>
 				<?php 
 				set_error_handler('exceptions_error_handler');
-				function exceptions_error_handler($severity,$msg,$filename,$lineon){
-					if(error_reporting()==0)
-						return;
-					if(error_reporting() && $severity)
-						throw new ErrorException($msg,0,$severity,$filename,$lineon);
-				}
+					function exceptions_error_handler($severity,$msg,$filename,$lineon){
+						if(error_reporting()==0){
+							return;
+						}
+						if(error_reporting() && $severity){
+							throw new ErrorException($msg,0,$severity,$filename,$lineon);
+						}
+					}
 				$pos=0; $arr = explode(",", $event[0]->cosas_relevantes)[(int)$pos];
 					do{ 
 						try{
@@ -49,12 +53,20 @@
 							<li><span>></span><?= $arr; ?></li>
 							<?php	
 						}catch(Exception $e){break;}
-					}while($arr[$pos]);
+					}while($arr[$pos-1]);
 				?>
 				</ul>
 			</div>
 			<div class="col-md-6 secondImg" > 
-				<img  src="<?= base_url().$event[0]->foto;?>" alt="Responsive image">
+				<?php 
+					try{
+						$a = explode(",", $event[0]->foto)[1];
+						
+					}catch(Exception $e){
+						$a = explode(",", $event[0]->foto)[0];
+					}
+				?>
+				<img  src="<?= base_url().$a;?>" alt="Responsive image">
 			</div>								
 		</div >
 	</section>

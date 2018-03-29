@@ -84,36 +84,19 @@ function readURL(input,idImg) {
             }
         }
 
-$('#addB').click(function(){
-	$('#addBlogForm').submit();
-});
-
-$('#addC').click(function(){
-	var cont 	=	'<div class="row"><div class="container">';
-		cont 	+=	'<div class="col-xs-3 text-right">Category:</div>';
-		cont 	+=	'<div class="col-xs-5"><input type="text" class="form-control" id="inpCat"></div></div></div>';
+$('#addE').click(function(){
+	var detalles='';
+	for (var i = 0; i < lista.length; i++) {
+		detalles+=lista[i];
+		if(i+1!=lista.length)
+			detalles+=',';
+	}
+	$('#detallesLista').val(detalles);
+	if($('#detallesLista').val()!='')
+		$('#addBlogForm').submit();
+	else{
 		cleanBotonesModal(true);
-		botonesModal.push({
-              label: 'ADD CATEGORY',
-              cssClass: 'btn-success',
-              action: function(dialogItself){
-              	$.post(ruta_base+'Admin/Blogs/AddCategory',{
-					'category': 	$('#inpCat').val(),
-				},
-				  function (data)
-				  { if(data=="error")
-				  		alert("no se pudo guardar");
-				  	else{
-				  		dropDataCombo('category');
-				  		var c = JSON.parse(data);
-				  		$.each(c,function(i,item)
-				        { $('#category').append('<option value="'+item.id+'">'+item.titulo+'</option>');
-				        });
-				  		dialogItself.close();
-				  	}
-				  	
-				  });
-              }
-          });
-		modal(BootstrapDialog.TYPE_DEFAULT,'ADD NEW CATEGORY',cont,true);
+		modal(BootstrapDialog.TYPE_DANGER,'ERROR','<strong>There are any detail.</strong>',true);
+	}
+
 });
