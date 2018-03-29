@@ -37,12 +37,6 @@ color: orange;
 	width: 100%;
 	height: 100%;
 }
-.event-detail-img{
-	background-image: url('../img/backgroundOurCooks.png');
-	width: 100%;
-	height: auto;
-	background-repeat: repeat-y;
-}
 #fecha_eventdetail{
 	background: #fea100;
 }
@@ -80,53 +74,16 @@ color: orange;
 	color: #fe5694;
 	font-family: arial;
 }
-.img-reserv>img{
-	width: 100%;
-	height: 150px;
-}
-.reserv{
-	background-color: #fe4c8d;
-	color: white;
-	height: 340px;
-	margin-bottom: 80px;
-	padding-top: 55px;
-}
-.reserv>p:not(.first){
-	margin-bottom: 30px;
-}
-.div-reserv{
-	background: white;
-	margin-bottom: 80px;
-	padding: 25px;
-	height: 240px;
-}
-.time-yellow{
-	position: relative;
-	top: -8px;
-	font-size: 14px;
-}
-.time-yellow>img{
-	top: -2px;
-	width: 20px;
-	height: 20px;
-	position: relative;
-}
-.dateRes{
-	position: absolute;
-	background: #fea100;
-	z-index: 10;
-	top: 0px;
-	margin-top: 120px;
-	color: white;
-	font-weight: bold;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 13px;
-	margin-left: 40px;
-}
+
 .dateDe{
 	position: relative;top: -18px;
 }
 .contDetails{
 	height: 200px;
+}
+.event-detail-img{
+	background-image: url('../img/backgroundOurCooks.png');
+	width: 100%;
+	height: auto;
+	background-repeat: repeat-y;
 }
