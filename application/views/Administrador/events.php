@@ -1,7 +1,7 @@
 <?php $this->load->view('Administrador/Global/Header');?>
 <?php $this->load->view('Administrador/Global/AsideLeft');?>
 
-<link rel="stylesheet" href="<?= base_url('assets/sources/css/Admin/blogs.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/sources/css/Admin/events.css'); ?>">
 
 
   <div class="content-wrapper">
@@ -9,10 +9,10 @@
       	<section class="content">
 	        <div class="row box">
     			<div class="container">
-    				<div class="col-md-2"><h3>Blogs</h3></div>
+    				<div class="col-md-2"><h3>Events</h3></div>
     				<div class="col-md-10 text-right">
-    					<button class=" btn btn-success btnPrin">Add new post</button>
-    					<button class=" btn btn-success btnPrin">Show posts list</button><br><br>
+    					<button class=" btn btn-success btnPrin">Add new event</button>
+    					<button class=" btn btn-success btnPrin">Show events list</button><br><br>
     				</div>
     			</div>
 	        </div>
@@ -23,8 +23,11 @@
     					<div class="col-md-12">
     						<form enctype="multipart/form-data" role="form" method="post" action="<?= base_url('index.php/Admin/Blogs/addBlog'); ?>"  id="addBlogForm">
     							<div class="col-md-4">
-    								<img class="imagen" alt="img" id="imagenBlog" src="<?= base_url('assets/sources/img/Sin_imagen.png') ?>">
-    								<input type="file" name="fotoP" class="btn btn-success col-xs-12" onchange="readURL(this);" />
+    								<img class="imagen" alt="img" id="imagenBlog" src="<?= base_url('assets/sources/img/principalPhoto.png') ?>">
+    								<input type="file" name="fotoP" class="btn btn-success col-xs-12" onchange="readURL(this,'imagenBlog');" />
+    								<hr>
+    								<img class="imagen" alt="img" id="imgSeg" src="<?= base_url('assets/sources/img/secondary_p.png') ?>">
+    								<input type="file" name="fotoP" class="btn btn-success col-xs-12" onchange="readURL(this,'imgSeg');" />
     							</div>
     							<div class="col-md-8">
     								<br>
@@ -46,29 +49,55 @@
 					                </div>
 					                <div class="row form-group">
 					                    <div class="col-md-2 text-right">
-					                        <label class="col-form-label mr-2 control-label">Category: </label>
+					                        <label class="col-form-label mr-2 control-label">Hora inicio: </label>
 					                    </div>
 					                    <div class="col-md-3">
-					                        <select id="category" name="category" class="form-control">
-					                        	<?php foreach ($categorias as $cat) { ?>
-													<option value="<?= $cat->id; ?>"><?= $cat->titulo; ?></option>
-					                        	<?php } ?>
-					                        </select>
+					                        <input maxlength="100" type="time" name="h-i" class="form-control" placeholder="*" required>
+					                    </div>
+					                    <div class="col-md-2 text-right">
+					                        <label class="col-form-label mr-2 control-label">Hora fin: </label>
 					                    </div>
 					                    <div class="col-md-3">
-					                        <button class="btn btn-info" id="addC">ADD CATEGORY</button>
+					                        <input maxlength="100" type="time" name="h-f" class="form-control" placeholder="*" required>
 					                    </div>
 
 					                </div>
+
+									<div class="row form-group">
+										<div class="col-md-2 text-right">
+						                    <label class="col-form-label mr-2 control-label">Details list </label>
+						                </div>
+					                	<div class="col-md-4">
+						                        <textarea maxlength="100" type="text" name="det" class="form-control" placeholder="*" id="det" required></textarea>
+						                        <button class="btn btn-info btnEx">ADD DETAIL</button>
+					                	</div>
+					                	<div class="col-md-6 detailsList">
+					                		<h4>Details list</h4>
+					                		<ul></ul>
+					                	</div>
+					                </div>
+
+
+
+
 					                <div class="row form-group">
 					                    <div class="col-md-2 text-right">
 					                        <label class="col-form-label mr-2 control-label">Description: </label>
 					                    </div>
 					                    <div class="col-md-10">
-					                        <textarea maxlength="100" type="text" name="contenido" class="form-control" placeholder="*" required></textarea><br>
-					                        <button class="btn btn-success pull-right" id="addB">ADD</button>
+					                        <textarea maxlength="100" type="text" name="contenido" class="form-control" placeholder="*" required></textarea>
 					                    </div>
 					                </div>
+					                <div class="row form-group">
+					                    <div class="col-md-2 text-right">
+					                        <label class="col-form-label mr-2 control-label">Motivation for clients: </label>
+					                    </div>
+					                    <div class="col-md-10">
+					                        <textarea maxlength="100" type="text" name="contenido" class="form-control" placeholder="*" required></textarea><br>
+					                        <button class="btn btn-success pull-right" id="addB">SAVE</button>
+					                    </div>
+					                </div>
+					                
     							</div>
     						</form>
     					</div>
@@ -101,6 +130,6 @@
 <script src="<?php echo base_url('assets/sources/js/dataTables.bootstrap.min.js'); ?>"></script>
 
 <script src="<?= base_url('assets/sources/js/generales.js'); ?>"></script>
-<script src="<?= base_url('assets/sources/js/Admin/blogs.js'); ?>"></script>
+<script src="<?= base_url('assets/sources/js/Admin/events.js'); ?>"></script>
 
 
