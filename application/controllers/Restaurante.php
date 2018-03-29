@@ -22,7 +22,8 @@ class Restaurante extends CI_Controller
 	}
 	public function Menu()
 	{
-		$this->load->view('FrontEnd/Menu');
+		$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Menu',$data);
 	}
 	public function Recipies()
 	{	$data['time'] = $this->GeneralesModal->GetHora();
