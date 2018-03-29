@@ -65,7 +65,7 @@ function deleteFromList(id){
 }
 
 function del(id){
-	$.post(ruta_base+'Admin/Blogs/DeletePost',{
+	$.post(ruta_base+'Admin/Events/DeleteEvent',{
 		'idDel': 	id,
 	},
 	  function (data)

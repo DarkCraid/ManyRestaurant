@@ -57,9 +57,26 @@ class Events extends CI_Controller
 	}
 
 	public function Featured(){
-		$data['featuredEv']	=	$this->EventsModel->GetFeaturedEvents();
-		$this->load->view('Administrador/featuredEv',$data);
+		$this->load->view('Administrador/featuredEv');
 	}
 
+	public function GetFeatured(){
+		echo json_encode($this->EventsModel->GetFeaturedEvents());
+	}
+
+	public function GetAllEv(){
+		echo json_encode($this->EventsModel->GetAllEventsFeatured());
+	}
+
+	public function changeFeatured(){
+		$idEvent	=	$this->input->post('idEvent');
+		$idFeat		=	$this->input->post('idFeat');
+		$this->EventsModel->changeFeatured($idEvent,$idFeat);
+		echo "listo";
+	}
+
+	public function DeleteEvent(){
+		$this->EventsModel->DeleteEvent($this->input->post('idDel'));
+	}
 
 }

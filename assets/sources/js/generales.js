@@ -29,6 +29,7 @@ function insertarPaginado(tableId){
        'info'         : true,
        'autoWidth'    : false,
        'destroy'      : true,
+       "iDisplayLength": 7,
        "language"     : {  "url": idiomaPaginado  }
     });
 }
