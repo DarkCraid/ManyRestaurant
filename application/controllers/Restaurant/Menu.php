@@ -10,7 +10,12 @@ class Menu extends CI_Controller
 
 	public function LoadData()
 	{
-		return $this->GeneralesModal->LoadDatas();
+        $Stat = array(
+        	'status'	=>	1
+        );
+
+	    $Resul = $this->Menus->LoadDatas($Stat);
+	    echo json_encode($Resul);
 	}
 
 }

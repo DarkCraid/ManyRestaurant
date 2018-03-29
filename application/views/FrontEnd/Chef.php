@@ -8,10 +8,10 @@
 	<div class="container">
 		<div class="row">
 			<h3><b>Head Chef</b></h3>
-			<div class="col-sm-6"><img src="<?= base_url('assets/sources/img/chefhead.jpg'); ?>" width="540px" height="300px"></div>
+			<div class="col-sm-6"><img id="DataImageChef" width="540px" height="300px"></div>
 			<div class="col-sm-5" id="fondoLeft">
-				<h3><b>Chef Benito</b></h3>
-					<p><font color="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit</font></p>
+				<h3><b id="DataChef"></b></h3>
+					<p><font color="gray" id="DataDescription"></font></p>
 					<div class="social-networks">
                       <a href="#" class="twitter"> <img src="<?= base_url('assets/sources/img/icon_twitter.png'); ?>"></a>
                       <a href="#" class="facebook"><img src="<?= base_url('assets/sources/img/icon_facebook.png'); ?>"></a>
@@ -34,59 +34,21 @@
 	</div>
 </div>
 
+
+
+
+
+
+
+
 <div class="form2" style="background-color: #eee">
 	<div class="container chefOptions">
 		<div class="row">
 			<div class="form-group">
 				<div class="col-md-offset-1 col-md-10">
 					<h3><b>Chef Team</b></h3>
-					<div class="menu-gallery chef1">
-						<img src="<?= base_url('assets/sources/img/chefteam1.jpg'); ?>">
-						<div class="menu-desc ">
-						<h5><b><center>DOÑA CLARITA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef2">
-						<img src="<?= base_url('assets/sources/img/chefteam2.jpg'); ?>">
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef3">
-						<img src="<?= base_url('assets/sources/img/chefteam3.jpg'); ?>">
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef4">
-						<img src="<?= base_url('assets/sources/img/chefteam4.jpg'); ?>">
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef1">
-						<img src="<?= base_url('assets/sources/img/chefteam1.jpg'); ?>" >
-						<div class="menu-desc ">
-						<h5><b><center>DOÑA CLARITA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef2">
-						<img src="<?= base_url('assets/sources/img/chefteam2.jpg'); ?>" >
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef2">
-						<img src="<?= base_url('assets/sources/img/chefteam3.jpg'); ?>" >
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
-					</div>
-					<div class="menu-gallery chef2">
-						<img src="<?= base_url('assets/sources/img/chefteam4.jpg'); ?>" >
-						<div class="menu-desc ">
-						<h5><b><center>BERTHA</center></b></h5>
-						</div>
+					<div id="ContainerChef">
+						
 					</div>
 				</div>
 			</div>
@@ -95,3 +57,6 @@
 </div>
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+
+<script src="<?= base_url('assets/sources/js/LoadDataChef.js');?>"></script>
+
