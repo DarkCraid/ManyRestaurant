@@ -190,7 +190,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="<?= base_url('index.php/Admin/Events'); ?>">
             <i></i> <span>Events</span>
           </a>
         </li>

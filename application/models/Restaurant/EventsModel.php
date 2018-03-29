@@ -4,6 +4,8 @@ class EventsModel extends CI_Model{
 	function GetAllEvents(){
 		$this->db->select('*');
 		$this->db->from('eventos');
+		$this->db->where('eventos.status',1);
+		$this->db->order_by('eventos.id');
 		$this->db->join('fotos_eventos','ON fotos_eventos.eventos_id = eventos.id','left');
 		return $this->db->get()->result();
 	}
