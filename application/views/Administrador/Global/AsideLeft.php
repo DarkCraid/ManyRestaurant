@@ -189,10 +189,17 @@
             <i></i> <span>Blogs</span>
           </a>
         </li>
-        <li>
-          <a href="<?= base_url('index.php/Admin/Events'); ?>">
-            <i></i> <span>Events</span>
+        <li class="treeview ">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Events</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li ><a href="<?= base_url('index.php/Admin/Events'); ?>"><i class="fa fa-circle-o"></i>Normal events</a></li>
+            <li ><a href="<?= base_url('index.php/Admin/Events/Featured'); ?>"><i class="fa fa-circle-o"></i>Featured events</a></li>
+          </ul>
         </li>
         <li>
           <a href="#">

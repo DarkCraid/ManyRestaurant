@@ -56,5 +56,10 @@ class Events extends CI_Controller
 			}
 	}
 
+	public function Featured(){
+		$data['featuredEv']	=	$this->EventsModel->GetFeaturedEvents();
+		$this->load->view('Administrador/featuredEv',$data);
+	}
+
 
 }

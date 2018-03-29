@@ -1,8 +1,6 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/sources/css/deerek.css'); ?>">
-<?php $this->load->view('FrontEnd/Global/generales'); 
-	
-?>
+<?php $this->load->view('FrontEnd/Global/generales'); ?>
 
 <div class="blog_bg">
 	<h1 class="blog_titulo"><img src="<?= base_url('assets/sources/img/left_leaf.png'); ?>" class="izquierda"><img src="<?= base_url('assets/sources/img/right_leaf.png'); ?>" class="derecha">Event Details</h1>
@@ -85,30 +83,8 @@
 	</section>
 </div>
 
-<section class="event-detail-img">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 container"><h3>Featured Events</h3></div>
-				<div class="col-md-10 col-md-offset-1">
-					
-				<?php foreach ($featuredEv as $fev) {	?>
-					<div class="col-md-4 img-reserv">
-						<img src="<?= base_url().$fev->foto; ?>" alt="">
-						<div class="dateRes"><?= GetFechaH($fev->fecha); ?></div>
-						<div class="col-xs-12 div-reserv">
-							<h4><?= $fev->titulo ?></h4>
-							<strong class="time-yellow"><img src="<?= base_url('assets/sources/icons/time-yellow.png'); ?>" alt="icon">
-								<?= GetHora($fev->hora_in); ?> - <?= GetHora($fev->hora_fin); ?>
-							</strong>
-							<p><?= $fev->descripcion; ?></p>
-						</div>
-					</div>
-				<?php } ?>
+<?php $this->load->view('FrontEnd/Global/featured');?>
 
-				</div>
-			</div>
-		</div>
-</section>
 <form method="post" action="<?= base_url('index.php/restaurant/Events/EvDetail'); ?>" id="sendToDetail">
 	<input type="hidden" id="idToFind" name="idToFind">
 </form>
