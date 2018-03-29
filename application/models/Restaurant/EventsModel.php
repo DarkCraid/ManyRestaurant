@@ -31,12 +31,12 @@ class EventsModel extends CI_Model{
 	}
 
 	function GetFeaturedEvents(){
-		$this->db->select('*');
+		$this->db->select('eventos_destacados.id AS id, titulo, descripcion, fecha, hora_in, hora_fin, extra_info, foto, principal, eventos_id');
 		$this->db->from('eventos_destacados');
 		$this->db->join('eventos','eventos_destacados.id_evento = eventos.id','left');
 		$this->db->join('fotos_eventos','fotos_eventos.eventos_id = eventos.id','left');
-		$this->db->order_by('eventos.fecha','asc');
-		$this->db->limit('3');
+		$this->db->where('fotos_eventos.principal',1);
+		$this->db->order_by('eventos.fecha','desc');
 		return $this->db->get()->result();
 	}
 
@@ -73,5 +73,27 @@ class EventsModel extends CI_Model{
 		$this->db->order_by('id','desc');
 		$this->db->limit(1);
 		return $this->db->get()->result();
+	}
+
+	function changeFeatured($idFrom,$idTo){
+		$stat = array('id_evento' => $idFrom);
+        $this->db->set($stat);
+        $this->db->where('id',$idTo);
+        $this->db->update('eventos_destacados');
+	}
+
+	function GetAllEventsFeatured(){
+		$this->db->select('eventos.id AS id, titulo');
+		$this->db->from('eventos');
+		$this->db->where('eventos.id NOT IN(SELECT id_evento FROM eventos_destacados)');
+		$this->db->where('eventos.status',1);
+		$this->db->order_by('eventos.id');
+		return $this->db->get()->result();
+	}
+
+	function DeleteEvent($id){
+		$this->db->set("status",0);
+		$this->db->where("id",$id);
+		$this->db->update("eventos");
 	}
 }
