@@ -30,11 +30,20 @@ class Events extends Generales {
 			$idActual		=	$this->input->post('idToFind');
 			$data['event']	=	$this->EventsModel->GetEvent($idActual);
 			$data['time']	=	$this->GetHora();
-			$idNext=$idActual+1;
+			//$idNext=$idActual+1;
+			
+			$idNext 		=	$this->EventsModel->getNextID($idActual);
+			if(count($idNext)>0)
+				$idNext 		=   $idNext[0]->id;
+			else
+				$idNext=1;
+			
 			if($idActual>1)
 				$idActual-=1;
-			else
-				$idActual=1;
+			else{
+				$idActual = $this->EventsModel->getLastID();
+				$idActual = $idActual[0]->id;
+			}
 			$data['idFind'] 	= 	array('idprev' => $idActual, 'idnext'=>$idNext);
 			$data['featuredEv']	=	$this->EventsModel->GetFeaturedEvents();
 			$this->load->view('FrontEnd/EventDetail',$data);
