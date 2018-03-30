@@ -51,7 +51,7 @@ nav.navbar{
 {	background-color: #fe4c8d;
 }
 
-.titleFoodMenu{margin-left: 11%;}
+.titleFoodMenu{margin-left: 25px;}
 .lista>ol>li>p::first-line{font-weight: bold;text-transform: uppercase;}
 .lista>ol>li>strong{    position: relative;
     float: right;
@@ -63,12 +63,99 @@ nav.navbar{
 .lista>ol li{
 	list-style-type: none;        margin-left: -25px;;
 }
-.left-c{position: absolute; background-color: red;width: 200px; height: 250px; float: left;z-index: 5;
+.left-c{position: absolute; width: 200px; height: 250px; float: left;z-index: 5;
+border:1px solid darkgrey; background-color: #FFF}
+.right-c{position: absolute; left: 210px; width: 200px; height: 250px; float: left;z-index: 4;
+border:1px solid darkgrey; background-color: #FFF}
+.cuadro:hover{width: 230px;z-index: 6;height: 270px; top: -10px;}
+.cuadro>img{width: 100%;height: 150px;}
+.cuadro{-webkit-box-shadow: 0px 68px 180px -52px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 68px 180px -52px rgba(0,0,0,0.75);
+box-shadow: 0px 68px 180px -52px rgba(0,0,0,0.75);}
+.left-c:hover{
 -webkit-box-shadow: 14px 29px 106px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 14px 29px 106px 0px rgba(0,0,0,0.75);
-box-shadow: 14px 29px 106px 0px rgba(0,0,0,0.75);}
-.right-c{position: absolute; left: 210px; background-color: blue;width: 200px; height: 250px; float: left;z-index: 4;
+box-shadow: 14px 29px 106px 0px rgba(0,0,0,0.75);
+}
+.right-c:hover{
 -webkit-box-shadow: -14px 29px 106px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: -14px 29px 106px 0px rgba(0,0,0,0.75);
-box-shadow: -14px 29px 106px 0px rgba(0,0,0,0.75);}
-.cuadro:hover{width: 230px;z-index: 6;height: 270px; top: -10px;}
+box-shadow: -14px 29px 106px 0px rgba(0,0,0,0.75);
+}
+.cuadro>p{margin:5px 15px;font-weight: bold;font-size: 18px; color: #fea100;}
+.cuadro>p::first-line{color: #000;}
+.explore{background-color: #fea100;color: #FFF;text-transform: uppercase;border-radius: 5px !important;
+font-size: 15px; font-weight: bold;padding: 10px;}
+.reserve{margin-top:50px; background-color: #565f61;padding-bottom: 80px; padding-top: 30px;}
+.reserve>h2{color: #FFF;margin-top: 50px;}
+.inp>div>input{background-color: #FFF;border-radius: 4px !important;}
+.callP{color:#FFF;font-size: 30px;font-weight: bold;}
+.call>p{font-size: 15px; color: #fe4c8d;}
+.call>p::first-line{color: white;}
+.happy{padding-top: 40px;}
+
+
+
+
+
+.vertical .carousel-inner {
+  height: 100%;
+}
+
+.carousel.vertical .item {
+  -webkit-transition: 0.6s ease-in-out top;
+     -moz-transition: 0.6s ease-in-out top;
+      -ms-transition: 0.6s ease-in-out top;
+       -o-transition: 0.6s ease-in-out top;
+          transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .active {
+  top: 0;
+}
+
+.carousel.vertical .next {
+  top: 400px;
+}
+
+.carousel.vertical .prev {
+  top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+  top: 0;
+}
+
+.carousel.vertical .active.left {
+  top: -400px;
+}
+
+.carousel.vertical .active.right {
+  top: 400px;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}
+
+.indicatorCar{    position: absolute;
+    top: 40px;
+    padding-left: 70%;
+}
+#myCarouselV{
+	height: 250px;
+}
+.indicatorCar>li{
+	border-radius: 200px !important;
+	border:1px solid #000;
+}
+.indicatorCar>.active{
+	background-image: url(../icons/carrocel_ci.png);
+	border:none;
+	background-size: 100% 100%;
+}
+
+.carCtrl{display: none;}
+.contenidoCarV>div>div>img{width: 100%; height: 245px;}
+.ourCooks{background-color: red;margin-top: 80px;}
