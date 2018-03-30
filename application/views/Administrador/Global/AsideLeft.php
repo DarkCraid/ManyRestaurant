@@ -123,8 +123,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li ><a href="#"><i class="fa fa-circle-o"></i> Barra de Navegacion</a></li>
-            <li ><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
+            <li ><a href="<?= base_url('index.php/Admin/BarraNav'); ?>"><i class="fa fa-circle-o"></i> Barra de Navegacion</a></li>
+            <li ><a href="<?= base_url('index.php/Admin/Comidas'); ?>"><i class="fa fa-circle-o"></i> Comidas</a></li>
             <li ><a href="#"><i class="fa fa-circle-o"></i> Especialidades</a></li>
 
             <li class="treeview">
@@ -187,6 +187,16 @@
         <li>
           <a href="<?= base_url('index.php/Admin/Blogs'); ?>">
             <i></i> <span>Blogs</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?= base_url('index.php/Admin/Chef'); ?>">
+            <i></i> <span>Chef</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?= base_url('index.php/Admin/Recipies'); ?>">
+            <i></i> <span>Recipies</span>
           </a>
         </li>
         <li>

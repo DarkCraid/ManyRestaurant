@@ -163,3 +163,5 @@
 
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+
+<script src="<?= base_url('assets/sources/js/LoadDataRecipiesDetail.js');?>"></script>

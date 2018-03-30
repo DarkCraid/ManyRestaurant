@@ -27,9 +27,11 @@
 	</div>
 </section>
 
+<section>
+
 <div class="container">
-	<section class="row">
-		<div class="container">
+
+		<div class="central">
 				<div class="recipie">
 					<h2 class="subir"><strong>Our Special Recipies</strong></h2><br>
 						<div class="col-md-8 col-md-offset-2 dateDe">
@@ -41,9 +43,9 @@
 						</div>
 				</div>
 		</div>
-	</section>
-</div>
 
+</div>
+</section>
 
 <section>
 	<div class="container">
@@ -148,3 +150,6 @@
 
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+
+
+<script src="<?= base_url('assets/sources/js/LoadDataRecipies.js');?>"></script>
