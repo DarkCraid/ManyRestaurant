@@ -4,10 +4,6 @@ $(document).ready(function(){
 		
 });
 
-
-
-
-
 function LoadData() 
 {
 	$.post(base_url+'Chef/LoadData',
