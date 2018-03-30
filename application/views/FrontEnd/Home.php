@@ -1,11 +1,43 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 	<link rel="stylesheet"  href="<?= base_url('assets/sources/css/home.css'); ?>">
   
-  <div class="header">
-    <div class="img text-center">
-      <p>Teast your fav dish <br> from luxury restaurent.</p>
+<div class="header">
+    <div  id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="<?= base_url('assets/sources/img/defaultRest.jpg'); ?>">
+      </div>
+      <div  class="item">
+        <img  src="<?= base_url('assets/sources/img/galeria1.jpg'); ?>">
+      </div>
+      <div  class="item">
+        <img  src="<?= base_url('assets/sources/img/galeria2.jpg');?>">
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
   </div>
+  <div class="texto" style="background-color: red;">
+    <br>
+  </div>
+</div>
 
 <div class="container">
   <section class="row" style="background: red">
@@ -21,39 +53,6 @@
   </section>
 </div>
 		<!--
-
-	<div style="width:100%;height:100%;" id="myCarousel" class="carousel slide col-md-4" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-  </ol>
-
-  <div style="width:2000px;height:600px;" class="carousel-inner">
-    <div class="item active">
-      <img style="width:100%;height:100%;" class="container" src="<?= base_url('assets/sources/img/foto3.jpg'); ?>" alt="Los Angeles">
-    </div>
-
-    <div  style="width:2000px;height:600px;" class="item">
-      <img style="width:100%;height:100%;" class="container" src="<?= base_url('assets/sources/img/foto5.jpg'); ?>" alt="">
-    </div>
-
-    <div  style="width:2000px;height:600px;" class="item">
-      <img style="width:100%;height:100%;" class="container" src="<?= base_url('assets/sources/img/foto6.jpg'); ?>" alt="New York">
-    </div>
-  </div>
-
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-         <img style="top:0%;left:20%;position:absolute;" class="container" src="<?= base_url('assets/sources/img/titulo.jpg'); ?>" alt="New York">
-
-</div>
 
 	<div id="dos_imagenes"  class="container" >
 		<div  class="col-md-8" >

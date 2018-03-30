@@ -2,29 +2,20 @@
 	background: grey;
 	position: relative;
 	top: -70px;
-	height: auto;
+	height: 750px;
 	width: 100%;
-	z-index: -1;
 }
-.img{
-	background-image: url('../img/galeria1.jpg');
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	height: 700px;
+.header>#myCarousel{
+	width: 100%;
+	height: 100%;
+}
+nav.navbar{
+	z-index: 1;
+}
+.carousel-inner>div>img{
+	width: 100%; height: 100%;
+}
+.carousel-inner{width: 100%; height: 100%;}
 
-}
-#headerImg{
-	width: 100%;
-	height: 700px;
-}
-.img>p{
-	position: relative;
-	top: 50px;
-	color: white;
-	font-size: 30px;
-	top: 40%;
-}
-.img>p::first-line{
-	font-size: 50px;
-	font-weight: bold;
-}
+.texto{position: relative;z-index: 0; top: -55%;}
+.carousel-control{z-index: 3;}
