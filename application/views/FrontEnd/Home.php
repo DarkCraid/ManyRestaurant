@@ -129,7 +129,7 @@
   <section class="row">
     <div class="container">
       <div class="col-md-5 col-md-offset-1">
-        <button class="btn explore">Explor food menu</button>
+        <a href="<?= base_url('index.php/Restaurante/menu'); ?>"><button class="btn explore">Explor food menu</button></a>
       </div>
     </div>
   </section>
