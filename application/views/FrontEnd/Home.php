@@ -34,14 +34,36 @@
     </a>
 
   </div>
-  <div class="texto" style="background-color: red;">
-    <br>
+  <div class="texto">
+    <p class="title">Teast your fav dish<br>from luxury restaurent.</p>
+    <img src="<?= base_url('assets/sources/icons/call.png');?>" alt="">
+    <p class="contact">Call us and book your table<br>1-008 005 006</p>
   </div>
 </div>
 
 <div class="container">
-  <section class="row" style="background: red">
-    <br>
+  <section class="row">
+    <div class="container">
+      <h3 class="titleFoodMenu">Food menu</h3>
+      <div class="col-md-5 col-md-offset-1 lista">
+        <ol>
+          <?php foreach (array(1,2,3,4,5,6) as &$key) {  ?>
+          <li>
+            <p>asd <br>asdeesfr</p>
+            <strong><span>$</span>345</strong>
+          </li>
+          <?php } ?>
+        </ol>
+      </div>
+      <div class="col-md-5">
+        <div class="left-c cuadro">
+          <br>
+        </div>
+        <div class="right-c cuadro">
+          <br>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="row" style="background: blue">
