@@ -12,13 +12,13 @@ class Restaurante extends CI_Controller
 	}
 
 	public function index()
-	{
-		$this->load->view('FrontEnd/Home');
+	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Home',$data);
 	}
 
 	public function Home()
-	{
-		$this->load->view('FrontEnd/Home');
+	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Home',$data);
 	}
 	public function Menu()
 	{

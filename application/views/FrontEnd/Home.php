@@ -1,5 +1,61 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 	<link rel="stylesheet"  href="<?= base_url('assets/sources/css/home.css'); ?>">
+  <script src="<?= base_url('assets/sources/js/jssor.slider-27.1.0.min.js'); ?>"></script>
+
+  <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $AutoPlaySteps: 5,
+              $SlideDuration: 160,
+              $SlideWidth: 200,
+              $SlideSpacing: 3,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,
+                $Steps: 5
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+
+
+
+
+
+
+
   
 <div class="header">
     <div  id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -127,8 +183,8 @@
     <div class="col-xs-10 col-xs-offset-1 carousel slide vertical" id="myCarouselV">
       <ol class="carousel-indicators indicatorCar">
         <li data-target="#myCarouselV" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarouselV" data-slide-to="1" class="active"></li>
-        <li data-target="#myCarouselV" data-slide-to="2" class="active"></li>
+        <li data-target="#myCarouselV" data-slide-to="1" class=""></li>
+        <li data-target="#myCarouselV" data-slide-to="2" class=""></li>
       </ol>
       <div class="carousel-inner contenidoCarV">
       <div class="active item">
@@ -183,69 +239,34 @@
 </div>
 
 <div class="ourCooks">
-  <div class="container ourCooks" id="ourCooks">
-    <h3>Our Cooks</h3>
-    <div id="myCarousel" class=" container-gallery carousel slide" data-ride="carousel">
-  
-        <!-- Wrapper for slides  Poner codigo para jalar las imagenes paps-->
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef1.jpg'); ?>" id="chefImg">
-          <hr>
-          <div class="ourCooks-desc " id="chefText">Ferran Adria</div>
+  <h3 class="text-center">Our Gallery</h3>
+  <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:200px;overflow:hidden;visibility:hidden;">
+        
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:230px;overflow:hidden;">
+            
+            <?php foreach (array(1,2,3,4,5,6,7,8,9,10) as &$arr) {  ?>
+            <div data-p="43.75">
+                <img data-u="image" src="<?= base_url('assets/sources/img/galeria1.jpg'); ?>" />
+            </div>
+            <?php } ?>
+            
         </div>
-         <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef2.jpg'); ?>">
-          <hr>
-          <div class="ourCooks-desc ">Gordon Ramsay</div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5000"></circle>
+                </svg>
+            </div>
         </div>
-         <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef3.jpg'); ?>">
-          <hr>
-          <div class="ourCooks-desc ">Alain Ducasse</div>
-        </div>
-         <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef4.jpg'); ?>">
-          <hr>
-          <div class="ourCooks-desc ">Paul Bocuse</div>
-        </div>
-          </div>
-          <div class="item">
-            <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef5.jpg'); ?>"  >
-          <hr>
-          <div class="ourCooks-desc ">Jamie Oliver</div>
-        </div>
-          </div>
-          <div class="item">
-            <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef6.jpg'); ?>">
-          <hr>
-          <div class="ourCooks-desc ">Juan Maria Arzak</div>
-        </div>
-            <div class="ourCooks-gallery">
-          <img src="<?php echo base_url('assets/sources/img/chefs/chef7.jpg'); ?>">
-          <hr>
-          <div class="ourCooks-desc ">Massino Bottura</div>
-        </div>
-          </div>
-        </div>
-                <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+        <!-- Arrow Navigator -->
+    </div>
+    
 
-      </div>
   </div>
 </div>
 
-<?php $this->load->view('FrontEnd/Global/Footer'); ?>
+<?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 
-<script>
-  $('.carousel').carousel({
-  interval: 3000
-});
-</script>
+<?php $this->load->view('FrontEnd/Global/Footer'); ?>
+<script type="text/javascript">jssor_1_slider_init();</script>
