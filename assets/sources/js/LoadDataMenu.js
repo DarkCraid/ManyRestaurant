@@ -1,6 +1,7 @@
 var base_url = 'http://localhost/ManyRestaurant/index.php/Restaurant/';
 $(document).ready(function(){
-	LoadDataGrid();		
+	LoadDataGrid();
+    LoadDataMenu();	
 });
 
 function LoadDataGrid() 
@@ -9,18 +10,10 @@ function LoadDataGrid()
       {},
       function (data)
       {
-        var typeClass = '';
         var c = JSON.parse(data);
         $.each(c,function(i,item)
         {
-            if (item.tipo == 1) {typeClass = 'breakfast';}
-            else if (item.tipo == 2) {typeClass = 'lunch';}
-            else if (item.tipo == 3) {typeClass = 'snack';}
-            else if (item.tipo == 4) {typeClass = 'pizza';}
-            else if (item.tipo == 5) {typeClass = 'soup';}
-            else if (item.tipo == 6) {typeClass = 'dinner';}
-            else if (item.tipo == 7) {typeClass = 'snack';}
-            $('#TodaComida').append('<div class="menu-gallery '+typeClass+'">'
+            $('#TodaComida').append('<div class="menu-gallery '+item.tipo+'">'
                 +'<img src="../../assets/sources/img/food/'+item.imagen+'"  >'
                 +'<div class="menu-desc ">'
                     +'<h5><b>'+item.nombre+'</b><br><small>'+item.descripcion+'</small></h5>'
@@ -30,4 +23,35 @@ function LoadDataGrid()
             +'</div>');
         });
      });
+}
+
+function LoadDataMenu()
+{
+    $.post(base_url+'Menu/LoadDataMenu',
+      {},
+      function (data)
+      {
+        var c = JSON.parse(data);
+        $.each(c,function(i,item)
+        {
+            $('#MenuAll').append('<div class="option" onclick="ClickEfect('+item.id+')">'
+                    +'<img src="../../assets/sources/img/'+item.icono+'">'
+                    +'<h4>'+item.tipo+'</h4>'
+                +'</div>');
+        });
+     });
+}
+
+function ClickEfect(txt) 
+{
+    if (txt ==7) 
+    {
+        $('.menu-gallery').show(500);
+    }
+    else
+    {
+        txt='.'+txt;
+        $('.menu-gallery').hide(500);
+        $(txt).show(500);
+     } 
 }

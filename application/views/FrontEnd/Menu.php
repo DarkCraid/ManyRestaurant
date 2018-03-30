@@ -1,7 +1,7 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/sources/css/TomEliezer.css'); ?>">
 	<script src="<?= base_url('assets/sources/js/jquery.min.js');?>" ></script>
-	<script src="<?= base_url('assets/sources/js/TomEliezer.js');?>"></script>
+
 
 	<div class="blog_bg">
 
@@ -13,35 +13,7 @@
 		</section>
 
 		<section class="row">
-			<center>
-				<div class="option" id="optionAll">
-					<img src="../../assets/sources/img/icon_all.png">
-					<h4>All</h4>
-				</div>
-				<div class="option" id="optionBreakfast">
-					<img src="../../assets/sources/img/icon_breakfast.png">
-					<h4>Breakfast</h4>
-				</div>
-				<div class="option" id="optionLunch">
-					<img src="../../assets/sources/img/icon_lunch.png">
-					<h4>Lunch</h4>
-				</div>
-				<div class="option" id="optionSnacks">
-					<img src="../../assets/sources/img/icon_snacks.png">
-					<h4>Snacks</h4>
-				</div>
-				<div class="option" id="optionPizza">
-					<img src="../../assets/sources/img/icon_pizza.png">
-					<h4>Pizza</h4>
-				</div>
-				<div class="option" id="optionSoups">
-					<img src="../../assets/sources/img/icon_soups.png">
-					<h4>Soups</h4>
-				</div>
-				<div class="option" id="optionDinner">
-					<img src="../../assets/sources/img/icon_dinner.png">
-					<h4>Dinner</h4>
-				</div>
+			<center id="MenuAll">
 			</center>
 		</section>
 	</div>

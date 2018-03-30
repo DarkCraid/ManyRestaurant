@@ -17,5 +17,14 @@ class Menu extends CI_Controller
 	    $Resul = $this->Menus->LoadDatas($Stat);
 	    echo json_encode($Resul);
 	}
+	public function LoadDataMenu()
+	{
+		$Stat = array(
+        	'status'	=>	1
+        );
+
+	    $Resul = $this->Menus->LoadDataMenus($Stat);
+	    echo json_encode($Resul);
+	}
 
 }

@@ -10,5 +10,12 @@ class Menus extends CI_Model
 		$this->db->where($Stat);
 		return $this->db->get()->result();
 	}
+	public function LoadDataMenus($Stat)
+	{
+		$this->db->select('*');
+		$this->db->from('tipo_alimento');
+		$this->db->where($Stat);
+		return $this->db->get()->result();
+	}
 
 }
