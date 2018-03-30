@@ -136,7 +136,17 @@
           <img src="<?= base_url('assets/sources/img/galeria2.jpg'); ?>" alt="">
         </div>
         <div class="col-md-9" >
-          <br>bbb
+          <div class="row">
+            <div class="col-xs-1"><img src="<?= base_url('assets/sources/icons/comi1.png'); ?>"></div>
+            <p class="col-xs-9 happyClientText">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Expedita mollitia sed, reprehenderit fugit, doloribus voluptatibus earum ducimus ipsam. Nulla placeat temporibus nostrum quae dolores dignissimos ratione iure at ab veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at autem quasi praesentium cum dolorum ipsum maiores atque, ipsam expedita totam nisi, aspernatur dolore similique rerum assumenda vel, quae ex! </p>
+            <div class="col-xs-1 com2"><img src="<?= base_url('assets/sources/icons/comi2.png'); ?>"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-4 nameVato">nombre del vato</div>
+          </div>
+
+
+
         </div>
       </div>
       <div class="item">
@@ -144,7 +154,11 @@
           <img src="<?= base_url('assets/sources/img/defaultRest.jpg'); ?>" alt="">
         </div>
         <div class="col-md-9" >
-          <br>d
+          
+
+
+
+
         </div>
       </div>
       <div class="item">
@@ -152,7 +166,11 @@
           <img src="<?= base_url('assets/sources/img/galeria1.jpg'); ?>" alt="">
         </div>
         <div class="col-md-9" >
-          <br>oo
+          
+
+
+
+
         </div>
       </div>
     </div>
@@ -165,7 +183,63 @@
 </div>
 
 <div class="ourCooks">
-  <br>
+  <div class="container ourCooks" id="ourCooks">
+    <h3>Our Cooks</h3>
+    <div id="myCarousel" class=" container-gallery carousel slide" data-ride="carousel">
+  
+        <!-- Wrapper for slides  Poner codigo para jalar las imagenes paps-->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef1.jpg'); ?>" id="chefImg">
+          <hr>
+          <div class="ourCooks-desc " id="chefText">Ferran Adria</div>
+        </div>
+         <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef2.jpg'); ?>">
+          <hr>
+          <div class="ourCooks-desc ">Gordon Ramsay</div>
+        </div>
+         <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef3.jpg'); ?>">
+          <hr>
+          <div class="ourCooks-desc ">Alain Ducasse</div>
+        </div>
+         <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef4.jpg'); ?>">
+          <hr>
+          <div class="ourCooks-desc ">Paul Bocuse</div>
+        </div>
+          </div>
+          <div class="item">
+            <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef5.jpg'); ?>"  >
+          <hr>
+          <div class="ourCooks-desc ">Jamie Oliver</div>
+        </div>
+          </div>
+          <div class="item">
+            <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef6.jpg'); ?>">
+          <hr>
+          <div class="ourCooks-desc ">Juan Maria Arzak</div>
+        </div>
+            <div class="ourCooks-gallery">
+          <img src="<?php echo base_url('assets/sources/img/chefs/chef7.jpg'); ?>">
+          <hr>
+          <div class="ourCooks-desc ">Massino Bottura</div>
+        </div>
+          </div>
+        </div>
+                <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      </div>
+  </div>
 </div>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
