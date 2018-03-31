@@ -6,4 +6,5 @@ class GeneralesModal extends CI_Model{
 		$this->db->from('datos_restaurante');
 		return $this->db->get()->result();
 	}
+
 }

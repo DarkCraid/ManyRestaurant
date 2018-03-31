@@ -5,11 +5,11 @@
   	</div>
 
 	<div class="container ourHistory">
-			<h2><strong><?= $llave[0]->titulo ?></strong></h2>
-			<p><?= $llave[0]->contenido ?></p>
+			<h2><strong>Our History</strong></h2>
+			<p><?= $historia[0]->historia ?></p>
 	</div>
 	<div class="container ourHotel" id="ourHotel">
-		<img src="<?php echo base_url('assets/sources/img/'.$llave[0]->foto);?>">
+		<img src="<?php echo base_url('assets/sources/img/restaurant/'.$historia[0]->foto);?>">
 		<p>OUR HOTEL</p>
 	</div>
 	
@@ -19,55 +19,49 @@
 	
 		    <!-- Wrapper for slides  Poner codigo para jalar las imagenes paps-->
 		    <div class="carousel-inner">
-		      <div class="item active">
-		      	<div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef1.jpg'); ?>" id="chefImg">
-					<hr>
-					<div class="ourCooks-desc " id="chefText">Ferran Adria</div>
-				</div>
-				 <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef2.jpg'); ?>">
-					<hr>
-					<div class="ourCooks-desc ">Gordon Ramsay</div>
-				</div>
-				 <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef3.jpg'); ?>">
-					<hr>
-					<div class="ourCooks-desc ">Alain Ducasse</div>
-				</div>
-				 <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef4.jpg'); ?>">
-					<hr>
-					<div class="ourCooks-desc ">Paul Bocuse</div>
-				</div>
-		      </div>
-		      <div class="item">
-		        <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef5.jpg'); ?>"  >
-					<hr>
-					<div class="ourCooks-desc ">Jamie Oliver</div>
-				</div>
-		      </div>
-		      <div class="item">
-		        <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef6.jpg'); ?>">
-					<hr>
-					<div class="ourCooks-desc ">Juan Maria Arzak</div>
-				</div>
-		        <div class="ourCooks-gallery">
-					<img src="<?php echo base_url('assets/sources/img/chefs/chef7.jpg'); ?>">
-					<hr>
-					<div class="ourCooks-desc ">Massino Bottura</div>
-				</div>
-		      </div>
-		    </div>
-		    		    <!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
 
+			<?php 
+				$contador=0;
+				$ciclo=0;
+				$fin=false;
+				$totalCiclos=0;
+
+				while(!$fin){
+			?>
+
+
+		      <div class="item <?php if($contador==0){echo 'active';} ?>">
+				<?php for ($i=$ciclo; $i < $ciclo+4; $i++) {  ?>
+
+				<?php if($contador<count($chefs)){ ?>
+		      	<div class="ourCooks-gallery">
+					<img src="<?php echo base_url('assets/sources/img/chefs/').$chefs[$i]->foto; ?>" id="chefImg">
+					<hr>
+					<div class="ourCooks-desc " id="chefText"><?= $chefs[$i]->nombre; ?></div>
+				</div>
+				<?php 
+					$contador++;
+				}else{
+					$fin=true;
+					break;
+				} ?>
+
+				<?php } $ciclo+=4; $totalCiclos++; ?>
+		      </div>
+
+
+			<?php } ?>
+
+		    </div>
+		    
+
+			<ol class="carousel-indicators">
+				<?php for ($a=0; $a < $totalCiclos ; $a++) {  ?>
+				<li data-target="#myCarousel" data-slide-to="<?= $a ?>" 
+					class="<?php if($a==0){echo 'active';} ?>"></li>
+				<?php } ?>
+			</ol>
+		
 	  	</div>
 	</div>
 
