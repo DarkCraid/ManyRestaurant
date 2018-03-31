@@ -13,17 +13,15 @@
 					<h3>Contact Details</h3>
 					<span class="glyphicon glyphicon-map-marker"></span>
 					<h6><b>ADDRESS</b></h6>
-					<h6 style="color: gray;">Luxury Restaurant</h6>
-					<h6 style="color: gray;">California Second Street</h6>
-					<h6 style="color: gray;">2nd floor</h6>
+					<h6 style="color: gray;"><?= $restaurante[0]->address; ?></h6>
 				</div>
 			</div>
 			<div class="col-sm-3">
 				<div class="col-sm-8">
 					<span class="glyphicon glyphicon-earphone" style="margin-top: 55px"></span>
 					<h6><b>PHONE</b></h6>
-					<h6 style="color: gray;">+91 855 558 659</h6>
-					<h6 style="color: gray;"><b>EMAIL: </b>info@luxury.com</h6>
+					<h6 style="color: gray;"><?= $restaurante[0]->telefono; ?></h6>
+					<h6 style="color: gray;"><b>EMAIL: </b><?= $restaurante[0]->email; ?></h6>
 				</div>
 			</div>
 			<div class="col-sm-3">

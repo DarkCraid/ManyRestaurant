@@ -45,8 +45,8 @@ class Restaurante extends CI_Controller
 		$this->load->view('FrontEnd/Chef',$data);
 	}
 	public function ContactUs()
-	{
-		$this->load->view('FrontEnd/ContactUs');
+	{	$data['restaurante'] = $this->GeneralesModal->GetInfoRestaurant();
+		$this->load->view('FrontEnd/ContactUs',$data);
 	}
 
 
