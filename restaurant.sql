@@ -73,7 +73,7 @@ CREATE TABLE `categoria_blog` (
 /*Data for the table `categoria_blog` */
 
 insert  into `categoria_blog`(`id`,`titulo`,`status`,`selected`) values 
-(1,'all foods',1,'none'),
+(1,'all foods',1,'activo'),
 (2,'vegetables',1,'none'),
 (3,'delicious food',1,'none'),
 (4,'special dishes',1,'none'),
@@ -81,7 +81,7 @@ insert  into `categoria_blog`(`id`,`titulo`,`status`,`selected`) values
 (11,'fr',1,'none'),
 (12,'nueva cat',1,'none'),
 (13,'prueba categoria nueva',1,'none'),
-(14,'codigo',1,'activo');
+(14,'codigo',1,'none');
 
 /*Table structure for table `chefs` */
 
@@ -95,9 +95,16 @@ CREATE TABLE `chefs` (
   `descripcion` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `chefs` */
+
+insert  into `chefs`(`id`,`nombre`,`foto`,`puesto`,`descripcion`,`status`) values 
+(1,'jose','chef1.jpg','jefe','wwww',1),
+(2,'pepe','chef2.jpg','empleado','rrrr',1),
+(3,'arturo','chef3.jpg','empleado','asldkjnaskdjnasdkj',1),
+(4,'alfonso','chef4.jpg','empleado','ttttttttttttttttttttttt',1),
+(5,'carlos','chef5.jpg','empleado','soy carlos',1);
 
 /*Table structure for table `comentarios_clientes` */
 
@@ -140,7 +147,7 @@ CREATE TABLE `datos_restaurante` (
 /*Data for the table `datos_restaurante` */
 
 insert  into `datos_restaurante`(`id`,`h_lunes_viernes`,`h_sabado_domingo`,`address`,`telefono`,`email`,`status`,`historia`,`video`) values 
-(1,'10 am - 10pm','09 am - 11pm','viva las americas, insurgentes #35','6694367201','luxury@gmail.com',1,'aqui va la historia, no se que inventar pero pues la escribo para que exista un poco de texto.','');
+(1,'10 am - 10pm','09 am - 11pm','Avenida insurgentes, calle aldama 34958','669 4367 201','luxury@gmail.com',1,'aqui va la historia, no se que inventar pero pues la escribo para que exista un poco de texto.','');
 
 /*Table structure for table `especialidad_chefs` */
 
@@ -192,7 +199,7 @@ CREATE TABLE `eventos` (
   `hora_fin` time NOT NULL,
   `extra_info` text COLLATE utf8_spanish2_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `eventos` */
 
@@ -206,7 +213,11 @@ insert  into `eventos`(`id`,`titulo`,`descripcion`,`cosas_relevantes`,`status`,`
 (16,'asd','sdf','df',0,'2018-03-31','10:57:00','22:58:00','df'),
 (17,'ricardo','awebo que si','el ricardo,esta,feo',1,'2018-03-30','08:57:00','23:58:00','sdsd'),
 (18,'dddd','sd','sdfsd,df',1,'2018-03-29','10:46:00','22:57:00','dfdsd'),
-(19,'bbbbbb','fgh','asd,df,fgh',1,'2018-03-29','11:58:00','12:59:00','fgh');
+(19,'bbbbbb','fgh','asd,df,fgh',1,'2018-03-29','11:58:00','12:59:00','fgh'),
+(20,'evento de prueba despues del push actual','la descripcion del evento bien interesante va aquí','esta es una prueba,para ver,que todo,lo haga,bien',1,'2018-03-30','12:59:00','12:59:00','leelo, se que te va a encantar.'),
+(21,'a','dfdf','asd,sd',1,'2018-12-31','00:59:00','12:57:00','sdfsdf'),
+(22,'prueba de mas de 5','vfvfvf','fer1,un osu,o,que,firulais :v,extra',1,'2018-12-31','12:59:00','12:59:00','vfvfvfvfvfvfvfvfv'),
+(23,'hhhhhhhhhhhhhhhhhhhhhhhhhhhh','ddd','dde,dede,deded,edede',1,'2018-03-14','12:59:00','10:59:00','f');
 
 /*Table structure for table `eventos_destacados` */
 
@@ -224,8 +235,8 @@ CREATE TABLE `eventos_destacados` (
 /*Data for the table `eventos_destacados` */
 
 insert  into `eventos_destacados`(`id`,`id_evento`,`status`) values 
-(1,15,1),
-(2,5,1),
+(1,4,1),
+(2,2,1),
 (3,1,1);
 
 /*Table structure for table `fotos_eventos` */
@@ -238,7 +249,7 @@ CREATE TABLE `fotos_eventos` (
   `principal` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'para indicar si sera la principal, es decir la foto grande o la pequeña',
   `eventos_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `fotos_eventos` */
 
@@ -256,7 +267,42 @@ insert  into `fotos_eventos`(`id`,`foto`,`principal`,`eventos_id`) values
 (13,'Screenshot_(7).png',1,18),
 (14,'Screenshot_(5).png',0,18),
 (15,'Screenshot_(28).png',1,19),
-(16,'Screenshot_(6).png',0,19);
+(16,'Screenshot_(6).png',0,19),
+(17,'Screenshot_(25).png',1,20),
+(18,'Screenshot_(7)1.png',0,20),
+(19,'Screenshot_(11).png',1,21),
+(20,'Screenshot_(14).png',0,21),
+(21,'Screenshot_(12).png',1,22),
+(22,'Screenshot_(6)1.png',0,22),
+(23,'Screenshot_(14)1.png',1,23),
+(24,'Screenshot_(4)1.png',0,23);
+
+/*Table structure for table `fotos_restaurante` */
+
+DROP TABLE IF EXISTS `fotos_restaurante`;
+
+CREATE TABLE `fotos_restaurante` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `foto` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `tipo` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+/*Data for the table `fotos_restaurante` */
+
+insert  into `fotos_restaurante`(`id`,`foto`,`status`,`tipo`) values 
+(1,'res4.jpg',1,1),
+(2,'res1.jpg',1,2),
+(3,'res2.jpg',1,2),
+(4,'res3.jpg',1,2),
+(5,'res4.jpg',1,2),
+(6,'res5.jpg',1,2),
+(7,'res6.jpg',1,2),
+(8,'res7.jpg',1,2),
+(9,'res8.jpg',1,2),
+(10,'res9.jpg',1,2),
+(11,'res10.jpg',1,2);
 
 /*Table structure for table `galeria` */
 
@@ -267,9 +313,14 @@ CREATE TABLE `galeria` (
   `nombre` varchar(250) NOT NULL,
   `tipo` varchar(45) NOT NULL,
   PRIMARY KEY (`idgaleria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='PAra la galeria pues';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='PAra la galeria pues';
 
 /*Data for the table `galeria` */
+
+insert  into `galeria`(`idgaleria`,`nombre`,`tipo`) values 
+(1,'Screenshot_(1).png','Comida'),
+(2,'Screenshot_(3).png','Restaurant'),
+(3,'Screenshot_(14).png','Postres');
 
 /*Table structure for table `imagenes_restaurante` */
 
@@ -295,12 +346,14 @@ CREATE TABLE `mensajes_contactos` (
   `mensaje` text COLLATE utf8_spanish2_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `mensajes_contactos` */
 
 insert  into `mensajes_contactos`(`nombre`,`id`,`email`,`mensaje`,`status`) values 
-('asdasd',1,'sds@asd','asdas',1);
+('asdasd',1,'sds@asd','asdas',1),
+('rrr',2,'rr@rr.com','rrrttrtr',1),
+('fffff',3,'ffff@fff','fffffffffffffffffffff',1);
 
 /*Table structure for table `menu` */
 
@@ -325,20 +378,6 @@ insert  into `menu`(`id`,`nombre`,`precio`,`tipo`,`descripcion`,`imagen`,`status
 (1,'pizza',34,4,'piasdaskj','pizza.jpg',1),
 (2,'mollete',25,1,'pan con frijol','mollete.jpg',1),
 (3,'sopa',50,2,'sopa','sopa.jpg',1);
-
-/*Table structure for table `nuestrahistoria` */
-
-DROP TABLE IF EXISTS `nuestrahistoria`;
-
-CREATE TABLE `nuestrahistoria` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `titulo` char(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `contenido` text COLLATE utf8_spanish2_ci NOT NULL,
-  `foto` char(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
-/*Data for the table `nuestrahistoria` */
 
 /*Table structure for table `pasos_receta` */
 
@@ -375,9 +414,12 @@ CREATE TABLE `recetas` (
   PRIMARY KEY (`id`),
   KEY `id_tipo` (`id_tipo`),
   CONSTRAINT `id_tipo` FOREIGN KEY (`id_tipo`) REFERENCES `tipo_alimento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `recetas` */
+
+insert  into `recetas`(`id`,`titulo`,`preparacion`,`termino`,`descripcion`,`ingredientes`,`foto`,`status`,`id_tipo`,`dificultad`) values 
+(1,'aAAA','00:00:00','00:00:00','a','a','a',1,1,2);
 
 /*Table structure for table `recetas_especiales` */
 
@@ -407,14 +449,16 @@ CREATE TABLE `reservaciones` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `req_especiales` varchar(150) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `reservaciones` */
 
 insert  into `reservaciones`(`id`,`nombre`,`email`,`fecha`,`hora`,`telefono`,`invitados`,`status`,`req_especiales`) values 
 (1,'jesus daniel','dan@dan.com','2018-03-24','13:01:00','1231231232',3,1,'viva las americas'),
 (2,'w','e@e.ccom','2018-12-31','00:59:00','34',5,1,'r'),
-(3,'qwe','eqw','2018-12-31','12:59:00','234',3,1,'none');
+(3,'qwe','eqw','2018-12-31','12:59:00','234',3,1,'none'),
+(4,'dfg','dfgd','2018-12-31','12:59:00','43534534',4,1,'none'),
+(5,'fernanda','fer@fer.com','2018-12-31','12:59:00','12386',3,1,'que sea todo nice');
 
 /*Table structure for table `reservaciones_especiales` */
 
@@ -428,7 +472,7 @@ CREATE TABLE `reservaciones_especiales` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `id_img_restaurante` (`id_img_restaurante`),
-  CONSTRAINT `id_img_restaurante` FOREIGN KEY (`id_img_restaurante`) REFERENCES `imagenes_restaurante` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `id_img_restaurante` FOREIGN KEY (`id_img_restaurante`) REFERENCES `fotos_restaurante` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `reservaciones_especiales` */
@@ -455,6 +499,23 @@ insert  into `tipo_alimento`(`id`,`tipo`,`icono`,`status`) values
 (5,'Sopas',NULL,1),
 (6,'Cenas',NULL,1),
 (7,'postres',NULL,1);
+
+/*Table structure for table `tipo_foto_restaurante` */
+
+DROP TABLE IF EXISTS `tipo_foto_restaurante`;
+
+CREATE TABLE `tipo_foto_restaurante` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+/*Data for the table `tipo_foto_restaurante` */
+
+insert  into `tipo_foto_restaurante`(`id`,`titulo`,`status`) values 
+(1,'historia',1),
+(2,'general',1);
 
 /*Table structure for table `users` */
 

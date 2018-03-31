@@ -83,3 +83,9 @@
 
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+
+<script>
+	$('.ourCooks-gallery').click(function(){
+		window.location.replace('<?= base_url('index.php/restaurante/chef'); ?>');
+	});
+</script>
