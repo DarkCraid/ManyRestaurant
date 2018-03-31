@@ -63,6 +63,7 @@ class EventsModel extends CI_Model{
 		$this->db->select('id');
 		$this->db->from('eventos');
 		$this->db->where('id >',$id);
+		$this->db->where('eventos.status',1);
 		$this->db->limit(1);
 		return $this->db->get()->result();
 	}
@@ -95,5 +96,15 @@ class EventsModel extends CI_Model{
 		$this->db->set("status",0);
 		$this->db->where("id",$id);
 		$this->db->update("eventos");
+	}
+
+	function GetPrevId($id){
+		$this->db->select('id');
+		$this->db->from('eventos');
+		$this->db->where('id <',$id);
+		$this->db->where('status',1);
+		$this->db->order_by('id','desc');
+		$this->db->limit(1);
+		return $this->db->get()->result();
 	}
 }

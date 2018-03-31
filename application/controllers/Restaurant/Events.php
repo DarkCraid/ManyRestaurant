@@ -38,8 +38,10 @@ class Events extends Generales {
 			else
 				$idNext=1;
 			
-			if($idActual>1)
-				$idActual-=1;
+			if($idActual>1){
+				$idActual = $this->EventsModel->GetPrevId($idActual);
+				$idActual = $idActual[0]->id;
+			}
 			else{
 				$idActual = $this->EventsModel->getLastID();
 				$idActual = $idActual[0]->id;
