@@ -11,7 +11,7 @@ class BlogsModel extends CI_Model{
 	function GetAllBlogs(){
 		$this->db->select('*');
 		$this->db->from('blog');
-		$this->db->where('status',1);
+		$this->db->where('blog.status',1);
 		$this->db->order_by('blog.id');
 		return $this->db->get()->result();
 	}
@@ -20,7 +20,7 @@ class BlogsModel extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('blog');
 		$this->db->where('blog.id',$id);
-		$this->db->where('status',1);
+		$this->db->where('blog.status',1);
 		return $this->db->get()->result();
 	}
 
@@ -61,6 +61,7 @@ class BlogsModel extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('blog');
 		$this->db->where('blog.id >=',$id);
+		$this->db->where('blog.status',1);
 		$this->db->order_by('blog.id');
 		return $this->db->get()->result();
 	}

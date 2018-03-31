@@ -9,12 +9,22 @@ class HomeModel extends CI_Model
 		$this->db->where('status',1);
 		return $this->db->get()->result();
 	}
-	public function GetEspecialidad()
-	{
+	public function GetEspecialidad(){
 		$this->db->select('*');
 		$this->db->from('menu');
 		$this->db->where('menu.status',1);
 		$this->db->join('especialidad_dia','id_menu = menu.id','left');
+		return $this->db->get()->result();
+	}
+
+	public function MakeReserv($data){
+		$this->db->insert('reservaciones', $data);
+	}
+
+	public function GetHappy(){
+		$this->db->select('*');
+		$this->db->from('comentarios_clientes');
+		$this->db->where('status',1);
 		return $this->db->get()->result();
 	}
 

@@ -23,7 +23,7 @@
 	
 <?php foreach ($blogsC as $blog) {	?>				
 <div class="row lista readMore" id="<?= $blog->id; ?>">
-	<img src="<?= base_url().$blog->foto; ?>">
+	<img src="<?= base_url('assets/sources/img/blogs/').$blog->foto; ?>">
 	<span><?= GetFechaH($blog->fecha); ?></span><br>
 	<strong><?= $blog->contenido; ?></strong>
 </div>

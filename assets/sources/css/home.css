@@ -157,7 +157,7 @@ font-size: 15px; font-weight: bold;padding: 10px;}
 }
 
 .carCtrl{display: none;}
-.contenidoCarV>div>div>img{width: 100%; height: 245px;}
+.contenidoCarV>div>div>img{width: 100%; height: 240px;border:1px solid #000;margin-top: 5px;}
 .ourCooks{background-color: #edf1f3;margin-top: 80px;padding-top: 40px;padding-bottom: 80px;}
 .comilla1{background-image: url(../icons/comi1.png);}
 .comilla2{background-image: url(../icons/comi2.png);}

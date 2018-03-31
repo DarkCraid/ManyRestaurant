@@ -71,6 +71,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<?= base_url('assets/sources/js/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
+    <script src="<?= base_url('assets/sources/js/bootstrap-dialog.min.js'); ?>"></script>
       </body>
 
 </html>

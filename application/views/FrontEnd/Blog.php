@@ -18,7 +18,7 @@
           if($totalEv<3){ ?>
       
       <div class="row">
-        <img id="imgBlog" src="<?= base_url().$bl->foto; ?>">
+        <img id="imgBlog" src="<?= base_url('assets/sources/img/blogs/').$bl->foto; ?>">
         <div class="col-md-2">
           <div class="date">
             <div>
