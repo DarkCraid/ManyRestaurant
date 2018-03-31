@@ -9,15 +9,20 @@ class Restaurante extends CI_Controller
 		parent::__construct();
 		$this->load->model("Restaurant/GeneralesModal");
 		$this->load->model("Restaurant/GaleriaModel");
+		$this->load->model("Restaurant/HomeModel");
 	}
 
 	public function index()
 	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$data['menu'] = $this->HomeModel->GetMenu();
+		$data['Espe'] = $this->HomeModel->GetEspecialidad();
 		$this->load->view('FrontEnd/Home',$data);
 	}
 
 	public function Home()
 	{	$data['time'] = $this->GeneralesModal->GetHora();
+		$data['menu'] = $this->HomeModel->GetMenu();
+		$data['Espe'] = $this->HomeModel->GetEspecialidad();
 		$this->load->view('FrontEnd/Home',$data);
 	}
 	public function Menu()

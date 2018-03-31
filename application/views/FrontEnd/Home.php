@@ -106,22 +106,22 @@
     <div class="container">
       <div class="col-md-5 col-md-offset-1 lista">
         <ol>
-          <?php foreach (array(1,2,3,4,5,6) as &$key) {  ?>
+          <?php foreach ($menu as &$m) {  ?>
           <li>
-            <p>asd <br>asdeesfr</p>
-            <strong><span>$</span>345</strong>
+            <p><?= $m->nombre; ?> <br><?= $m->descripcion; ?></p>
+            <strong><span>$</span><?= $m->precio;?></strong>
           </li>
           <?php } ?>
         </ol>
       </div>
       <div class="col-md-5">
         <div class="left-c cuadro">
-          <img src="<?= base_url('assets/sources/img/galeria2.jpg'); ?>" alt="">
-          <p>texto<br>$345</p>
+          <img src="<?= base_url('assets/sources/img/food/').$Espe[0]->imagen; ?>" alt="">
+          <p><?= $Espe[0]->nombre; ?><br>$ <?= $Espe[0]->precio; ?></p>
         </div>
         <div class="right-c cuadro">
-          <img src="<?= base_url('assets/sources/img/defaultRest.jpg'); ?>" alt="">
-          <p>texto<br>$345</p>
+          <img src="<?= base_url('assets/sources/img/food/').$Espe[1]->imagen; ?>" alt="">
+          <p><?= $Espe[1]->nombre; ?><br>$ <?= $Espe[1]->precio; ?></p>
         </div>
       </div>
     </div>
