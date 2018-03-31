@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="col-md-5">
-				<img alt="Imagen no encontrada" src="<?= base_url().$event->foto;?>" class="imgn"></img>
+				<img alt="Imagen no encontrada" src="<?= base_url('assets/sources/img/events/').$event->foto;?>" class="imgn"></img>
 			</div>
 			<div class="col-md-3">
 				<label id="eventhead"><?= $event->titulo; ?></label>

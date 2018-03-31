@@ -55,7 +55,7 @@
 				
 			<?php foreach ($featuredEv as $fev) {	?>
 				<div class="col-md-4 img-reserv">
-					<img src="<?= base_url().$fev->foto; ?>" alt="">
+					<img src="<?= base_url('assets/sources/img/events/').$fev->foto; ?>" alt="">
 					<div class="dateRes"><?= GetFechaH($fev->fecha); ?></div>
 					<div class="col-xs-12 div-reserv">
 						<h4><?= $fev->titulo ?></h4>

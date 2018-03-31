@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="col-md-8 firstImg">
-			<img src="<?= base_url().explode(",", $event[0]->foto)[0];?>" alt="Responsive image">
+			<img src="<?= base_url('assets/sources/img/events/').explode(",", $event[0]->foto)[0];?>" alt="Responsive image">
 		</div>
 	</section>
 
@@ -64,7 +64,7 @@
 						$a = explode(",", $event[0]->foto)[0];
 					}
 				?>
-				<img  src="<?= base_url().$a;?>" alt="Responsive image">
+				<img  src="<?= base_url('assets/sources/img/events/').$a;?>" alt="Responsive image">
 			</div>								
 		</div >
 	</section>

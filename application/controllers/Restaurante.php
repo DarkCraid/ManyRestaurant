@@ -17,6 +17,7 @@ class Restaurante extends CI_Controller
 		$data['menu'] 		= $this->HomeModel->GetMenu();
 		$data['Espe'] 		= $this->HomeModel->GetEspecialidad();
 		$data['clientes']	= $this->HomeModel->GetHappy();
+		$data['gallery']	= $this->HomeModel->GetGallery();
 		$this->load->view('FrontEnd/Home',$data);
 	}
 
