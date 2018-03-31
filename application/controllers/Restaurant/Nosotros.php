@@ -12,8 +12,9 @@ class Nosotros extends Generales {
 
 	public function index()
 	{
-		$data['time']	= $this->GetHora();
-		$data['llave']	= $this->AboutUsModel->Carga();
+		$data['time']		= $this->GetHora();
+		$data['historia']	= $this->AboutUsModel->Carga();
+		$data['chefs']		= $this->AboutUsModel->GetCooks();
 		$this->load->view('FrontEnd/AboutUs',$data);
 	}
 

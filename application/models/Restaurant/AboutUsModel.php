@@ -5,8 +5,16 @@ class AboutUsModel extends CI_Model {
 
 
 	public function Carga(){
-		$query = $this->db->get('nuestrahistoria');
-		return $query->result();
+		$this->db->select('historia, foto');
+		$this->db->from('datos_restaurante, fotos_restaurante');
+		$this->db->where('fotos_restaurante.tipo',1);
+		return $this->db->get()->result();
+	}
+
+	public function GetCooks(){
+		$this->db->select('*');
+		$this->db->from('chefs');
+		return $this->db->get()->result();
 	}
 
 	public function check(){
