@@ -143,31 +143,31 @@
   <div class="container" >
     <div class="row form-group inp">
       <div class="col-md-4 col-md-offset-2">
-        <input type="text" class="form-control" placeholder="Name*">
+        <input type="text" class="form-control" placeholder="Name*" id="i-name">
       </div>
       <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Email address*">
+        <input type="email" class="form-control" placeholder="Email address*" id="i-email">
       </div>
     </div>
     <div class="row form-group inp">
       <div class="col-md-4 col-md-offset-2">
-        <input type="text" class="form-control" placeholder="Time*">
+        <input type="time" class="form-control" placeholder="Time*" id="i-time">
       </div>
       <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Date*">
+        <input type="date" class="form-control" placeholder="Date*" id="i-date">
       </div>
     </div>
     <div class="row form-group inp">
       <div class="col-md-4 col-md-offset-2">
-        <input type="text" class="form-control" placeholder="Guests*">
+        <input type="number" class="form-control" placeholder="Guests*" id="i-guests">
       </div>
       <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Phone*">
+        <input type="number" class="form-control" placeholder="Phone*" id="i-phone">
       </div>
     </div>
     <div class="row form-group">
       <div class="col-md-2 col-md-offset-2"><br>
-        <button class="btn explore">Make reservation</button>
+        <button class="btn explore" id="makeRev">Make reservation</button>
       </div>
       <div class="col-md-6 callP">
         <div class="call col-xs-4"><p>You can also call<br>for a reservation</p></div>
@@ -187,48 +187,23 @@
         <li data-target="#myCarouselV" data-slide-to="2" class=""></li>
       </ol>
       <div class="carousel-inner contenidoCarV">
-      <div class="active item">
+      <?php $cant=0; foreach ($clientes as $cli) { ?>
+      <div class="<?php if($cant==0)echo 'active'; ?> item">
         <div class="col-md-3" >
-          <img src="<?= base_url('assets/sources/img/galeria2.jpg'); ?>" alt="">
+          <img src="<?= base_url('assets/sources/img/clientes/').$cli->foto; ?>" alt="clienteFoto">
         </div>
         <div class="col-md-9" >
           <div class="row">
             <div class="col-xs-1"><img src="<?= base_url('assets/sources/icons/comi1.png'); ?>"></div>
-            <p class="col-xs-9 happyClientText">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Expedita mollitia sed, reprehenderit fugit, doloribus voluptatibus earum ducimus ipsam. Nulla placeat temporibus nostrum quae dolores dignissimos ratione iure at ab veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at autem quasi praesentium cum dolorum ipsum maiores atque, ipsam expedita totam nisi, aspernatur dolore similique rerum assumenda vel, quae ex! </p>
+            <p class="col-xs-9 happyClientText"><?= $cli->titulo; ?><br><?= $cli->descripcion; ?></p>
             <div class="col-xs-1 com2"><img src="<?= base_url('assets/sources/icons/comi2.png'); ?>"></div>
           </div>
           <div class="row">
-            <div class="col-xs-offset-1 col-xs-4 nameVato">nombre del vato</div>
+            <div class="col-xs-offset-1 col-xs-4 nameVato"><?= $cli->nombre; ?></div>
           </div>
-
-
-
         </div>
       </div>
-      <div class="item">
-        <div class="col-md-3" >
-          <img src="<?= base_url('assets/sources/img/defaultRest.jpg'); ?>" alt="">
-        </div>
-        <div class="col-md-9" >
-          
-
-
-
-
-        </div>
-      </div>
-      <div class="item">
-        <div class="col-md-3" >
-          <img src="<?= base_url('assets/sources/img/galeria1.jpg'); ?>" alt="">
-        </div>
-        <div class="col-md-9" >
-          
-
-
-
-
-        </div>
-      </div>
+      <?php $cant++; } ?>
     </div>
 
 <a class="left carousel-control carCtrl" href="#myCarouselV" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -270,3 +245,5 @@
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
 <script type="text/javascript">jssor_1_slider_init();</script>
+<script src="<?= base_url('assets/sources/js/generales.js'); ?>"></script>
+<script src="<?= base_url('assets/sources/js/restaurant/home.js'); ?>"></script>

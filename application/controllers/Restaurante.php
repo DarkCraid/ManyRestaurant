@@ -13,18 +13,19 @@ class Restaurante extends CI_Controller
 	}
 
 	public function index()
-	{	$data['time'] = $this->GeneralesModal->GetHora();
-		$data['menu'] = $this->HomeModel->GetMenu();
-		$data['Espe'] = $this->HomeModel->GetEspecialidad();
+	{	$data['time'] 		= $this->GeneralesModal->GetHora();
+		$data['menu'] 		= $this->HomeModel->GetMenu();
+		$data['Espe'] 		= $this->HomeModel->GetEspecialidad();
+		$data['clientes']	= $this->HomeModel->GetHappy();
 		$this->load->view('FrontEnd/Home',$data);
 	}
 
-	public function Home()
+	/*public function Home()
 	{	$data['time'] = $this->GeneralesModal->GetHora();
 		$data['menu'] = $this->HomeModel->GetMenu();
 		$data['Espe'] = $this->HomeModel->GetEspecialidad();
 		$this->load->view('FrontEnd/Home',$data);
-	}
+	}*/
 	public function Menu()
 	{
 		$data['time'] = $this->GeneralesModal->GetHora();

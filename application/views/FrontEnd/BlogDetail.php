@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 col-md-offset-1 image" >
-				<img src="<?= base_url().$blog[0]->foto; ?>">
+				<img src="<?= base_url('assets/sources/img/blogs/').$blog[0]->foto; ?>">
 				<div class="col-md-2 cuadro-naranja">
 					<div>
 						<?= GetFechaV2($blog[0]->fecha); ?>

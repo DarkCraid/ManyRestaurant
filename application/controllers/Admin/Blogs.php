@@ -46,7 +46,7 @@ class Blogs extends CI_Controller
 						"fecha" 				=> $this->input->post("date"),
 						"id_categoria" 			=> $this->input->post("category"),
 						"contenido" 			=> $this->input->post("contenido"),
-						"foto" 					=> "assets/sources/img/blogs/".$file['upload_data']['file_name'],
+						"foto" 					=> $file['upload_data']['file_name'],
 					];
 
 			$this->BlogsModel->SetPost($info);
