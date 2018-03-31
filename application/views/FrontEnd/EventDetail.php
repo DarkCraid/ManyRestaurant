@@ -51,7 +51,7 @@
 							<li><span>></span><?= $arr; ?></li>
 							<?php	
 						}catch(Exception $e){break;}
-					}while($arr[$pos-1]);
+					}while($arr[$pos-2]);
 				?>
 				</ul>
 			</div>
