@@ -1,10 +1,9 @@
 <?php $this->load->view('FrontEnd/Global/Header'); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/sources/css/Kirey.css');?>">
 
-
-	<div class="header">
-		<img src="<?php echo base_url('assets/sources/img/primera.jpg'); ?>" width="100%" heigh="100px">
-	</div>
+<div class="header">
+	<img src="<?php echo base_url('assets/sources/img/primera.jpg'); ?>" width="100%" heigh="100px">
+</div>
 
 <section>
 	<div id="container-menu">
@@ -42,109 +41,35 @@
 				</div>
 		</div>
 	</section>
-</div>
+<!-- ///////////////////////////////////////////////////////////// contenido cuadros ROW  -->
+	<?php foreach (array(1,2,3) as &$a) { ?>
 
-
-<section>
-	<div class="container">
+	<section class="row">
 		<div class="central" >
-			<div id="cuadro1">
-				<div class="cuadroFoto1">
-					<img src="<?php echo base_url('assets/sources/img/li1.jpg'); ?>" width="100%" heigh="100px">
+			<!-- ///////////////////////////////////////////////////////////// rectangulo  -->
+			<?php foreach (array(1,2) as &$b) { ?>
+			<div class="col-sm-6 info">
+				<div class="col-sm-5">
+					<img class="imgNormal" src="<?= base_url('assets/sources/img/primera.jpg'); ?>" alt="imagen">
 				</div>
-				<div class="lado1">
-					<label class="titulos"><b>Salad</b></label><br>
-					<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-					<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-					<button class="boton1">DETALLES</button>
+				<div class="col-sm-7 info-cont">
+					<h2>title here</h2>
+					<img class="estrellas" src="<?= base_url('assets/sources/img/estrellas.png'); ?>" alt="estrellas">
+					<p>Lorem ipsum dolor sit amet, consectetur abus, rem suscipit illum aut officiis eum nesciunt voluptatum possimus voluptates animi in? Enim tempore dicta adipisci deserunt.</p>
+					<button class="btn">RECIPE DETAILS</button>
 				</div>
-			</div>	
+			</div>
+			<?php } ?>
+			<!-- ///////////////////////////////////////////////////////////// end rectangulo  -->
 		</div>
-	</div>
-</section>
-
-
-
-
-<!--<section >
-	<div class="contenedor">
-	<h2 class="subir">Our Special Recipies</h2>
-	<p class="cuerpo">Our restaurant has the recipes that highlight who we are, the great taste for food, you will find the best recipes in the house.</p>
-	<div class="central" >
-		<div id="cuadro1">
-			<div class="cuadroFoto1">
-				<img src="<?php echo base_url('assets/sources/img/li1.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado1">
-				<label class="titulos"><b>Salad</b></label><br>
-				<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton1">DETALLES</button>
-			</div>
-		</div>	
-
-		<div>
-			<div class="cuadroFoto2">
-				<img src="<?php echo base_url('assets/sources/img/li2.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado2">
-				<label class="titulos"><b>Mashed Potatoes</b></label><br>
-				<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton2">DETALLES</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="cuadroFoto3">
-				<img src="<?php echo base_url('assets/sources/img/li3.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado3">
-				<label class="titulos"><b>Flutes</b></label>
-				<img src="<?php echo base_url('assets/sources/img/estrella2.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton3">DETALLES</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="cuadroFoto4">
-				<img src="<?php echo base_url('assets/sources/img/li4.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado4">
-				<label class="titulos"><b>Meats</b></label><br>
-				<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton4">DETALLES</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="cuadroFoto5">
-				<img src="<?php echo base_url('assets/sources/img/li5.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado5">
-				<label class="titulos"><b>Cakes</b></label><br>
-				<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton5">DETALLES</button>
-			</div>
-		</div>
-
-		<div>
-			<div class="cuadroFoto6">
-				<img src="<?php echo base_url('assets/sources/img/li6.jpg'); ?>" width="100%" heigh="100px">
-			</div>
-			<div class="lado6">
-				<label class="titulos"><b>Chiken</b></label><br>
-				<img src="<?php echo base_url('assets/sources/img/estrellas.png'); ?>"><br><br>
-				<label>It is a special dish of our restaurant that tastes the customer.</label><br>
-				<button class="boton6">DETALLES</button>
-			</div>
-		</div>
-	</div>
+	</section>
+	
+	<?php } ?>
+	<!-- ///////////////////////////////////////////////////////////// end contenido cuadros ROW  -->
 </div>
-</section>-->
+
+
+
 
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
