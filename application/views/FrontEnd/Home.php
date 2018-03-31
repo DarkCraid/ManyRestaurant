@@ -219,9 +219,14 @@
         
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:230px;overflow:hidden;">
             
-            <?php foreach (array(1,2,3,4,5,6,7,8,9,10) as &$arr) {  ?>
+            <?php foreach ($gallery as &$gal) {  ?>
+            <?php if(is_file('assets/sources/img/events/'.$gal->foto)){
+                 $photo = 'assets/sources/img/events/'.$gal->foto;
+              }else{
+                 $photo = 'assets/sources/img/blogs/'.$gal->foto;
+              } ?>
             <div data-p="43.75">
-                <img data-u="image" src="<?= base_url('assets/sources/img/galeria1.jpg'); ?>" />
+                <img data-u="image" src="<?= base_url().$photo; ?>" />
             </div>
             <?php } ?>
             

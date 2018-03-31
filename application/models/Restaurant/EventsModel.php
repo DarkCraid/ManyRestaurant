@@ -44,11 +44,11 @@ class EventsModel extends CI_Model{
 		$this->db->insert('eventos', $data);
 		$insert_id = $this->db->insert_id();
 
-		$fotoP = ["foto" => "assets/sources/img/events/".$fotos[0],
+		$fotoP = ["foto" => $fotos[0],
 			"eventos_id" => $insert_id,
 		];
 
-		$fotoS = ["foto" => "assets/sources/img/events/".$fotos[1],
+		$fotoS = ["foto" => $fotos[1],
 			"eventos_id" => $insert_id,
 			"principal"  => 0,
 		];

@@ -28,4 +28,10 @@ class HomeModel extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	function GetGallery(){
+		$this->db->select('foto');
+		$this->db->from('blog, eventos');
+		$this->db->limit(10);
+		return $this->db->get()->result();
+	}
 }
