@@ -21,8 +21,10 @@ class ReservacionModel extends CI_Model{
 	}
 
 	function reservaciones_especiales(){
-		$this->db->select('*');
+		$this->db->select('descripcion, titulo, foto');
 		$this->db->from('reservaciones_especiales');
+		$this->db->join('fotos_restaurante',
+			'fotos_restaurante.id = reservaciones_especiales.id_img_restaurante','left');
 		return $this->db->get()->result();
 	}
 }
