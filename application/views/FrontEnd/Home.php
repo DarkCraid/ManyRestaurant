@@ -226,7 +226,7 @@
                  $photo = 'assets/sources/img/blogs/'.$gal->foto;
               } ?>
             <div data-p="43.75">
-                <img data-u="image" src="<?= base_url().$photo; ?>" />
+                <img data-u="image" src="<?= base_url().$photo; ?>" class="fotosCar" />
             </div>
             <?php } ?>
             

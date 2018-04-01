@@ -1,21 +1,6 @@
 var base_url = window.location.origin+'/ManyRestaurant/assets/sources/';
 var ruta_base= window.location.origin+'/ManyRestaurant/index.php/';
 $(document).ready(function(){
-	$('#restaurantOpt').click(function(){
-		$('.menu-gallery1').hide(500);
-		$('.restaurant').show(500);
-	});
-	$('#foodOpt').click(function(){
-		$('.menu-gallery1').hide(500);
-		$('.food').show(500);
-	});
-	$('#dessertsOpt').click(function(){
-		$('.menu-gallery1').hide(500);
-		$('.desserts').show(500);
-	});
-	$('#optionAll').click(function(){
-		$('.restaurant , .food , .desserts').show(500);
-	});
 	InsertCuadros('Restaurant/ReservacionControlador/GetCuadros');
 });
 $('.normal').hover(function(){
