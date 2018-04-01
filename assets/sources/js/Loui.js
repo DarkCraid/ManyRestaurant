@@ -21,9 +21,9 @@ $(document).ready(function(){
 $('.normal').hover(function(){
 	var id = 0;
 	switch(this.id){
-		case "n_0": 	id = 0;	break;
 		case "n_1": 	id = 1;	break;
 		case "n_2": 	id = 2;	break;
+		case "n_3": 	id = 3;	break;
 	}
 	$('#m_'+id).css('display','block');
 	$('#'+this.id).css('display','none');
@@ -31,9 +31,9 @@ $('.normal').hover(function(){
 $('.mask').mouseleave(function(){
 	var id = 0;
 	switch(this.id){
-		case "m_0": 	id = 0;	break;
 		case "m_1": 	id = 1;	break;
 		case "m_2": 	id = 2;	break;
+		case "m_3": 	id = 3;	break;
 	}
 	$('#n_'+id).css('display','block');
 	$('#'+this.id).css('display','none');

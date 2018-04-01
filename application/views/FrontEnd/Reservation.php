@@ -53,25 +53,25 @@
 		<div class="row">
 			<h3 class="text-center">Special Reservation</h3>
 			<div class="col-md-10 col-md-offset-1">
-				<?php for($i=0; $i<3; $i++) {	?>
-				<div class="col-md-4 img-reserv cuadrosInferiores normal" id="n_<?= $i; ?>">
-					<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
+				<?php $control=1; foreach($reserv as $res) {	?>
+				<div class="col-md-4 img-reserv cuadrosInferiores normal" id="n_<?= $control; ?>">
+					<img src="<?= base_url('assets/sources/img/restaurant/').$res->foto; ?>" alt="">
 					<div class="col-xs-12 div-reserv">
-						<h4>Private Dinning</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam illo consectetur aut maiores na</p>
+						<h4><?= $res->titulo; ?></h4>
+						<p><?= $res->descripcion; ?></p>
 					</div>
 				</div>
-				<div class="col-md-4 cuadrosInferiores mask" id="m_<?= $i; ?>" style="display: none;">
+				<div class="col-md-4 cuadrosInferiores mask" id="m_<?= $control; ?>" style="display: none;">
 					<div class="col-xs-12 reserv text-center">
 						<img src="<?= base_url('assets/sources/icons/phone.png'); ?>" alt="telefono">
-						<p class="first">1-007 000 005</p>
+						<p class="first"><?= $restaurante[0]->telefono; ?></p>
 						<p>Call us for a Special reservation</p>
 						<img src="<?= base_url('assets/sources/icons/msg-white.png'); ?>" alt="mensaje">
-						<p class="first">info@luxury.com</p>
+						<p class="first"><?= $restaurante[0]->email; ?></p>
 						<p>mail us for a Special reservation</p>
 					</div>
 				</div>
-				<?php } ?>
+				<?php $control++; } ?>
 			</div>
 		</div>
 	</div>

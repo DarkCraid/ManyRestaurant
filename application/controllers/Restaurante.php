@@ -10,6 +10,7 @@ class Restaurante extends CI_Controller
 		$this->load->model("Restaurant/GeneralesModal");
 		$this->load->model("Restaurant/GaleriaModel");
 		$this->load->model("Restaurant/HomeModel");
+		$this->load->model("Restaurant/ReservacionModel");
 	}
 
 	public function index()
@@ -60,8 +61,9 @@ class Restaurante extends CI_Controller
 	}
 	public function Reservation()
 	{
-		$data['restaurante'] = $this->GeneralesModal->GetInfoRestaurant();
-		$data['time'] = $this->GeneralesModal->GetHora();
+		$data['restaurante'] 	= $this->GeneralesModal->GetInfoRestaurant();
+		$data['reserv']			= $this->ReservacionModel->reservaciones_especiales();
+		$data['time']	 		= $this->GeneralesModal->GetHora();
 		$this->load->view('FrontEnd/Reservation',$data);
 	}
 
