@@ -2,86 +2,85 @@
 .blog_titulo{text-align: center;vertical-align: middle;display: table-cell;color: white;position: relative;font-size: 50px;font-family: "Times New Roman", Times, serif;}
 img.izquierda {float: left;position: relative;left: 35%;top: 20px;}
 img.derecha {float: right;position: relative;right: 35%;top: 20px;}
-.ourGallery{font-size: 12px; position: relative; text-align: center;}
-.img-gal>div{border-right: 2px solid #e3e3e3;}
-.img-gal>div:hover{color: pink;}
-.img-gal>div>p{font-size: 12px; font-weight: bold;}
-.img-gal-end{border-right: 2px solid #FFF !important;}
-.img-gal{margin-bottom: 40px;}
 .opening{background: #edf1f3;}
+.menuG{width: 100%; height: 100px; }
+.contG{height: auto;width: auto; display:  inline-block;}
+.opcion{width: auto; height: auto; float: left;padding: 5px 10px; border-right: 1px solid #e3e3e3;}
+.opcion>img{width: auto;height: 30px;margin-left: auto;margin-right: auto;cursor: pointer;}
+.opcion>p{font-weight: bold;}
+.without{border-right: none;}
 
-/*CSS DE MENU*/
-.MenuOptions{
-	width: 100%;
+
+
+
+.hijo_uno {
+  background-color: yellow;
+  
+  /* IMPORTANTE */
+  width: 200px;
+  
 }
-.option{
-	display: inline-block;  
-	margin-right: 5%;
+
+.hijo_dos {
+  background-color: yellow;
+  
+  /* IMPORTANTE */
+  width: 200px;
+  margin: 0 auto;
 }
-.option:hover{
-	cursor: pointer;
+
+
+
+
+* {
+    box-sizing: border-box;
 }
-.FoodOptions{
-	width: 100%; margin-top: 20px;
+
+body {
+    margin: 0;
+    font-family: Arial;
 }
-.container-menu{
-	width: 80%; 
-	margin-left: auto; 
-	margin-right: auto; 
-	box-shadow: 10px 10px grey;
+
+.header {
+    text-align: center;
+    padding: 32px;
 }
-.menu-gallery1{
-	/*margin: 10px;*/
-	border: 1px solid #ccc;
-	display: inline; 
-	width: 100%; 
-	height: 100%; 
-	background-color: white; 
-	margin-bottom: 200px;
-	position: relative;
-	border-right: 3px;
-}
-.menu-gallery1 img {
-	width: 28%;
-	height: 28%;
-	display: inline-block;
-}
-.menu-desc {
-	padding: 10px; 
-	border: 1px solid #ccc;
-}
-/*---------------------------------*/
-.lll {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  margin-left: 30px;
+
+.rowG {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
 }
 
 .column img {
-  margin-top: 8px;
-  vertical-align: middle;
+    margin-top: 8px;
+    vertical-align: middle;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
 }

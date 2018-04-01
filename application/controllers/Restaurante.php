@@ -52,10 +52,7 @@ class Restaurante extends CI_Controller
 
 
 	public function Gallery()
-	{
-		$data['rest'] = $this->GaleriaModel->carga1();
-		$data['comida'] = $this->GaleriaModel->carga2();
-		$data['postre'] = $this->GaleriaModel->carga3();
+	{	$data['galeria']	= $this->GaleriaModel->GetMenu();
 		$data['time'] = $this->GeneralesModal->GetHora();
 		$this->load->view('FrontEnd/Gallery',$data);
 	}

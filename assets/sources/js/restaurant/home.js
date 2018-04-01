@@ -41,3 +41,7 @@ function ajaxPost(ruta){
 	  	modal(BootstrapDialog.TYPE_SUCCESS,'SUCCESS','<p></p>',true);
 	  });
 }
+
+$('.fotosCar').click(function(){
+	window.location.replace(window.location.origin+'/ManyRestaurant/index.php/Restaurante/gallery');
+});
