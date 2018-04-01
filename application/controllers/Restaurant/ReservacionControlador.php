@@ -31,5 +31,9 @@ class ReservacionControlador extends CI_Controller {
 			);
 			$this->ReservacionModel->guardar($datos);
 			redirect('Restaurante/Reservation','refresh');
+		}
+
+		public function GetCuadros(){
+			echo json_encode($this->ReservacionModel->reservaciones_especiales());
 		}		
 }
