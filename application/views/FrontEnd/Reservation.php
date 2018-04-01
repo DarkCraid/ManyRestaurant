@@ -7,7 +7,7 @@
 <div class="container">
 	<section class="row text-center">
 		<h2>Book a Table</h2>
-		<p class="col-md-6 col-md-offset-3">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+		<p class="col-md-6 col-md-offset-3"><?= $restaurante[0]->historia; ?></p>
 	</section>
 
 <form id="formularioReservacion" action="<?php echo base_url('index.php/Restaurant/ReservacionControlador/guardar'); ?>" method="POST">
@@ -53,14 +53,15 @@
 		<div class="row">
 			<h3 class="text-center">Special Reservation</h3>
 			<div class="col-md-10 col-md-offset-1">
-				<div class="col-md-4 img-reserv">
+				<?php for($i=0; $i<3; $i++) {	?>
+				<div class="col-md-4 img-reserv cuadrosInferiores normal" id="n_<?= $i; ?>">
 					<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
 					<div class="col-xs-12 div-reserv">
 						<h4>Private Dinning</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam illo consectetur aut maiores na</p>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 cuadrosInferiores mask" id="m_<?= $i; ?>" style="display: none;">
 					<div class="col-xs-12 reserv text-center">
 						<img src="<?= base_url('assets/sources/icons/phone.png'); ?>" alt="telefono">
 						<p class="first">1-007 000 005</p>
@@ -70,18 +71,17 @@
 						<p>mail us for a Special reservation</p>
 					</div>
 				</div>
-				<div class="col-md-4 img-reserv">
-					<img src="<?= base_url('assets/sources/img/imgHeaderBlogDetail4.jpg'); ?>" alt="">
-					<div class="col-xs-12 div-reserv">
-						<h4>Private Dinning</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur repellendus neque nesciuntdio ea.</p>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
 </div>
-<script src="<?php echo base_url('assets/sources/js/Loui.js') ?>"></script>
+
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+<script src="<?php echo base_url('assets/sources/js/Loui.js') ?>"></script>
+
+<!--
+	
+				-->

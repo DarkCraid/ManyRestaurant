@@ -60,8 +60,9 @@ class Restaurante extends CI_Controller
 	}
 	public function Reservation()
 	{
-
-		$datos['time'] = $this->GeneralesModal->GetHora();
-		$this->load->view('FrontEnd/Reservation',$datos);
+		$data['restaurante'] = $this->GeneralesModal->GetInfoRestaurant();
+		$data['time'] = $this->GeneralesModal->GetHora();
+		$this->load->view('FrontEnd/Reservation',$data);
 	}
+
 }

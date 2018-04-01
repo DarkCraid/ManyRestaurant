@@ -19,4 +19,10 @@ class ReservacionModel extends CI_Model{
 		$this->db->where('id',$id);
 		$this->db->update('reservaciones',$data);
 	}
+
+	function reservaciones_especiales(){
+		$this->db->select('*');
+		$this->db->from('reservaciones_especiales');
+		return $this->db->get()->result();
+	}
 }
