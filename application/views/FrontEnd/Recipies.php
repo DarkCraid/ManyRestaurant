@@ -41,35 +41,25 @@
 				</div>
 		</div>
 	</section>
-<!-- ///////////////////////////////////////////////////////////// contenido cuadros ROW  -->
-	<?php foreach (array(1,2,3) as &$a) { ?>
 
-	<section class="row">
-		<div class="central" >
-			<!-- ///////////////////////////////////////////////////////////// rectangulo  -->
-			<?php foreach (array(1,2) as &$b) { ?>
-			<div class="col-sm-6 info">
-				<div class="col-sm-5">
-					<img class="imgNormal" src="<?= base_url('assets/sources/img/primera.jpg'); ?>" alt="imagen">
-				</div>
-				<div class="col-sm-7 info-cont">
-					<h2>title here</h2>
-					<img class="estrellas" src="<?= base_url('assets/sources/img/estrellas.png'); ?>" alt="estrellas">
-					<p>Lorem ipsum dolor sit amet, consectetur abus, rem suscipit illum aut officiis eum nesciunt voluptatum possimus voluptates animi in? Enim tempore dicta adipisci deserunt.</p>
-					<button class="btn">RECIPE DETAILS</button>
-				</div>
-			</div>
-			<?php } ?>
-			<!-- ///////////////////////////////////////////////////////////// end rectangulo  -->
-		</div>
+
+	<section class="row" id="ContenedorRecetas">
+		
 	</section>
 	
-	<?php } ?>
+
 	<!-- ///////////////////////////////////////////////////////////// end contenido cuadros ROW  -->
 </div>
+
+<form action="<?= base_url('index.php/Restaurant/Recipie/RecipiesDetail'); ?>" method="post" id="IdOb_Link">
+				<input type="hidden" id="IdOb" name="IdOb" />
+			</form>
+
 
 
 
 
 <?php $this->load->view('FrontEnd/Global/horaApertura'); ?>
 <?php $this->load->view('FrontEnd/Global/Footer'); ?>
+
+<script src="<?= base_url('assets/sources/js/LoadDataRecipies.js');?>"></script>

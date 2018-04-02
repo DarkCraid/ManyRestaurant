@@ -14,7 +14,7 @@ function LoadDataGrid()
         $.each(c,function(i,item)
         {
             $('#TodaComida').append('<div class="menu-gallery '+item.tipo+'">'
-                +'<img src="../../assets/sources/img/food/'+item.imagen+'"  >'
+                +'<img src="../../assets/uploads/food/'+item.imagen+'"  >'
                 +'<div class="menu-desc ">'
                     +'<h5><b>'+item.nombre+'</b><br><small>'+item.descripcion+'</small></h5>'
                     +'<hr>'
@@ -35,7 +35,7 @@ function LoadDataMenu()
         $.each(c,function(i,item)
         {
             $('#MenuAll').append('<div class="option" onclick="ClickEfect('+item.id+')">'
-                    +'<img src="../../assets/sources/img/'+item.icono+'">'
+                    +'<img src="../../assets/uploads/icons/'+item.icono+'">'
                     +'<h4>'+item.tipo+'</h4>'
                 +'</div>');
         });

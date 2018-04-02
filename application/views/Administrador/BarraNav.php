@@ -7,21 +7,28 @@
 	</section>
 
 	<div class="container">
-		<form action="">
-			<div class="row">
-				<div class="col-sm-3"><label>Nombre de Seccion: </label></div>
-				<div class="col-sm-3"><input type="text"></div>
-			</div><br>
-			<div class="row">
-				<div class="col-sm-3"><label>Seleccionar icono: </label></div>
-				<div class="col-sm-3"><input type="file"></div>
-				<div class="col-sm-3"><input type="button" value="Ok"></div>
-			</div>
-		</form>
+		 <form id="form-create-usuario" style="padding:0px 15px;"class="form-horizontal" role="form" action="<?php base_url();?>BarraNav/SaveData" method="POST">
+           <h2>[--------------------------------------------------------------------------------------------------------------------------]</h2>
+    <p>Nuevo Seccion.</p>
+
+    <div class="form-group">
+      <label for="txtEdad">Nombre de seccion:</label>
+      <input type="text" class="form-control" name="txtNombre" placeholder="Seccion">
+    </div>
+
+    <div class="form-group">
+      <label for="fileEvidencia">Imagen<small>[solo formato png | jpg]</small>:</label>
+      <input type="file" class="form-control-file" name="fileEvidencia" aria-describedby="fileHelp">
+    </div>
+  
+           <button type="submit" class="btn btn-primary btn-block" value="Registrar">Registrar</button>
+          
+        </form>
 	</div>
 </div>
 
+
 <?php $this->load->view('Administrador/Global/AsideRight');?>
 <?php $this->load->view('Administrador/Global/Footer');?>
-
-<script src="<?= base_url('assets/sources/js/LoadDataAdmBarraNav.js');?>"></script>
+<script src="<?php echo base_url();?>assets/sources/js/jquery-1.11.3.min.js"></script>
+<script src="<?php echo base_url();?>assets/sources/js/SendDataAdm.js"></script>

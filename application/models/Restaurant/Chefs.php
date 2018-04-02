@@ -10,4 +10,16 @@ class Chefs extends CI_Model
 		$this->db->where($Stat);
 		return $this->db->get()->result();
 	}
+	public function SaveDatas($theInsert)
+	{
+		$this->db->insert("chefs", $theInsert);		
+		if ($this->db->affected_rows() > 0) 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
