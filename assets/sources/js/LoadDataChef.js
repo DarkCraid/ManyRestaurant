@@ -15,7 +15,7 @@ function LoadData()
         {
             $('#DataChef').text('Chef: '+ item.nombre);
             $('#DataDescription').text(item.descripcion);
-            $("#DataImageChef").attr("src",'../../assets/sources/img/'+item.foto+'');
+            $("#DataImageChef").attr("src",'../../assets/uploads/chefs/'+item.foto+'');
 
             $('#ContainerChef').append('<div class="menu-gallery chef1">'
                         +'<img src="../../assets/sources/img/'+item.foto+'">'
@@ -39,7 +39,7 @@ function ChangePic(data)
         {
             $('#DataChef').text('Chef: '+ item.nombre);
             $('#DataDescription').text(item.descripcion);
-            $("#DataImageChef").attr("src",'../../assets/sources/img/'+item.foto+'');
+            $("#DataImageChef").attr("src",'../../assets/uploads/chefs/'+item.foto+'');
         });
      });
 }
