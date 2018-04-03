@@ -49,5 +49,20 @@ class Menus extends CI_Model
   	return $this->db->get('tipo_alimento')->result();
 	//return $this->db->get('tipo_alimento')->result();
   	}
+  	public function RemoveItems($Stat)
+  	{
+  		$UpdateArray = array('status' => 0);
+		$this->db->where($Stat);
+        $this->db->set($UpdateArray);
+        $this->db->update('tipo_alimento');  
+        if ($this->db->affected_rows() > 0) 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+  	}
 
 }

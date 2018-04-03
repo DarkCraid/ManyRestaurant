@@ -27,4 +27,20 @@ class Menu extends CI_Controller
 	    echo json_encode($Resul);
 	}
 
+	public function RemoveItem()
+	{
+		$data = $this->input->post();
+		$Stat = array(
+        		'id'				=> 	$data['IdOb'],
+        );
+		if ($this->Menus->RemoveItems($Stat) == true) 
+            {
+              echo "Item Removido";
+            }
+            else
+            {
+              echo "Item no Removido";
+            }
+	}
+
 }

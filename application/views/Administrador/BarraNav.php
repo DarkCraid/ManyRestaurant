@@ -25,6 +25,34 @@
           
         </form>
 	</div>
+
+
+
+  <!---->
+          <div class="row">
+      <section class="content">
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Barra de Navegacion</h3>
+                    </div>
+                    <div class="box-body">
+                        <table id="Exportar_a_Excel" class="table table-hover no-margin">
+                          <thead>
+                              <tr>
+                                <th>Titulo</th>
+                                <th>Icono</th>
+                              </tr>
+                          </thead>
+                          <tbody id="contenido_tabla"></tbody>
+                        </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </section>
+    </div>
 </div>
 
 
@@ -32,3 +60,4 @@
 <?php $this->load->view('Administrador/Global/Footer');?>
 <script src="<?php echo base_url();?>assets/sources/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo base_url();?>assets/sources/js/SendDataAdm.js"></script>
+<script src="<?php echo base_url();?>assets/sources/js/GetMenuAdm.js"></script>
