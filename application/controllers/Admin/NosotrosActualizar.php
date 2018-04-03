@@ -13,6 +13,7 @@ class NosotrosActualizar extends CI_Controller {
 	{
 		$data['key'] 		= $this->AboutUsModel->check();
 		$data['historia']	= $this->AboutUsModel->Carga();
+		$data['fotos']		= $this->AboutUsModel->GetPhotos();
 		if(!empty($data['key']) ){
 			$this->load->view('Administrador/NosotrosActualizar',$data);
 		}else{
@@ -34,35 +35,18 @@ class NosotrosActualizar extends CI_Controller {
 	{
 
 		$id 		= $this->input->post('id');
-		$titulo 	= $this->input->post("titulo");
-		$contenido	= $this->input->post("contenido");
-
-		$config['upload_path']	= './assets/sources/img';
-        $config['allowed_types']= 'gif|jpg|png';
-
-        $this->load->library('upload', $config);
-
-        if( !$this->upload->do_upload('userFile') ){
-        	$data = "defaultRest.jpg";
-        	$datos = array (
-        		"id"		=> $id,
-        		"titulo" 	=> $titulo,
-        		"contenido" => $contenido,
-        		"foto"		=> $data
-        	);
-        	$this->AboutUsModel->insert($datos);
-        	redirect('Admin/NosotrosActualizar','refresh');
-        }else{
-        	$data = array('upload_data' => $this->upload->data() );
-        	$datos = array(
-        		"id"		=> $id,
-        		"titulo"	=> $titulo,
-        		"contenido"	=> $contenido,
-        		"foto"		=> $data['upload_data']['file_name']
-        	);
-        }
-        	$this->AboutUsModel->insert($datos);
-        	redirect('Admin/NosotrosActualizar','refresh');
+		$data = [
+			'address' 	=>	$this->input->post('adrres'),
+			'telefono'	=>	$this->input->post('phone'),
+			'email'		=>	$this->input->post('email'),
+			'historia'	=>	$this->input->post('history'),
+			'hi_lv'		=>	$this->input->post('hi_lv'),
+			'hf_lv'		=>	$this->input->post('hf_lv'),
+			'hi_sd'		=>	$this->input->post('hi_sd'),
+			'hf_sd'		=>	$this->input->post('hf_sd')
+		];
+    	$this->AboutUsModel->SetAboutUs($data,$this->input->post('photo'));
+    	redirect('Admin/NosotrosActualizar','refresh');
 	}
 
 }

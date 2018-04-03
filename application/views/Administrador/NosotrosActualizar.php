@@ -15,7 +15,7 @@
 	        	<div class="container" id="contentenido">
     				<div class="row">
     					<div class="col-md-12">
-    						<form enctype="multipart/form-data" role="form" method="post" action="<?= base_url('index.php/Admin/NosotrosActualizar/do_upload'); ?>"  id="addBlogForm">
+    						<form enctype="multipart/form-data" role="form" method="post" action="<?= base_url('index.php/Admin/NosotrosActualizar/do_upload'); ?>"  id="saaveForm">
     								<br>
     								<div class="row form-group">
 					                    <div class="col-md-2 text-right">
@@ -90,12 +90,17 @@
 					                    </div>
 					                    <div class="col-md-3">
 					                    	<select name="photo" id="photo" class="form-control">
-					                    		<option value="1">asd</option>
+					                    		<?php foreach ($fotos as $f) { ?>
+					                    		<?php if($f->tipo==1){ ?>
+					                    			<option value="<?= $f->id; ?>" selected><?= $f->foto; ?></option>
+					                    		<?php }else{ ?>
+					                    			<option value="<?= $f->id; ?>"><?= $f->foto; ?></option>
+					                    		<?php } } ?>
 					                    	</select>
 					                    </div>
 					                </div>
 					                <div class="col-md-8 col-md-offset-2">
-				                        <img src="<?= base_url('assets/sources/img/restaurant/'.$historia[0]->foto);?>" alt="fotoHistoria" style="width: 100%;">
+				                        <img src="<?= base_url('assets/sources/img/restaurant/'.$historia[0]->foto);?>" alt="fotoHistoria" style="width: 100%;" id="fotoImg">
 				                    </div>
     						</form>
     					</div>
@@ -109,3 +114,4 @@
 
 <?php $this->load->view('Administrador/Global/AsideRight');?>
 <?php $this->load->view('Administrador/Global/Footer');?>
+<script src="<?= base_url('assets/sources/js/Admin/AboutUs.js'); ?>"></script>
