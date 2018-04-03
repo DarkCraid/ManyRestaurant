@@ -23,14 +23,23 @@ class AboutUsModel extends CI_Model {
 		return $query;
 	}
 
-	public function SetAboutUs($data){
+	public function SetAboutUs($data,$idPhoto){
 		$this->db->set($data);
 		$this->db->where('id',1);
 		$this->db->update('datos_restaurante');
+		$this->db->set('tipo',2);
+		$this->db->where('tipo',1);
+		$this->db->update('fotos_restaurante');
+		$this->db->set('tipo',1);
+		$this->db->where('id',$idPhoto);
+		$this->db->update('fotos_restaurante');
 	}
 
 	public function GetPhotos(){
-		
+		$this->db->select('*');
+		$this->db->from('fotos_restaurante');
+		$this->db->where('status',1);
+		return $this->db->get()->result();
 	}
 
 }

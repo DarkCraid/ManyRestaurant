@@ -34,4 +34,10 @@ class HomeModel extends CI_Model
 		$this->db->limit(10);
 		return $this->db->get()->result();
 	}
+
+	function GetDatosRestaurante(){
+		$this->db->select('*');
+		$this->db->from('datos_restaurante');
+		return $this->db->get()->result();
+	}
 }

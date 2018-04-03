@@ -93,7 +93,7 @@
   <div class="texto">
     <p class="title">Teast your fav dish<br>from luxury restaurent.</p>
     <img src="<?= base_url('assets/sources/icons/call.png');?>" alt="">
-    <p class="contact">Call us and book your table<br>1-008 005 006</p>
+    <p class="contact">Call us and book your table<br><?= $restaurante[0]->telefono; ?></p>
   </div>
 </div>
 
@@ -171,7 +171,7 @@
       </div>
       <div class="col-md-6 callP">
         <div class="call col-xs-4"><p>You can also call<br>for a reservation</p></div>
-        <div class="col-xs-6 text-left"><p>1-007 000 005</p></div>
+        <div class="col-xs-6 text-left"><p><?= $restaurante[0]->telefono; ?></p></div>
       </div>
     </div>
   </div>
