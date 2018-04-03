@@ -7,7 +7,11 @@
 <div class="container openingHours">
 	<h3 class="col-lg-4 text-right">Opening Hourss</h3>
 	<div class="col-lg-5">
-		<label class="col-xs-6"><small>Monday to Friday</small><br/><?= $time[0]->h_lunes_viernes; ?></label>
-		<label class="col-xs-6"><small>Saturday to Sunday</small><br/><?= $time[0]->h_sabado_domingo; ?></label>
+		<?php 
+			$lv = date('h:i a', strtotime($time[0]->hi_lv)).' - '.date('h:i a', strtotime($time[0]->hf_lv));
+			$sd = date('h:i a', strtotime($time[0]->hi_sd)).' - '.date('h:i a', strtotime($time[0]->hf_sd));
+		?>
+		<label class="col-xs-6"><small>Monday to Friday</small><br/><?= $lv; ?></label>
+		<label class="col-xs-6"><small>Saturday to Sunday</small><br/><?= $sd; ?></label>
 	</div>
 </div>

@@ -11,16 +11,19 @@ class NosotrosActualizar extends CI_Controller {
 
 	public function index()
 	{
-		$data['key'] = $this->AboutUsModel->check();
+		$data['key'] 		= $this->AboutUsModel->check();
+		$data['historia']	= $this->AboutUsModel->Carga();
 		if(!empty($data['key']) ){
-			//print_r($data);
 			$this->load->view('Administrador/NosotrosActualizar',$data);
 		}else{
 			$data['key'] = (object)array(
-				"id"		=> null,
-				"titulo" 	=> null,
-				"contenido" 	=> null,
-				"foto"		=> null
+				"h_lunes_viernes"		=> null,
+				"h_sabado_domingo" 		=> null,
+				"address" 				=> null,
+				"telefono"				=> null,
+				"email"					=> null,
+				"historia"				=> null,
+				"video"					=> null
 			);
 			//print_r($data);
 			$this->load->view('Administrador/NosotrosActualizar',$data);
