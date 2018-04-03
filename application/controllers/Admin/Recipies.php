@@ -5,7 +5,7 @@ class Recipies extends CI_Controller
 {
 	public function __construct()
 	{	parent::__construct();
-		$this->load->model("Restaurant/Chefs");
+		$this->load->model("Restaurant/Recipiee");
 	}
 
 	public function index()
@@ -16,12 +16,21 @@ class Recipies extends CI_Controller
 	{
 	if ($this->input->is_ajax_request()) 
     {
-      $txtNombre = $this->input->post("txtNombre");
-      $txtPuesto = $this->input->post("txtPuesto");
+      $txtTitulo = $this->input->post("txtTitulo");
       $txtDescripcion = $this->input->post("txtDescripcion");
 
+      $txtPre = $this->input->post("txtPre");
+      $txtCoc = $this->input->post("txtCoc");
+
+      $cmbSeccion = $this->input->post("cmbSeccion");
+
+
+      $Ingredientes = $this->input->post("Ingredientes");
+      $Pasos = $this->input->post("Pasos");
+
+
         
-          $config['upload_path'] = "./assets/uploads/chefs/";
+          $config['upload_path'] = "./assets/uploads/recetas/";
           $config['allowed_types'] = "jpg|png";
 
           $this->load->library("upload", $config);
@@ -39,14 +48,17 @@ class Recipies extends CI_Controller
             $Data_icon = array('upload_data' => $this->upload->data());
 
             $theInsert = [
-              "nombre" => $txtNombre,
-              "puesto" => $txtPuesto,
+              "titulo" => $txtTitulo,
+              "preparacion" => $txtPre,
+              "termino" => $txtCoc,
               "descripcion" => $txtDescripcion,
+              "ingredientes" =>$Ingredientes,
+              "id_tipo" =>$cmbSeccion,
               "foto" => $Data_icon['upload_data']['file_name'],
               "status" => 1,
             ];
 
-            if ($this->Chefs->SaveDatas($theInsert) == true) 
+            if ($this->Recipiee->SaveDatas($theInsert,$Pasos) == true) 
             {
               echo "Exito";
             }

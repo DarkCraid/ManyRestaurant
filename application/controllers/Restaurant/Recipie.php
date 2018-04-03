@@ -5,7 +5,7 @@ class Recipie extends CI_Controller
 {
 	public function __construct()
 	{	parent::__construct();
-		$this->load->model("Restaurant/Recipies");
+		$this->load->model("Restaurant/Recipiee");
 		$this->load->model("Restaurant/GeneralesModal");
 	}
 
@@ -15,7 +15,7 @@ class Recipie extends CI_Controller
         	'status'	=>	1
         );
 
-	    $Resul = $this->Recipies->LoadDatas($Stat);
+	    $Resul = $this->Recipiee->LoadDatas($Stat);
 	    echo json_encode($Resul);
 	}
 
@@ -31,7 +31,17 @@ class Recipie extends CI_Controller
 		$Query = array(
         	'id'	=>	$IdOb
         );
-        $Resul = $this->Recipies->LoadDataIdObs($Query);
+        $Resul = $this->Recipiee->LoadDataIdObs($Query);
+	    echo json_encode($Resul);
+	}
+
+	public function LoadDataIdObPasos()
+	{
+		$IdOb = $this->input->post("IdOb");
+		$Query = array(
+        	'id_receta'	=>	$IdOb
+        );
+        $Resul = $this->Recipiee->LoadDataIdObsPasos($Query);
 	    echo json_encode($Resul);
 	}
 

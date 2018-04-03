@@ -34,11 +34,11 @@
 				<img id="DataImageReceta" src="">
 					<div class="col-md-10 col-md-offset-1 datosImagen">
 						<div class="col-md-4">
-							<p>15 M<br>Tiempo de preparación</p>
+							<p><p id="timePreparacion"></p> M<br>Tiempo de preparación</p>
 						</div>
 
 						<div class="col-md-3">
-							<p>30 M<br>Tiempo de cocción</p> 
+							<p><p id="timeCoccion"></p> M<br>Tiempo de cocción</p> 
 							
 						</div>
 
@@ -63,14 +63,8 @@
 <section class="row">
 	<div class="container">
 			<div class="ingredients" >
-
-				<p id="ingredientes">Ingredientes</p>
-
-				<p><b><img src="<?php echo base_url('assets/sources/img/check.png'); ?>" width="50px" heigh="50px"> 1/2 taza de limón</p>
-				<p><img src="<?php echo base_url('assets/sources/img/check.png'); ?>" width="50px" heigh="50px"> 1/2 taza de limón</p>
-				<p><img src="<?php echo base_url('assets/sources/img/check.png'); ?>" width="50px" heigh="50px"> 1/2 taza de limón</p>
-				<p><img src="<?php echo base_url('assets/sources/img/check.png'); ?>" width="50px" heigh="50px"> 1/2 taza de limón</p>
-				<p><img src="<?php echo base_url('assets/sources/img/check.png'); ?>" width="50px" heigh="50px"> 1/2 taza de limón</p>
+				<p>Ingredientes</p>
+				<div id="ContIngredientes_"></div>
 			</div>
 		</div>
 </section>
@@ -80,51 +74,14 @@
 	<div class="contenedor">
 		<div class="col-md-5 col-md-offset-3 pasos">
 			<h3>Food Step</h3>
-				<div class="container-fluid steps">
-						<div class="row step">
-							<div class="col-xs-2">
-								<div><p>1<br>STEP</p></div>
-							</div>
-							<div class="col-xs-10">
-								<p>consectetur adipisicing elit. Deleniti tempora nisi perspiciatis voluptatum labore dolore quae, quod itaque optio quos in recusandae, nulla similique omnis praesentium eveniet a consectetur, accusamus!</p>
-							</div>
-						</div>
-						<div class="row step">
-							<div class="col-xs-2">
-								<div><p>2<br>STEP</p></div>
-							</div>
-							<div class="col-xs-10">
-								<p>consectetur adipisicing elit. Et rerum nulla veritatis soluta voluptate, voluptatum aliq iste eum placeat quaerat, distinctio fuga pariatur in nobis qui?</p>
-							</div>
-						</div>
-						<div class="row step">
-							<div class="col-xs-2">
-								<div><p>3<br>STEP</p></div>
-							</div>
-							<div class="col-xs-10">
-								<p>consectetur adipisicing elit. Molestiae, ad iusto. Doloribus et iste commodi, aperiam illosam aspernatur quis vitae laborum!</p>
-							</div>
-						</div>
-						<div class="row step">
-							<div class="col-xs-2">
-								<div><p>4<br>STEP</p></div>
-							</div>
-							<div class="col-xs-10">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat nulla magnam aliquid enim molestiae ex, suscipit nesciunt aliquam in optio nemo odit, tenetur adipisci recusandae maiores possimus laboriosam libero. Id!</p>
-							</div>
-						</div>
-				</div>
+			<div class="container-fluid steps" id="PasosCont"></div>
 		</div>
 	</div>
 </section>
 
 
 
-
-
-
 <div class="container">
-
 		<div class="row cuadrosPic">
 			<h2>Featured Recipies</h2>
 			<div class="col-md-10 col-md-offset-1">
