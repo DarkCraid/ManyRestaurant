@@ -126,22 +126,6 @@
             <li ><a href="<?= base_url('index.php/Admin/BarraNav'); ?>"><i class="fa fa-circle-o"></i> Barra de Navegacion</a></li>
             <li ><a href="<?= base_url('index.php/Admin/Comidas'); ?>"><i class="fa fa-circle-o"></i> Comidas</a></li>
             <li ><a href="#"><i class="fa fa-circle-o"></i> Especialidades</a></li>
-
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> Galeria
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Restaurante</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Comidas</a></li>
-                <li><a href="<?= base_url('index.php/Admin/GaleriaSubir'); ?>"><i class="fa fa-circle-o"></i> Galeria/Subir</a></li>
-              </ul>
-            </li>
-						<li><a href="<?php echo base_url('index.php/Admin/NosotrosActualizar') ?>"><i class="fa fa-circle-o"></i>Actualizar Sobre Nosotros</a></li>
-            <li><a href="<?php echo base_url('index.php/Administrador/Reservaciones'); ?>"><i class="fa fa-circle-o"></i>Reservaciones</a></li>
-            <li><a href="<?php echo base_url('index.php/Administrador/Contacto'); ?>"><i class="fa fa-circle-o"></i>Contacto</a></li>
           </ul>
         </li>
 
@@ -157,7 +141,30 @@
             <li ><a href="<?php echo base_url('index.php/Administrador/CambiarContrasena');?>"><i class="fa fa-circle-o"></i> Cambiar Contraseña</a></li>
           </ul>
         </li>
-
+        <li class="treeview ">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Notificaciones</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li ><a href="<?php echo base_url('index.php/Administrador/Contacto'); ?>"><i class="fa fa-circle-o"></i>Mensajes</a></li>
+            <li ><a href="<?php echo base_url('index.php/Administrador/Reservaciones'); ?>"><i class="fa fa-circle-o"></i>Reservaciones</a></li>
+          </ul>
+        </li>
+        <li class="treeview ">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Events</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li ><a href="<?= base_url('index.php/Admin/Events'); ?>"><i class="fa fa-circle-o"></i>Normal events</a></li>
+            <li ><a href="<?= base_url('index.php/Admin/Events/Featured'); ?>"><i class="fa fa-circle-o"></i>Featured events</a></li>
+          </ul>
+        </li>
         <!--<li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
@@ -200,18 +207,15 @@
           </a>
         </li>
         <li>
-        <li class="treeview ">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Events</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+          <a href="<?= base_url('index.php/Admin/GaleriaSubir'); ?>">
+             <i></i> <span>Gallery</span>
           </a>
-          <ul class="treeview-menu">
-            <li ><a href="<?= base_url('index.php/Admin/Events'); ?>"><i class="fa fa-circle-o"></i>Normal events</a></li>
-            <li ><a href="<?= base_url('index.php/Admin/Events/Featured'); ?>"><i class="fa fa-circle-o"></i>Featured events</a></li>
-          </ul>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/Admin/NosotrosActualizar') ?>">
+            <i></i>About Us</a>
+          </li>
+        <li>
         <li>
           <a href="#">
             <i class="fa fa-share"></i> <span>Cerrar Sesion</span>
