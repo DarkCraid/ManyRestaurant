@@ -133,21 +133,23 @@ DROP TABLE IF EXISTS `datos_restaurante`;
 
 CREATE TABLE `datos_restaurante` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `h_lunes_viernes` varchar(20) COLLATE utf8_spanish2_ci NOT NULL DEFAULT '10am - 10pm',
-  `h_sabado_domingo` varchar(20) COLLATE utf8_spanish2_ci NOT NULL DEFAULT '09am - 11pm',
   `address` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `telefono` varchar(12) COLLATE utf8_spanish2_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `historia` text COLLATE utf8_spanish2_ci NOT NULL,
   `video` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `hi_lv` time NOT NULL,
+  `hf_lv` time NOT NULL,
+  `hi_sd` time NOT NULL,
+  `hf_sd` time NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `datos_restaurante` */
 
-insert  into `datos_restaurante`(`id`,`h_lunes_viernes`,`h_sabado_domingo`,`address`,`telefono`,`email`,`status`,`historia`,`video`) values 
-(1,'10 am - 10pm','09 am - 11pm','Avenida insurgentes, calle aldama 34958','669 4367 201','luxury@gmail.com',1,'aqui va la historia, no se que inventar pero pues la escribo para que exista un poco de texto.','');
+insert  into `datos_restaurante`(`id`,`address`,`telefono`,`email`,`status`,`historia`,`video`,`hi_lv`,`hf_lv`,`hi_sd`,`hf_sd`) values 
+(1,'Avenida insurgentes, calle aldama 34958','669 4367 201','luxury@gmail.com',1,'aqui va la historia, no se que inventar pero pues la escribo para que exista un poco de texto.','','10:00:00','22:00:00','11:00:00','23:00:00');
 
 /*Table structure for table `especialidad_chefs` */
 
@@ -309,18 +311,54 @@ insert  into `fotos_restaurante`(`id`,`foto`,`status`,`tipo`) values
 DROP TABLE IF EXISTS `galeria`;
 
 CREATE TABLE `galeria` (
-  `idgaleria` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(250) NOT NULL,
-  `tipo` varchar(45) NOT NULL,
-  PRIMARY KEY (`idgaleria`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='PAra la galeria pues';
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `rutaName` text COLLATE utf8_spanish_ci NOT NULL,
+  `tipo_galeria` int(10) unsigned NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `tipo_galeria` (`tipo_galeria`),
+  CONSTRAINT `tipo_galeria` FOREIGN KEY (`tipo_galeria`) REFERENCES `galeria_tipo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 /*Data for the table `galeria` */
 
-insert  into `galeria`(`idgaleria`,`nombre`,`tipo`) values 
-(1,'Screenshot_(1).png','Comida'),
-(2,'Screenshot_(3).png','Restaurant'),
-(3,'Screenshot_(14).png','Postres');
+insert  into `galeria`(`id`,`rutaName`,`tipo_galeria`,`status`) values 
+(1,'assets/sources/img/restaurant/res1.jpg',2,1),
+(2,'assets/sources/img/food/pizza.jpg',3,1),
+(3,'assets/sources/img/restaurant/res2.jpg',2,1),
+(4,'assets/sources/img/restaurant/res3.jpg',2,1),
+(5,'assets/sources/img/restaurant/res4.jpg',2,1),
+(6,'assets/sources/img/food/pizza2.jpg',3,1),
+(9,'assets/sources/img/food/mollete.jpg',3,1),
+(10,'assets/sources/img/food/chilaquiles.jpg',3,1),
+(11,'assets/sources/img/food/ratatui.jpg',3,1),
+(12,'assets/sources/img/food/sopa.jpg',3,1),
+(13,'assets/sources/img/food/mollete.jpg',3,1),
+(21,'assets/uploads/newFolder/Screenshot_(7)1.png',8,1),
+(22,'assets/uploads/newFolder/Screenshot_(2).png',8,1);
+
+/*Table structure for table `galeria_tipo` */
+
+DROP TABLE IF EXISTS `galeria_tipo`;
+
+CREATE TABLE `galeria_tipo` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `icono` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `default` tinyint(1) NOT NULL DEFAULT '0',
+  `folder` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci COMMENT='PAra la galeria pues';
+
+/*Data for the table `galeria_tipo` */
+
+insert  into `galeria_tipo`(`id`,`categoria`,`icono`,`status`,`default`,`folder`) values 
+(1,'All photos','i-all.png',1,1,''),
+(2,'Restaurant','i-restaurant.png',1,1,''),
+(3,'Food','i-food.png',1,1,''),
+(4,'Desserts','i-desserts.png',1,1,''),
+(8,'nueva cat','Screenshot_(8).png',0,0,'newFolder');
 
 /*Table structure for table `imagenes_restaurante` */
 
@@ -353,7 +391,7 @@ CREATE TABLE `mensajes_contactos` (
 insert  into `mensajes_contactos`(`nombre`,`id`,`email`,`mensaje`,`status`) values 
 ('asdasd',1,'sds@asd','asdas',1),
 ('rrr',2,'rr@rr.com','rrrttrtr',1),
-('fffff',3,'ffff@fff','fffffffffffffffffffff',1);
+('fffff',3,'ffff@fff','fffffffffffffffffffff',0);
 
 /*Table structure for table `menu` */
 
@@ -455,7 +493,7 @@ CREATE TABLE `reservaciones` (
 
 insert  into `reservaciones`(`id`,`nombre`,`email`,`fecha`,`hora`,`telefono`,`invitados`,`status`,`req_especiales`) values 
 (1,'jesus daniel','dan@dan.com','2018-03-24','13:01:00','1231231232',3,1,'viva las americas'),
-(2,'w','e@e.ccom','2018-12-31','00:59:00','34',5,1,'r'),
+(2,'w','e@e.ccom','2018-12-31','00:59:00','34',5,0,'r'),
 (3,'qwe','eqw','2018-12-31','12:59:00','234',3,1,'none'),
 (4,'dfg','dfgd','2018-12-31','12:59:00','43534534',4,1,'none'),
 (5,'fernanda','fer@fer.com','2018-12-31','12:59:00','12386',3,1,'que sea todo nice');
@@ -473,9 +511,14 @@ CREATE TABLE `reservaciones_especiales` (
   PRIMARY KEY (`id`),
   KEY `id_img_restaurante` (`id_img_restaurante`),
   CONSTRAINT `id_img_restaurante` FOREIGN KEY (`id_img_restaurante`) REFERENCES `fotos_restaurante` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `reservaciones_especiales` */
+
+insert  into `reservaciones_especiales`(`id`,`id_img_restaurante`,`descripcion`,`titulo`,`status`) values 
+(1,1,'sdfkjsdflksd lsdflksdj','sdfsdf',1),
+(2,2,'ffffff','eeeee',1),
+(3,3,'efefef','kkkk',1);
 
 /*Table structure for table `tipo_alimento` */
 
