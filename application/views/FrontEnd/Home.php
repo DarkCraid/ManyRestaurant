@@ -116,11 +116,11 @@
       </div>
       <div class="col-md-5">
         <div class="left-c cuadro">
-          <img src="<?= base_url('assets/sources/img/food/').$Espe[0]->imagen; ?>" alt="">
+          <img src="<?= base_url('assets/uploads/food/').$Espe[0]->imagen; ?>" alt="">
           <p><?= $Espe[0]->nombre; ?><br>$ <?= $Espe[0]->precio; ?></p>
         </div>
         <div class="right-c cuadro">
-          <img src="<?= base_url('assets/sources/img/food/').$Espe[1]->imagen; ?>" alt="">
+          <img src="<?= base_url('assets/uploads/food/').$Espe[1]->imagen; ?>" alt="">
           <p><?= $Espe[1]->nombre; ?><br>$ <?= $Espe[1]->precio; ?></p>
         </div>
       </div>

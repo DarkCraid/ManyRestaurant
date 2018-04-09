@@ -70,7 +70,7 @@ class BlogsModel extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('blog');
 		$this->db->where('status',1);
-		$this->db->order_by('fecha');
+		$this->db->order_by('fecha','desc');
 		$this->db->limit(3);
 		return $this->db->get()->result();
 	}

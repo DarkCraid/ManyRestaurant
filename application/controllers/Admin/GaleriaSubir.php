@@ -54,7 +54,10 @@ class GaleriaSubir extends CI_Controller {
 	}
 
 	public function AddPhoto(){
-		$config['upload_path'] 		= "./assets/uploads/".$this->input->post('folder');
+		if($this->input->post('folder')!="restaurant")
+			$config['upload_path'] 		= "./assets/uploads/".$this->input->post('folder');
+		else
+			$config['upload_path'] 		= "./assets/sources/img/".$this->input->post('folder');
         $config['allowed_types']    = 'gif|jpg|png';
         $config['max_width']      	= 4000;
         $config['max_height']      	= 4000;
@@ -65,12 +68,25 @@ class GaleriaSubir extends CI_Controller {
             	$error = array('error' => $this->upload->display_errors());
             else
             	$file = array('upload_data' => $this->upload->data());
-        $data = [
-        	'rutaName' =>	'assets/uploads/'.$this->input->post('folder').'/'.$file['upload_data']['file_name'],
-        	'tipo_galeria'	=>	$this->input->post('idCategory')
-        ];
+        if($this->input->post('folder')!="restaurant"){
+        	$data = [
+        		'rutaName' =>	'assets/uploads/'.$this->input->post('folder').'/'.$file['upload_data']['file_name'],
+        		'tipo_galeria'	=>	$this->input->post('idCategory')
+        	];
+        	$dataFotoRes=false;
+        }
+        else{
+        	$data = [
+        		'rutaName' =>	'assets/sources/img/'.$this->input->post('folder').'/'.$file['upload_data']['file_name'],
+        		'tipo_galeria'	=>	$this->input->post('idCategory')
+        	];
+        	$dataFotoRes = [
+        		'foto' => $file['upload_data']['file_name'],
+        		'tipo' => 2
+        	];
+        }
 
-		$this->GaleriaModel->AddPhoto($data);
+		$this->GaleriaModel->AddPhoto($data,$dataFotoRes);
 		redirect('Admin/GaleriaSubir','refresh');
 	}
 
