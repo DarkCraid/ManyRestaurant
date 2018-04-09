@@ -33,7 +33,8 @@ class Recipiee extends CI_Model
 			
 			$DataBrutaPasos = explode(",", $DataBrutaPasos);
 
-			 for ($i=0; $i <count($DataBrutaPasos) ; $i++) { 
+			 for ($i=0; $i <count($DataBrutaPasos) ; $i++) 
+			 { 
 			 	$insertPasos = [
 			 		'orden'=>$i+1,
 			 		'pasos'=>$DataBrutaPasos[$i],
