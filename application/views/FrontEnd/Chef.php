@@ -34,13 +34,6 @@
 	</div>
 </div>
 
-
-
-
-
-
-
-
 <div class="form2" style="background-color: #eee">
 	<div class="container chefOptions">
 		<div class="row">
