@@ -10,9 +10,6 @@ img.derecha {float: right;position: relative;right: 35%;top: 20px;}
 .opcion>p{font-weight: bold;}
 .without{border-right: none;}
 
-
-
-
 .hijo_uno {
   background-color: yellow;
   
@@ -28,9 +25,6 @@ img.derecha {float: right;position: relative;right: 35%;top: 20px;}
   width: 200px;
   margin: 0 auto;
 }
-
-
-
 
 * {
     box-sizing: border-box;
